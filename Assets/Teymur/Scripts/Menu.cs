@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour, IManager
 {
-    public Text languageText;
+    //public Text languageText;
     public GameObject mainMenu;
     public GameObject settingsMenu;
     public GameObject levelsMenu;
@@ -100,7 +100,7 @@ public class Menu : MonoBehaviour, IManager
 
     public void SetLanguage(string language)
     {
-        languageText.text = language;
+        //languageText.text = language;
         PlayerPrefs.SetString("Language", language);
         PlayerPrefs.Save();
     }

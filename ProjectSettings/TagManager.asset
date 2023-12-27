@@ -3,11 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - UIObjects
-  - UIObjectsToActive
-  - LevelPrefab
-  - Roof
+  tags: []
   layers:
   - Default
   - TransparentFX
