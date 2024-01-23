@@ -109,8 +109,8 @@ public class PauseMenu : MonoBehaviour
         if (musicTracks.Length > 0)
         {
             int randomIndex = Random.Range(0, musicTracks.Length);
-            audioSource.clip = musicTracks[randomIndex];
-            audioSource.Play();
+            //audioSource.clip = musicTracks[randomIndex];
+            //audioSource.Play();
         }
         else
         {

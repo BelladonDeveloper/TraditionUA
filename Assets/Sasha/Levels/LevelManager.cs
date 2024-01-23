@@ -4,11 +4,12 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> _levelPrefab; 
-    [SerializeField] private List<GameObject> _levels;
+    
+    private List<GameObject> _levels = new List<GameObject>();
 
     public void CreateLevels()
     {
-        if (_levels.Count == 0)
+        if (_levelPrefab.Count != 0)
         {
             for (int i = 0; i < _levelPrefab.Count; i++)
             {
@@ -19,7 +20,10 @@ public class LevelManager : MonoBehaviour
                 _levels.Add(newLevel);
             }
         }
-
+        else
+        {
+            Debug.Log("The Level manager haven`t levels to create");
+        }
     }
 
     private void OnDisable()

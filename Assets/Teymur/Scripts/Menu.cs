@@ -1,20 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using Base;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class Menu : MonoBehaviour, IManager
 {
-    //public Text languageText;
-    public GameObject mainMenu;
-    public GameObject settingsMenu;
-    public GameObject levelsMenu;
-    public GameObject creditsMenu;
-    public GameObject tutorialMenu;
-
     public Button settingsButton;
     public Button newGameButton;
     public Button continueButton;
@@ -32,17 +22,9 @@ public class Menu : MonoBehaviour, IManager
     {
         settingsButton.onClick.AddListener(OpenSettings);
         levelChanger.onClick.AddListener(ShowLevelChanger);
+        exitButton.onClick.AddListener(ExitGame);
         
         currentSceneName = SceneManager.GetActiveScene().name;
-
-        if (PlayerPrefs.HasKey("Language"))
-        {
-            //SetLanguage(PlayerPrefs.GetString("Language"));
-        }
-        else
-        {
-            //SetLanguage("English");
-        }
 
         UpdateMenus();
     }
@@ -57,7 +39,7 @@ public class Menu : MonoBehaviour, IManager
         Register.Get<UIManager>().Show(UIPopupType.POPUP1);
     }
 
-    public void UpdateMenus()
+    private void UpdateMenus()
     {
         settingsButton.gameObject.SetActive(false);
         newGameButton.gameObject.SetActive(false);
@@ -93,27 +75,7 @@ public class Menu : MonoBehaviour, IManager
         }
     }
 
-    public void SetScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
-    }
-
-    public void SetLanguage(string language)
-    {
-        //languageText.text = language;
-        PlayerPrefs.SetString("Language", language);
-        PlayerPrefs.Save();
-    }
-
-    public void LoadLastSaved()
-    {
-        if (PlayerPrefs.HasKey("LastSaved"))
-        {
-            SceneManager.LoadScene(PlayerPrefs.GetString("LastSaved"));
-        }
-    }
-
-    public void ExitGame()
+    private void ExitGame()
     {
         Application.Quit();
     }
@@ -123,6 +85,7 @@ public class Menu : MonoBehaviour, IManager
         Debug.Log("I am Disposed");
         settingsButton.onClick.RemoveAllListeners();
         levelChanger.onClick.RemoveAllListeners();
+        exitButton.onClick.RemoveAllListeners();
     }
 }
 

@@ -58,5 +58,6 @@ public enum UIPopupType
 {
     None,
     POPUP1,
-    LevelChanger
+    LevelChanger,
+    DialogueButton,
 }

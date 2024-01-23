@@ -2335,15 +2335,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c9c222bf0c52a4196ecb465eb726c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenu: {fileID: 286271330}
-  settingsMenu: {fileID: 125015974}
-  levelsMenu: {fileID: 0}
-  creditsMenu: {fileID: 0}
-  tutorialMenu: {fileID: 0}
   settingsButton: {fileID: 125015978}
   newGameButton: {fileID: 483386517}
   continueButton: {fileID: 1167162326}
-  levelChanger: {fileID: 0}
+  levelChanger: {fileID: 515059812}
   exitButton: {fileID: 1125087454}
 --- !u!1 &1167162323
 GameObject:
