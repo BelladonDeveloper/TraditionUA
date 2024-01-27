@@ -10,6 +10,7 @@ TagManager:
   - Egg
   - UIObjects
   - UIObjectsToActive
+  - Bread Component
   layers:
   - Default
   - TransparentFX

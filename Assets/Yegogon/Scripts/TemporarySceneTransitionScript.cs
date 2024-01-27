@@ -9,10 +9,10 @@ public class TemporarySceneTransitionScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        BakeThatCake();
+        BakeThatBread();
     }
 
-    private void BakeThatCake()
+    private void BakeThatBread()
     {
         SceneManager.LoadScene(ThatSpecifficScene);
     }

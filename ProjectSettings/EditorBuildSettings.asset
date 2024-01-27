@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/testlevel.unity
     guid: 93bf371a237bd8d4391239747154df1a
+  - enabled: 1
+    path: Assets/Scenes/Day of Malanka/MalankaDay.unity
+    guid: 8211dbe5f1e7f984b857b02d441e58c6
+  - enabled: 1
+    path: Assets/Scenes/Day of Malanka/CookingScene.unity
+    guid: 65571d5f356c7ba47b1074faae7152d0
   m_configObjects: {}
