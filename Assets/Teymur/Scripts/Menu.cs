@@ -2,90 +2,162 @@ using Base;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using DG.Tweening;
+using System;
+using UnityEngine.SceneManagement;
 
-public class Menu : MonoBehaviour, IManager
+public class Menu : MonoBehaviour
 {
-    public Button settingsButton;
-    public Button newGameButton;
-    public Button continueButton;
-    public Button levelChanger;
-    public Button exitButton;
+    [SerializeField] private float transitionTime;
 
-    private string currentSceneName;
+    [SerializeField] private InitialController initialController;
+    [SerializeField] private MenuData menuData;
+    //Buttons
+    [SerializeField] private Button playButton;
+    [SerializeField] private Button settingsButton;
+    [SerializeField] private Button galleryButton;
+    [SerializeField] private Button informationButton;
+    [SerializeField] private Button exitButton;
+    //SettingsButtons
+    [SerializeField] private Button settingsBack;
+    //InformationButtons
+    [SerializeField] private Button informationBack;
+    //ExitButtons
+    [SerializeField] private Button exitBackButton;
+    [SerializeField] private Button exitBackBG;
+    [SerializeField] private Button exitYes;
+    
+    
 
-    public void Init()
-    {
-        Debug.Log("I am initialized");
-    }
+    [SerializeField] private GameObject SettingsScreen;
+    [SerializeField] private GameObject GalleryScreen;
+    [SerializeField] private GameObject QuitScreen;
+    [SerializeField] private GameObject InformationScreen;
+    [SerializeField] private Image TransitionScreen;
+
 
     private void Start()
     {
-        settingsButton.onClick.AddListener(OpenSettings);
-        levelChanger.onClick.AddListener(ShowLevelChanger);
-        exitButton.onClick.AddListener(ExitGame);
-        
-        currentSceneName = SceneManager.GetActiveScene().name;
-
-        UpdateMenus();
+        Subscribe();
     }
-
-    private void ShowLevelChanger()
+    private void OnDestroy()
     {
-        Register.Get<UIManager>().Show(UIPopupType.LevelChanger);
+        UnSubscribe();
     }
-
-    private void OpenSettings()
+    //Play
+    private void PlayButton()
     {
-        Register.Get<UIManager>().Show(UIPopupType.POPUP1);
+        StartGame();
     }
-
-    private void UpdateMenus()
+    private void StartGame()
     {
-        settingsButton.gameObject.SetActive(false);
-        newGameButton.gameObject.SetActive(false);
-        continueButton.gameObject.SetActive(false);
-        exitButton.gameObject.SetActive(false);
-
-        if (currentSceneName == "MainMenu")
-        {
-            newGameButton.gameObject.SetActive(true);
-            continueButton.gameObject.SetActive(true);
-            exitButton.gameObject.SetActive(true);
-
-            if (PlayerPrefs.HasKey("LastSaved"))
-            {
-                settingsButton.gameObject.SetActive(true);
-            }
-        }
-        else if (currentSceneName == "SettingsMenu")
-        {
-            exitButton.gameObject.SetActive(true);
-        }
-        else if (currentSceneName == "LevelsMenu")
-        {
-            exitButton.gameObject.SetActive(true);
-        }
-        else if (currentSceneName == "CreditsMenu")
-        {
-            exitButton.gameObject.SetActive(true);
-        }
-        else if (currentSceneName == "TutorialMenu")
-        {
-            exitButton.gameObject.SetActive(true);
-        }
+        initialController.soundManager.PlayMusic(Music.None,false);
+        SceneManager.LoadScene(menuData.level+1);
     }
-
-    private void ExitGame()
+    //Settings
+    private void SettingsButton()
+    {
+        Click();
+        Transition(() => SettingsScreen.SetActive(true));
+    }
+    private void SettingsBack()
+    {
+        Click();
+        Transition(() => SettingsScreen.SetActive(false));
+    }
+    //Gallery
+    private void GalleryButton()
+    {
+        Click();
+        Transition(() => GalleryScreen.SetActive(true));
+    }
+    //Information
+    private void InformationButton()
+    {
+        Click();
+        Transition(() => InformationScreen.SetActive(true));
+    }
+    private void InformationBack()
+    {
+        Click();
+        Transition(() => InformationScreen.SetActive(false));
+    }
+    //Exit
+    private void ExitButton()
+    {
+        Click();
+        QuitScreen.SetActive(true);
+    }
+    private void ExitBack()
+    {
+        Click();
+        QuitScreen.SetActive(false);
+    }
+    private void Quit()
     {
         Application.Quit();
     }
-
-    public void Dispose()
+    //
+    public void Transition(Action function)
     {
-        Debug.Log("I am Disposed");
-        settingsButton.onClick.RemoveAllListeners();
-        levelChanger.onClick.RemoveAllListeners();
-        exitButton.onClick.RemoveAllListeners();
+        Sequence Transition1 = DOTween.Sequence();
+
+        TransitionScreen.gameObject.SetActive(true);
+
+        Transition1.Append(TransitionScreen.DOFade(1f, transitionTime/2));
+        
+        Transition1.OnComplete(() => 
+        {
+            function?.Invoke();
+            Part2();
+        });
+        Transition1.Play();
     }
+    private void Part2()
+    {
+        Sequence Transition2 = DOTween.Sequence();
+        Transition2.Append(TransitionScreen.DOFade(0f, transitionTime/2));
+        Transition2.OnComplete(() => TransitionScreen.gameObject.SetActive(false));
+        Transition2.Play();
+    }
+    //
+    private void Subscribe()
+    {
+        playButton.onClick.AddListener(PlayButton);
+        settingsButton.onClick.AddListener(SettingsButton);
+        galleryButton.onClick.AddListener(GalleryButton);
+        informationButton.onClick.AddListener(InformationButton);
+        exitButton.onClick.AddListener(ExitButton);
+        //Settings Buttons
+        settingsBack.onClick.AddListener(SettingsBack);
+        //Information Buttons
+        informationBack.onClick.AddListener(InformationBack);
+        //Exit Buttons
+        exitBackButton.onClick.AddListener(ExitBack);
+        exitBackBG.onClick.AddListener(ExitBack);
+        exitYes.onClick.AddListener(Quit);
+    }
+    private void UnSubscribe()
+    {
+        playButton.onClick.RemoveListener(PlayButton);
+        settingsButton.onClick.RemoveListener(SettingsButton);
+        galleryButton.onClick.RemoveListener(GalleryButton);
+        informationButton.onClick.RemoveListener(InformationButton);
+        exitButton.onClick.RemoveListener(ExitButton);
+        //Settings Buttons
+        settingsBack.onClick.RemoveListener(SettingsBack);
+        //Information Buttons
+        informationBack.onClick.RemoveListener(InformationBack);
+        //Exit Buttons
+        exitBackButton.onClick.RemoveListener(ExitBack);
+        exitBackBG.onClick.RemoveListener(ExitBack);
+        exitYes.onClick.RemoveListener(Quit);
+    }
+    //Click Sound
+    private void Click()
+    {
+        initialController.soundManager.PlaySound(Sound.Click);
+    }
+    
 }
 

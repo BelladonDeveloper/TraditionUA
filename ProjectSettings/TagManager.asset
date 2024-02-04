@@ -10,7 +10,7 @@ TagManager:
   - Egg
   - UIObjects
   - UIObjectsToActive
-  - Bread Component
+  - Currot
   layers:
   - Default
   - TransparentFX
@@ -18,9 +18,9 @@ TagManager:
   - 
   - Water
   - UI
-  - PlayerViewer
-  - ObjectsForView
+  - Interaction
   - 
+  - Player
   - 
   - 
   - 

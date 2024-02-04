@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4012314370331086859}
   - component: {fileID: 8807504664583664902}
   - component: {fileID: 5305905834410888137}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EggPrefab
   m_TagString: Egg
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b5bc4936a2f367d4aaca61a2002130d0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3fdfb96feea381f4bb156af43f327050, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,7 +105,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.5599997, y: 2.5600002, z: 0.20000015}
+  m_Size: {x: 500, y: 500, z: 500}
   m_Center: {x: 0, y: 0.0000014305115, z: -0.0000009536743}
 --- !u!114 &5305905834410888137
 MonoBehaviour:
