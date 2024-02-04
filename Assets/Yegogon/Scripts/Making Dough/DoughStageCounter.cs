@@ -8,7 +8,7 @@ public class DoughStageCounter : MonoBehaviour
     [SerializeField] private GameObject stage2;
     [SerializeField] private GameObject stage3;
 
-    public int Counter = 0;
+    public DoughStage Stage;
     
     private void Awake()
     {
@@ -17,7 +17,7 @@ public class DoughStageCounter : MonoBehaviour
 
     private void Update()
     {
-        if (Counter == 1)
+        if (Stage == DoughStage.DryOut)
         {
             //Enable:
             stage1.SetActive(true);
@@ -26,7 +26,7 @@ public class DoughStageCounter : MonoBehaviour
             stage2.SetActive(false);
             stage3.SetActive(false);
         }
-        else if (Counter == 2)
+        else if (Stage == DoughStage.Soup)
         {
             //Enable:
             stage2.SetActive(true);
@@ -35,7 +35,7 @@ public class DoughStageCounter : MonoBehaviour
             stage1.SetActive(false);
             stage3.SetActive(false);
         }
-        else if (Counter == 3)
+        else if (Stage == DoughStage.ReadyDough)
         {
             //Enable:
             stage3.SetActive(true);
@@ -50,7 +50,7 @@ public class DoughStageCounter : MonoBehaviour
 
     private void Reset()
     {
-        Counter = 0;
+        Stage = DoughStage.Empty;
         stage1.SetActive(false);
         stage2.SetActive(false);
         stage3.SetActive(false);
@@ -58,6 +58,6 @@ public class DoughStageCounter : MonoBehaviour
 
     public void NextDoughStage()
     {
-        Counter++;
+        Stage++;
     }
 }
