@@ -11,6 +11,8 @@ TagManager:
   - UIObjects
   - UIObjectsToActive
   - Currot
+  - villager
+  - Bread Component
   layers:
   - Default
   - TransparentFX
