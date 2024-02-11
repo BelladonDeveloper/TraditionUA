@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Base;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -10,7 +11,6 @@ public class PageScript : MonoBehaviour
 {
     private int level;
     [SerializeField] private Menu menu;
-    [SerializeField] private InitialController initialController;
     [SerializeField] private MenuData menuData;
     //
     [SerializeField] private Button leftButton;
@@ -113,7 +113,7 @@ public class PageScript : MonoBehaviour
     
     private void PLSPlay()
     {
-        //initialController.soundManager.PlayMusic(Music.None,false);
+        Register.Get<SoundManager>().PlayMusic(Music.None,false);
         SceneManager.LoadScene(SelectedLevel);
     }
     private void HidePLS()
@@ -124,7 +124,7 @@ public class PageScript : MonoBehaviour
 
     private void Click()
     {
-        //initialController.soundManager.PlaySound(Sound.Click);
+        Register.Get<SoundManager>().PlaySound(Sound.Click);
     }
 
     private void Subscribe()

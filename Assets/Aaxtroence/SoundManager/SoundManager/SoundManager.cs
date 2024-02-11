@@ -34,6 +34,7 @@ public class SoundManager : MonoBehaviour, IManager
     {
         soundScript.PlaySound((int)Index, volume);
     }
+    
     // Settings
     public void Settings_SetMusicVolume(int volume)
     {

@@ -177,7 +177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 422e44b5f3b11534281bbb6cd31eb6f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsScript: {fileID: 56381367}
   iconImage: {fileID: 645047602}
   IconPrefs:
   - {fileID: 21300000, guid: 77ab0154e9b6dc247a7e8c3158c3cd83, type: 3}
@@ -364,8 +363,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SoundVolume: 100
+  previousSoundVolume: -1
   MusicVolume: 100
-  initialController: {fileID: 511396600}
+  previousMusicVolume: -1
 --- !u!1 &61222910
 GameObject:
   m_ObjectHideFlags: 0
@@ -4660,7 +4660,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 328.35
+  m_fontSize: 328.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5756,7 +5756,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 1160562774}
-  initialController: {fileID: 511396600}
   menuData: {fileID: 529090570}
   leftButton: {fileID: 1660605911}
   rightButton: {fileID: 1897968550}
@@ -7604,7 +7603,6 @@ MonoBehaviour:
   rectTransform: {fileID: 382238974}
   image: {fileID: 1042561354}
   loadingScreen: {fileID: 1119974702}
-  initialController: {fileID: 511396600}
 --- !u!1 &1160562771
 GameObject:
   m_ObjectHideFlags: 0
@@ -9995,7 +9993,19 @@ MonoBehaviour:
   m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1531143011}
+        m_TargetAssemblyTypeName: SliderScript, Assembly-CSharp
+        m_MethodName: ChangeVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1531143011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10008,7 +10018,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 422e44b5f3b11534281bbb6cd31eb6f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsScript: {fileID: 56381367}
   iconImage: {fileID: 1270084780}
   IconPrefs:
   - {fileID: 21300000, guid: 77ab0154e9b6dc247a7e8c3158c3cd83, type: 3}
@@ -12774,7 +12783,7 @@ PrefabInstance:
     - target: {fileID: 1107018364050183838, guid: c0c29ff70818243449e2829ed601315b,
         type: 3}
       propertyPath: Sounds.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1107018364050183838, guid: c0c29ff70818243449e2829ed601315b,
         type: 3}
@@ -12805,6 +12814,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SoundManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1107018364775637454, guid: c0c29ff70818243449e2829ed601315b,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

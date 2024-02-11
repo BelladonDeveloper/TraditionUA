@@ -1,119 +1,58 @@
 ﻿using System.Collections.Generic;
-using Base;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public sealed class InitialController : MonoBehaviour
+namespace Base
 {
-    public static InitialController instance { get; private set; }
-
-    [SerializeField] private UIManager uiManager;
-    //public SoundManager soundManager;
-
-    private List<IManager> managerPrefabs = new List<IManager>();
-
-    private void Awake()
+    public sealed class InitialController : MonoBehaviour
     {
-        if (instance == null)
+        private static InitialController instance { get; set; }
+
+        [SerializeField] private UIManager uiManager;
+        [SerializeField] private SoundManager soundManager;
+
+        private List<IManager> managerPrefabs = new List<IManager>();
+
+        private void Awake()
         {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
-            RegisterManagers();
-            InitializeManagers();
+            if (instance == null)
+            {
+                instance = this;
+                DontDestroyOnLoad(this.gameObject);
+                RegisterManagers();
+                InitializeManagers();
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
         }
-        else
+
+        private void RegisterManagers()
         {
-            Destroy(this.gameObject);
+            managerPrefabs.Add(uiManager);
+            Register.Add(uiManager);
+
+            managerPrefabs.Add(soundManager);
+            Register.Add(soundManager);
         }
-    }
 
-    private void RegisterManagers()
-    {
-        managerPrefabs.Add(uiManager);
-        Register.Add(uiManager);
+        private void InitializeManagers()
+        {
+            managerPrefabs.ForEach(e => e.Init());
+        }
 
-        //managerPrefabs.Add(soundManager);//aax
-        //Register.Add(soundManager); //aax
-    }
+        private void DisposeManagers()
+        {
+            managerPrefabs.ForEach(e => e.Dispose());
+            managerPrefabs.Clear();
 
-    private void InitializeManagers()
-    {
-        managerPrefabs.ForEach(e => e.Init());
-    }
+            Register.Remove(uiManager);
+            Register.Remove(soundManager);
+        }
 
-    private void DisposeManagers()
-    {
-        managerPrefabs.ForEach(e => e.Dispose());
-        managerPrefabs.Clear();
-        //Register.Remove(uiManager);
-
-        //Register.Remove(soundManager);//aax
-    }
-
-    private void OnDestroy()
-    {
-        DisposeManagers();
+        private void OnApplicationQuit()
+        {
+            DisposeManagers();
+        }
     }
 }
-
-
-
-
-
-//using System;
-//using System.Collections.Generic;
-//using Base;
-//using Unity.VisualScripting;
-//using UnityEngine;
-//using UnityEngine.Serialization;
-
-//public sealed class InitialController : MonoBehaviour 
-//{
-//    private InitialController() { }
-
-//    private static InitialController _instance;
-
-//    [SerializeField] private UIManager uiManager;
-
-//    private List<IManager> managerPrefabs = new List<IManager>();
-
-
-//    public static InitialController GetInstance()
-//    {
-//        if (_instance == null)
-//        {
-//            _instance = new InitialController();
-//        }
-//        return _instance;
-//    }
-
-//    private void Awake()
-//    {
-//        DontDestroyOnLoad(gameObject);
-//        RegisterManagers();
-//        InitializeManagers();
-//    }
-
-//    private void RegisterManagers()
-//    {
-//        managerPrefabs.Add(uiManager);
-//        Register.Add(uiManager);
-//    }
-
-//    private void InitializeManagers()
-//    {
-//        managerPrefabs.ForEach(e => e.Init());
-//    }
-
-//    private void DisposeManagers()
-//    {
-//        managerPrefabs.ForEach(e => e.Dispose());
-//        managerPrefabs.Clear();
-//        Register.Remove(uiManager);
-//    }
-
-//    private void OnDestroy()
-//    {
-//        DisposeManagers();
-//    }
-//}
