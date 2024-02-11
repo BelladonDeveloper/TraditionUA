@@ -13,7 +13,7 @@ public class PlayerWining : MonoBehaviour
     {
         if(score == winingScore)
         {
-            win.transform.position = new Vector3(367.6667f, 147.6667f, 0);
+            win.GetComponent<CanvasGroup>().alpha = 1;
             Time.timeScale = 0;
         }
     }
