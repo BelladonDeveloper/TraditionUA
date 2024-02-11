@@ -11,6 +11,9 @@ TagManager:
   - UIObjects
   - UIObjectsToActive
   - Currot
+  - villager
+  - Flowers
+  - Weed
   layers:
   - Default
   - TransparentFX
