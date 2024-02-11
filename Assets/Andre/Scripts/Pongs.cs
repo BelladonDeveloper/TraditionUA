@@ -10,6 +10,12 @@ public class Pongs : MonoBehaviour
     
     string FlowersTag = "Flowers";
     string WeedTag = "Weed";
+    public GameObject _joysticks;
+    public GameObject MiniGame1;
+    public Transform targes;
+    
+    public GameObject WeedT;
+    public GameObject FlowersT;
 
     void Update()
     {
@@ -24,11 +30,30 @@ public class Pongs : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == WeedTag) { Debags();}
+        if (other.tag == WeedTag) { СlosingWeed(); }
+        if (other.tag == FlowersTag) { СlosingFlowers(); }
     }
 
-    void Debags()
+    void СlosingWeed()
     {
-        Debug.Log("Weed"); 
+        _joysticks.SetActive(true);
+        AndrePlayerController._moveSpeed = 6;
+        Camera1.target = targes;
+        Camera1.Quaternions = 45;
+        MiniGame1.SetActive(false);
+        AndrePlayerController.weed = +1;
+        WeedT.SetActive(true);
+        FlowersT.SetActive(true);
+    }
+    void СlosingFlowers()
+    {
+        WeedT.SetActive(true);
+        FlowersT.SetActive(true);
+        _joysticks.SetActive(true);
+        AndrePlayerController._moveSpeed = 6;
+        Camera1.target = targes;
+        Camera1.Quaternions = 45;
+        MiniGame1.SetActive(false);
+        AndrePlayerController.flowers = +1;
     }
 }
