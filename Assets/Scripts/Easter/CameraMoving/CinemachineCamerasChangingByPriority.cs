@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using Input = UnityEngine.Input;
@@ -8,7 +9,9 @@ public class CinemachineCamerasChangingByPriority : MonoBehaviour
 
     [SerializeField] private CinemachineVirtualCamera[] _virtualCameras;
 
+
     private int _currentCameraIndex;
+    private int _currentVirtualCameraIndex;
 
     public void Start()
     {
@@ -29,4 +32,5 @@ public class CinemachineCamerasChangingByPriority : MonoBehaviour
 
         //PassingAndTakingTasks.SingleTon.TakeSecondTask(); //Need to remove
     }
+
 }
