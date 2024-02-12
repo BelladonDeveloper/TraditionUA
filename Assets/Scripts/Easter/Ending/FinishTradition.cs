@@ -10,7 +10,9 @@ public class FinishTradition : MonoBehaviour
 
     [SerializeField] private GameObject _stick;
     [SerializeField] private CanvasGroup _darkness;
-    
+
+
+    private const int _changeScene = 0;
 
     private const float _timeToDarkness = 5f;
 
@@ -18,7 +20,7 @@ public class FinishTradition : MonoBehaviour
     {
         Sequence fading = DOTween.Sequence();
 
-        _movementController.ChangeSpeed(0);
+        _movementController.enabled = false;
 
         _stick.SetActive(false);
 
@@ -31,7 +33,7 @@ public class FinishTradition : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
 
-        //Todo: SceneManager.LoadScene(neddedScene); 
+        SceneManager.LoadScene(_changeScene); 
     }
 
     private void OnEnable()

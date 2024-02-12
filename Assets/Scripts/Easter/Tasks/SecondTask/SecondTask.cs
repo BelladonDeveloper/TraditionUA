@@ -16,6 +16,8 @@ public class SecondTask : MonoBehaviour
     [SerializeField] private CanvasGroup _uICheckMark;
     [SerializeField] private CanvasGroup _stick;
 
+    [SerializeField] private CanvasGroup _timerText;
+
     private const float TIME_TO_APPEARING = 1f;
 
     private int _randomSprite;
@@ -34,7 +36,7 @@ public class SecondTask : MonoBehaviour
     {
         Sequence fade = DOTween.Sequence();
 
-        fade.Append(EasterTimer.Singleton.timerText.DOFade(1, 1f));
+        fade.Append(EasterTimer.Singleton.TimerText.DOFade(1, 1f));
 
         if (!_isStarted)
         {
@@ -64,6 +66,7 @@ public class SecondTask : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         appear.Append(_uICheckMark.DOFade(1, TIME_TO_APPEARING).SetEase(Ease.Linear));
+        appear.Join(_timerText.DOFade(1, TIME_TO_APPEARING).SetEase(Ease.Linear));
 
 
         _usedPositions.Clear();

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -15,16 +16,22 @@ public class ThirdTask : MonoBehaviour
 
     [SerializeField] private NavMeshAgent bunnyAgent;
 
+    [SerializeField] private CanvasGroup _thirdTask;
+
     private List<GameObject> _carrots = new List<GameObject>();
 
     private List<int> usedIndices = new List<int>();
 
-    private const int Default = 10;
+    private const int Default = 19;
 
     private const float QuaternionRotation = 15.0f;
 
     public void OnThirdTask()
     {
+        Sequence appear = DOTween.Sequence();
+
+        appear.Append(_thirdTask.DOFade(1f, 2f));
+
         AddNewCarrotsCount = Default;
         StartCoroutine(CarrotSpawner());
     }

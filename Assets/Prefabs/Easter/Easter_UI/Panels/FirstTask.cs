@@ -16,6 +16,11 @@ public class FirstTask : MonoBehaviour
     [SerializeField] private CountCollectedEggs _countCollectedEggs;
     [SerializeField] private List<Transform> _randomPositions;
 
+    [SerializeField] private CanvasGroup _firstTaskUI;
+    [SerializeField] private CanvasGroup _firstTaskTimer;
+
+    private const float _timeToAppearing = 2.0f;
+
     public static int _isDoneChecker = 0;
 
     private Coroutine _timerCoroutine;
@@ -29,6 +34,12 @@ public class FirstTask : MonoBehaviour
 
     public void TakeFirstTask()
     {
+        Sequence appear = DOTween.Sequence();
+
+        appear.Append(_firstTaskUI.DOFade(1f, _timeToAppearing));
+        appear.Append(_firstTaskTimer.DOFade(1f, _timeToAppearing));
+
+
         int number = 0;
         float time = 0;
 
@@ -104,17 +115,17 @@ public class FirstTask : MonoBehaviour
     {
         Sequence fade = DOTween.Sequence();
 
-        EasterTimer.Singleton.timerText.text = "Game Over";
+        EasterTimer.Singleton.TimerText.text = "Game Over";
 
-        fade.Append(EasterTimer.Singleton.timerText.DOFade(1, 1f));
-        fade.Append(EasterTimer.Singleton.timerText.DOFade(0, 1f));
+        fade.Append(EasterTimer.Singleton.TimerText.DOFade(1, 1f));
+        fade.Append(EasterTimer.Singleton.TimerText.DOFade(0, 1f));
 
         ResetFirstTask();
     }
 
     public void Win()
     {
-        EasterTimer.Singleton.timerText.text = "Round Completed";
+        EasterTimer.Singleton.TimerText.text = "Round Completed";
     }
 
     public void ResetFirstTask()
