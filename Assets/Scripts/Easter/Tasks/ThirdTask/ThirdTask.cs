@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
 public class ThirdTask : MonoBehaviour
@@ -11,11 +13,15 @@ public class ThirdTask : MonoBehaviour
 
     [SerializeField] private List<Transform> _positions = new List<Transform>();
 
+    [SerializeField] private NavMeshAgent bunnyAgent;
+
+    private List<GameObject> _carrots = new List<GameObject>();
+
+    private List<int> usedIndices = new List<int>();
+
     private const int Default = 10;
 
     private const float QuaternionRotation = 15.0f;
-
-    private List<int> usedIndices = new List<int>();
 
     public void OnThirdTask()
     {
@@ -23,7 +29,25 @@ public class ThirdTask : MonoBehaviour
         StartCoroutine(CarrotSpawner());
     }
 
-    public IEnumerator CarrotSpawner()
+    public void RemoveCarrotFromList(GameObject carrot)
+    {
+        if (_carrots.Contains(carrot))
+            _carrots.Remove(carrot);
+    }
+
+
+    private void Update()
+    {
+        GameObject nearestCarrot = FindNearestCarrot();
+
+        if (nearestCarrot != null)
+        {
+            bunnyAgent.transform.localRotation.SetLookRotation(nearestCarrot.transform.position);
+            bunnyAgent.SetDestination(nearestCarrot.transform.position);
+        }
+    }
+
+    private IEnumerator CarrotSpawner()
     {
         Quaternion rototationX = Quaternion.Euler(QuaternionRotation, 0, 0);
 
@@ -35,9 +59,9 @@ public class ThirdTask : MonoBehaviour
 
             usedIndices.Add(randomIndex);
 
-            Instantiate(_carrot, _positions[randomIndex].position, rototationX);
+            GameObject newCarrot = Instantiate(_carrot, _positions[randomIndex].position, rototationX);
 
-            Debug.Log(randomIndex);
+            _carrots.Add(newCarrot);
         }
     }
 
@@ -53,8 +77,36 @@ public class ThirdTask : MonoBehaviour
         return randomIndex;
     }
 
-    private void OnEnable() => PassingAndTakingTasks.OnTakenThirdTask += OnThirdTask;
+    private GameObject FindNearestCarrot()
+    {
 
-    private void OnDisable() => PassingAndTakingTasks.OnTakenThirdTask -= OnThirdTask;
+        GameObject nearest = null;
+        float minDist = Mathf.Infinity;
 
+        foreach (GameObject carrot in _carrots)
+        {
+            float dist = Vector3.Distance(bunnyAgent.transform.position, carrot.transform.position);
+
+            if (dist < minDist)
+            {
+                nearest = carrot;
+                minDist = dist;
+            }
+        }
+
+        return nearest;
+
+    }
+
+    private void OnEnable()
+    {
+        PassingAndTakingTasks.OnTakenThirdTask += OnThirdTask;
+        PickingThingsUp.OnRemovedCarrot += RemoveCarrotFromList;
+    }
+
+    private void OnDisable()
+    {
+        PassingAndTakingTasks.OnTakenThirdTask -= OnThirdTask;
+        PickingThingsUp.OnRemovedCarrot -= RemoveCarrotFromList;
+    }
 }

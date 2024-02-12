@@ -10,6 +10,7 @@ public class CountCollectedEggs : MonoBehaviour
 
     public static event Action OnCollectedAllEggs;
     public static event Action OnEnded;
+
     public static List<GameObject> _eggs = new List<GameObject>();
 
     public TextMeshProUGUI CurrentCountOfEggsTMP;
@@ -101,8 +102,6 @@ public class CountCollectedEggs : MonoBehaviour
             OnEnded?.Invoke();
 
             FirstTask._isDoneChecker = 4;
-
-            PassingAndTakingTasks.SequenceOfTasks = 1;
         }
 
     }

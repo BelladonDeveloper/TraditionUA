@@ -46,30 +46,30 @@ public class PassingAndTakingTasks : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        TakeThirdTask();
-        //if (SequenceOfTasks == 0)
-        //{
-        //    if (other.gameObject.tag == "Player")
-        //    {
-        //        TakeFirstTask();
-        //    }
-        //}
+        //TakeThirdTask();
+        if (SequenceOfTasks == 0)
+        {
+            if (other.gameObject.tag == "Player")
+            {
+                TakeFirstTask();
+            }
+        }
 
-        //else if (SequenceOfTasks == 1)
-        //{
-        //    if (other.gameObject.tag == "Player")
-        //    {
-        //        TakeSecondTask();
-        //    }
+        else if (SequenceOfTasks == 1)
+        {
+            if (other.gameObject.tag == "Player")
+            {
+                TakeSecondTask();
+            }
 
-        //}
+        }
 
-        //else if (SequenceOfTasks == 2)
-        //{
-        //    if (other.gameObject.tag == "Player")
-        //    {
-        //        TakeThirdTask();
-        //    }
-        //}
+        else if (SequenceOfTasks == 2)
+        {
+            if (other.gameObject.tag == "Player")
+            {
+                TakeThirdTask();
+            }
+        }
     }
 }

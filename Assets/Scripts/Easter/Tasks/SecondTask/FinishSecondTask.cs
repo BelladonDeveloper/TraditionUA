@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Cinemachine;
 using DG.Tweening;
@@ -5,6 +6,8 @@ using UnityEngine;
 
 public class FinishSecondTask : MonoBehaviour
 {
+    public static event Action OnFinishedTask;
+
     [SerializeField] private CinemachineVirtualCamera _playerCamera;
     [SerializeField] private CanvasGroup _stick;
     [SerializeField] private CanvasGroup _checkMarkUI;
@@ -29,6 +32,10 @@ public class FinishSecondTask : MonoBehaviour
 
         appearing.Append(_stick.DOFade(1, TIME_TO_FINISH));
         appearing.Join(_checkMarkUI.DOFade(0, TIME_TO_FINISH));
+
+        yield return new WaitForSeconds(3f);
+
+        OnFinishedTask?.Invoke();
     }
 
 

@@ -27,6 +27,7 @@ public class SecondTaskManager : MonoBehaviour
 
     private bool _isDone;
     private bool _isDone2;
+    private bool _isDone3;
     private bool _isFinised;
     private bool _isStartedSecondTask;
 
@@ -94,11 +95,11 @@ public class SecondTaskManager : MonoBehaviour
                 _isDone2 = true;
             }
 
-            if (_eggsFirstLevel.Count == 0 && _isStartedSecondTask == true && _isFinised == true)
+            if (_eggsFirstLevel.Count == 0 && _isStartedSecondTask == true && _isFinised == true && _isDone3 == false)
             {
-                Debug.Log("FinishSecondTask!");
-
                 OnFinishedTask?.Invoke();
+
+                _isDone3 = true;
             }
         }
     }
