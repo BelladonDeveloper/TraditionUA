@@ -43,18 +43,13 @@ public class EasterCurrentSprite : MonoBehaviour
             gameObject.GetComponent<BoxCollider>().enabled = false;
             SecondTaskManager.Singleton.EggsRemover(this.gameObject);
 
-
             colorChanging.Append(spriteRenderer.DOFade(END_VALUE, TIME_TO_CHANGE_COLOR))
                     .OnComplete(() => SetSpriteColor(spriteRenderer, Color.green));
-
-            StartCoroutine(ChangeSpriteColorToDefault(spriteRenderer));
         }
         else
         {
             colorChanging.Append(spriteRenderer.DOFade(END_VALUE, TIME_TO_CHANGE_COLOR))
                     .OnComplete(() => SetSpriteColor(spriteRenderer, Color.red));
-
-            StartCoroutine(ChangeSpriteColorToDefault(spriteRenderer));
         }
     }
 
@@ -72,7 +67,7 @@ public class EasterCurrentSprite : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        colorChanging.Append(spriteRenderer.DOFade(END_VALUE, TIME_TO_CHANGE_COLOR));
+        colorChanging.Append(spriteRenderer.DOFade(1, TIME_TO_CHANGE_COLOR));
 
         yield return new WaitForSeconds(1f);
 
@@ -85,5 +80,7 @@ public class EasterCurrentSprite : MonoBehaviour
         {
             spriteRenderer.DOColor(color, TIME_TO_CHANGE_COLOR);
         }
+
+        StartCoroutine(ChangeSpriteColorToDefault(spriteRenderer));
     }
 }

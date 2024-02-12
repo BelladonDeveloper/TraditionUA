@@ -22,9 +22,9 @@ public class SecondTaskManager : MonoBehaviour
     private List<GameObject> _objectsToDelete = new List<GameObject>();
     public List<GameObject> _eggsFirstLevel = new List<GameObject>();
 
-    private int _randomSprite;
-    private bool _isStarted;
+    private int _nextSprite;
 
+    private bool _isStarted;
     private bool _isDone;
     private bool _isDone2;
     private bool _isDone3;
@@ -52,8 +52,10 @@ public class SecondTaskManager : MonoBehaviour
 
                     if (spriteRenderer != null && easterCurrentSprite != null)
                     {
-                        _randomSprite = Random.Range(0, _eggsSprites.Count);
-                        ChangeRandomSprite(hit.transform.gameObject, _randomSprite);
+                        if (_nextSprite == _eggsSprites.Count)
+                            _nextSprite = 0;
+
+                        ChangeRandomSprite(hit.transform.gameObject, _nextSprite++);
 
                         if (_checkMarkButton != null)
                         {
@@ -182,7 +184,6 @@ public class SecondTaskManager : MonoBehaviour
         }
     }
 
-
     public void OnStartTask()
     {
         foreach (GameObject egg in GameObject.FindGameObjectsWithTag("Egg"))
@@ -200,6 +201,11 @@ public class SecondTaskManager : MonoBehaviour
             _eggsFirstLevel[i].GetComponent<SpriteRenderer>().sprite = _defaultSprite;
         }
         _isStarted = true;
+    }
+
+    public void OnStop()
+    {
+        _isStarted = false;
     }
 
     private void OnEnable()

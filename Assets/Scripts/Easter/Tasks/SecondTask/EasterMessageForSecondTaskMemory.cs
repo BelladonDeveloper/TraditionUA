@@ -9,8 +9,6 @@ public class EasterMessageForSecondTaskMemory : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _timerText;
 
-    private bool _isDone;
-
     public void TimerStart()
     {
         StartCoroutine(Timer());
@@ -18,6 +16,8 @@ public class EasterMessageForSecondTaskMemory : MonoBehaviour
 
     private IEnumerator Timer()
     {
+        SecondTaskManager.Singleton.OnStop();
+
         _timerText.text = "Remember";
         yield return new WaitForSeconds(3f);
         _timerText.text = "3";
