@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Random = UnityEngine.Random;
 
 public class SecondTaskManager : MonoBehaviour
 {
@@ -23,16 +22,16 @@ public class SecondTaskManager : MonoBehaviour
     public List<GameObject> _eggsFirstLevel = new List<GameObject>();
 
     private int _nextSprite;
+    private int _nextLevel;
 
-    private bool _isStarted;
     private bool _isDone;
-    private bool _isDone2;
-    private bool _isDone3;
-    private bool _isFinised;
-    private bool _isStartedSecondTask;
+    private bool _isStarted;
+    private bool _isEmpty;
 
     private void Start()
     {
+        _nextLevel = 0;
+
         Singleton = this;
     }
 
@@ -65,7 +64,7 @@ public class SecondTaskManager : MonoBehaviour
                                 {
                                     easterCurrentSprite.CheckSprite(spriteRenderer, easterCurrentSprite.mySpriteType);
 
-                                    DeleteReadyObjects();
+                                    StartCoroutine(DeleteReadyObjectsWithTime());
                                 }
                             });
 
@@ -83,32 +82,25 @@ public class SecondTaskManager : MonoBehaviour
                 }
             }
 
-            if (_eggsFirstLevel.Count == 0 && _isDone == false)
+            if (_eggsFirstLevel.Count == 0 && _nextLevel == 0 && !SecondTask._isRestarted && CinemachineCamerasChangingByPriority.IsStartedTask && !_isEmpty)
             {
                 StartCoroutine(FirstLevelCompleted());
-
-                _isDone = true;
             }
 
-            if (_eggsFirstLevel.Count == 0 && _isStartedSecondTask == true && _isDone2 == false)
+            if (_eggsFirstLevel.Count == 0 && _nextLevel == 1 && !SecondTask._isRestarted && CinemachineCamerasChangingByPriority.IsStartedTask && !_isEmpty)
             {
                 StartCoroutine(SecondLevelCompleted());
-
-                _isDone2 = true;
             }
 
-            if (_eggsFirstLevel.Count == 0 && _isStartedSecondTask == true && _isFinised == true && _isDone3 == false)
+            if (_eggsFirstLevel.Count == 0 && _nextLevel == 2 && !SecondTask._isRestarted && CinemachineCamerasChangingByPriority.IsStartedTask && !_isEmpty && !_isDone)
             {
                 OnFinishedTask?.Invoke();
 
-                _isDone3 = true;
+                _isDone = true;
+
+                Debug.Log("CheckFinish2Task");
             }
         }
-    }
-
-    public void DeleteReadyObjects()
-    {
-        StartCoroutine(DeleteReadyObjectsWithTime());
     }
 
     private IEnumerator DeleteReadyObjectsWithTime()
@@ -121,13 +113,17 @@ public class SecondTaskManager : MonoBehaviour
 
             foreach (var obj in _objectsToDelete)
             {
-                BoxCollider boxCollider = obj.gameObject.GetComponent<BoxCollider>();
-
-                if (boxCollider == null || boxCollider.enabled)
+                if (obj != null)
                 {
-                    allObjectsHaveNotBoxColliderEnabled = false;
-                    break;
+                    BoxCollider boxCollider = obj.GetComponent<BoxCollider>();
+
+                    if (boxCollider == null || boxCollider.enabled)
+                    {
+                        allObjectsHaveNotBoxColliderEnabled = false;
+                        break;
+                    }
                 }
+                
             }
 
             if (allObjectsHaveNotBoxColliderEnabled)
@@ -138,6 +134,8 @@ public class SecondTaskManager : MonoBehaviour
                 }
 
                 _objectsToDelete.Clear();
+
+                SecondTask._isRestarted = false;
             }
         }
     }
@@ -145,35 +143,49 @@ public class SecondTaskManager : MonoBehaviour
 
     private IEnumerator FirstLevelCompleted()
     {
+        _isEmpty = true;
         yield return new WaitForSeconds(1f);
 
-        SecondTask.Levels = 1;
-        SecondTask.IsDone = false;
+        if (SecondTask._isRestarted == false && CinemachineCamerasChangingByPriority.IsStartedTask)
+        {
+            SecondTask.Levels = 1;
+            SecondTask.IsDone = false;
 
-        PassingAndTakingTasks.SingleTon.TakeSecondTask();
 
-        yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(1f);
 
-        _isStartedSecondTask = true;
+            _nextLevel = 1;
+
+            PassingAndTakingTasks.SingleTon.TakeSecondTask();
+
+            yield return new WaitForSeconds(2f);
+
+            _isEmpty = false;
+        }
     }
 
     private IEnumerator SecondLevelCompleted()
     {
+        _isEmpty = true;
         yield return new WaitForSeconds(1f);
 
-        SecondTask.Levels = 2;
-        SecondTask.IsDone = false;
+        if (SecondTask._isRestarted == false && CinemachineCamerasChangingByPriority.IsStartedTask)
+        {
+            SecondTask.Levels = 2;
+            SecondTask.IsDone = false;
+            _nextLevel = 2;
 
-        PassingAndTakingTasks.SingleTon.TakeSecondTask();
+            PassingAndTakingTasks.SingleTon.TakeSecondTask();
 
-        yield return new WaitForSeconds(8);
+            yield return new WaitForSeconds(2f);
 
-        _isFinised = true;
+            _isEmpty = false;
+        }
     }
 
     public void ChangeRandomSprite(GameObject g, int randomSprite)
     {
-        g.transform.gameObject.GetComponent<SpriteRenderer>().sprite = _eggsSprites[randomSprite];
+        g.GetComponent<SpriteRenderer>().sprite = _eggsSprites[randomSprite];
     }
 
     public void EggsRemover(GameObject egg)
@@ -186,6 +198,7 @@ public class SecondTaskManager : MonoBehaviour
 
     public void OnStartTask()
     {
+        _eggsFirstLevel.Clear();
         foreach (GameObject egg in GameObject.FindGameObjectsWithTag("Egg"))
         {
             _eggsFirstLevel.Add(egg);
@@ -196,9 +209,9 @@ public class SecondTaskManager : MonoBehaviour
 
     public void OnStart()
     {
-        for (int i = 0; i < _eggsFirstLevel.Count; i++)
+        foreach (GameObject egg in _eggsFirstLevel)
         {
-            _eggsFirstLevel[i].GetComponent<SpriteRenderer>().sprite = _defaultSprite;
+            egg.GetComponent<SpriteRenderer>().sprite = _defaultSprite;
         }
         _isStarted = true;
     }
@@ -208,15 +221,28 @@ public class SecondTaskManager : MonoBehaviour
         _isStarted = false;
     }
 
+    public void Restart()
+    {
+        _eggsFirstLevel.Clear();
+
+        _nextLevel = 0;
+
+        _isStarted = false;
+        _isEmpty = false;
+        _isDone = false;
+    }
+
     private void OnEnable()
     {
         SecondTask.OnStartedTask += OnStartTask;
         EasterMessageForSecondTaskMemory.OnTimeEnded += OnStart;
+        RestartSecondTask.OnRestarted += Restart;
     }
 
     private void OnDisable()
     {
         SecondTask.OnStartedTask -= OnStartTask;
         EasterMessageForSecondTaskMemory.OnTimeEnded -= OnStart;
+        RestartSecondTask.OnRestarted -= Restart;
     }
 }

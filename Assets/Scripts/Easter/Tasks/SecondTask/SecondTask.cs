@@ -9,13 +9,22 @@ using DG.Tweening;
 public class SecondTask : MonoBehaviour
 {
     public static event Action OnStartedTask;
+    public static event Action OnSpawnedHearts;
 
     public static int Levels = 0;
+
+    public static bool _isRestarted;
+    public static bool IsSpawned;
+    public static bool IsDone;
+
+    [SerializeField] private EasterProvider easterProvider;
+
     [SerializeField] private List<Transform> _randomPositions;
+
     [SerializeField] private GameObject _eggPrefab;
+
     [SerializeField] private CanvasGroup _uICheckMark;
     [SerializeField] private CanvasGroup _stick;
-
     [SerializeField] private CanvasGroup _timerText;
 
     private const float TIME_TO_APPEARING = 1f;
@@ -30,31 +39,52 @@ public class SecondTask : MonoBehaviour
     private List<Transform> _usedPositions = new List<Transform>();
 
     private bool _isStarted;
-    public static bool IsDone;
 
     public void OnSecondTask()
     {
-        Sequence fade = DOTween.Sequence();
-
-        fade.Append(EasterTimer.Singleton.TimerText.DOFade(1, 1f));
-
-        if (!_isStarted)
+        if (_isRestarted == false)
         {
-            CinemachineCamerasChangingByPriority.Singleton.SwitchCamera();
+            Sequence fade = DOTween.Sequence();
 
-            _isStarted = true;
+            fade.Append(EasterTimer.Singleton.TimerText.DOFade(1, 1f));
+
+            if (!_isStarted)
+            {
+                CinemachineCamerasChangingByPriority.Singleton.SwitchCamera();
+
+                _isStarted = true;
+            }
+
+            if (Levels == 0)
+                _countOfEggs = InitialEggCount;
+
+            else if (Levels == 1)
+                _countOfEggs = SecondLevelSpriteCount;
+
+            else if (Levels == 2)
+                _countOfEggs = ThirdLevelSpriteCount;
+
+            StartCoroutine(SecondTaskWaiter());
         }
+    }
 
-        if (Levels == 0)
-            _countOfEggs = InitialEggCount;
+    public void RestartedSecond()
+    {
+        Levels = 0;
+        IsSpawned = false;
+        _isStarted = false;
+        IsDone = false;
+        _isRestarted = true;
 
-        else if(Levels == 1)
-            _countOfEggs = SecondLevelSpriteCount;
+        RestartUI();
+    }
 
-        else if (Levels == 2)
-            _countOfEggs = ThirdLevelSpriteCount;
+    private void RestartUI()
+    {
+        Sequence sequence = DOTween.Sequence();
 
-        StartCoroutine(SecondTaskWaiter());
+        sequence.Append(_stick.DOFade(1, TIME_TO_APPEARING).SetEase(Ease.Linear));
+        sequence.Join(_uICheckMark.DOFade(0, TIME_TO_APPEARING).SetEase(Ease.Linear));
     }
 
     private IEnumerator SecondTaskWaiter()
@@ -81,7 +111,10 @@ public class SecondTask : MonoBehaviour
 
                 _usedPositions.Add(randomPosition);
 
-                GameObject newEgg = Instantiate(_eggPrefab, randomPosition.position, Quaternion.identity);
+                GameObject newEgg = easterProvider.CreateItem(_eggPrefab, randomPosition.position, Quaternion.identity);
+
+                EasterCurrentSprite.IsDone = false;
+
                 newEgg.GetComponent<SpriteRenderer>().sortingOrder = 1;
                 SecondTaskManager.Singleton.ChangeRandomSprite(newEgg, _randomSprite);
                 newEgg.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
@@ -89,6 +122,11 @@ public class SecondTask : MonoBehaviour
 
             OnStartedTask?.Invoke();
 
+            if (IsSpawned == false)
+                OnSpawnedHearts?.Invoke();
+
+
+            IsSpawned = true;
             IsDone = true;
         }
     }
@@ -104,7 +142,15 @@ public class SecondTask : MonoBehaviour
     }
 
 
-    private void OnEnable() => PassingAndTakingTasks.OnTakenSecondTask += OnSecondTask;
+    private void OnEnable()
+    {
+        RestartSecondTask.OnRestarted += RestartedSecond;
+        PassingAndTakingTasks.OnTakenSecondTask += OnSecondTask;
+    }
 
-    private void OnDisable() => PassingAndTakingTasks.OnTakenSecondTask -= OnSecondTask;
+    private void OnDisable()
+    {
+        RestartSecondTask.OnRestarted -= RestartedSecond;
+        PassingAndTakingTasks.OnTakenSecondTask -= OnSecondTask;
+    }
 }
