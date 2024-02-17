@@ -16,6 +16,7 @@ TagManager:
   - Weed
   - Bunny
   - GoldCarrot
+  - Heart
   layers:
   - Default
   - TransparentFX
