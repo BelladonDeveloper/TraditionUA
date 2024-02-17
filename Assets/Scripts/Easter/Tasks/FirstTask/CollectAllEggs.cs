@@ -6,7 +6,6 @@ public class CollectAllEggs : MonoBehaviour
 {
     public static event Action OnFinishedTask;
 
-
     [SerializeField] private GameObject _finishTaskTimeLine;
 
     public void OnCollectEggs()

@@ -69,6 +69,7 @@ public class EasterTimer : MonoBehaviour
         FirstTask.OnStartedTimer += OnTimerStarted;
         FirstTask.OnGivenMoreTime += MoreTime;
         CountCollectedEggs.OnEnded += OnEnded;
+        RestartFirstTask.OnRestarted += OnEnded;
     }
 
     private void OnDisable()
@@ -76,6 +77,7 @@ public class EasterTimer : MonoBehaviour
         FirstTask.OnStartedTimer -= OnTimerStarted;
         FirstTask.OnGivenMoreTime -= MoreTime;
         CountCollectedEggs.OnEnded -= OnEnded;
+        RestartFirstTask.OnRestarted -= OnEnded;
     }
 
 }

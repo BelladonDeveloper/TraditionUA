@@ -29,6 +29,14 @@ public class CountCollectedEggs : MonoBehaviour
         NeddedCountOfEggsTMP.text = NeddedCountOfEggs.ToString();
     }
 
+    public void ResetStats()
+    {
+        _eggs.Clear();
+        CollectedEggs = 0;
+        NeddedCountOfEggs = 0;
+        Assign();
+    }
+
     public void FindAllEggs()
     {
         foreach (var egg in GameObject.FindGameObjectsWithTag("Egg"))
@@ -50,36 +58,63 @@ public class CountCollectedEggs : MonoBehaviour
 
         for (int i = 0; i < _eggs.Count; i++)
         {
-            _eggs[i].GetComponent<EggsPickUpper>().OnPickedUp += CheckCollectedEggs;
+            EggsPickUpper eggsPickUpper = _eggs[i].GetComponent<EggsPickUpper>();
+            if (eggsPickUpper != null)
+            {
+                eggsPickUpper.OnPickedUp += CheckCollectedEggs;
+            }
+            else
+            {
+                Debug.LogWarning("EggsPickUpper component not found on egg: " + _eggs[i].name);
+            }
         }
+
     }
 
     public void CheckCollectedEggs(GameObject currentGameObject)
     {
-        if (_isDone)
+        if (currentGameObject != null)
+        {
+            if (_eggs.Contains(currentGameObject))
+            {
+                StartCoroutine(DelayedDestroy(currentGameObject));
+            }
+            else
+            {
+                Debug.LogWarning("Attempted to collect an egg that is not in the list.");
+            }
+
+            if (_eggs.Count == 0 && FirstTask._isDoneChecker == 3)
+            {
+                FinishFirstTask();
+            }
+        }
+
+        if (_eggs == null || !_isDone)
             return;
 
-        if (_eggs.Contains(currentGameObject))
-        {
-            StartCoroutine(DelayedDestroy(currentGameObject));
-        }
-
-        if (_eggs.Count == 0 && FirstTask._isDoneChecker == 3)
-        {
-            FinishFirstTask();
-        }
     }
 
     private IEnumerator DelayedDestroy(GameObject obj)
     {
+        if (_eggs == null || obj == null || !_eggs.Contains(obj))
+        {
+            Debug.LogWarning("Attempted to destroy an egg that is not in the list or is null.");
+            yield break;
+        }
+
         yield return null;
 
+        if (obj != null && _eggs.Contains(obj))
+        {
+            Destroy(obj);
+        }
         _eggs.Remove(obj);
-        Destroy(obj);
+        
 
         CollectedEggs++;
         ChangeCurrentNumberOfCollectedEggs();
-        _isDone = true; 
+        _isDone = true;
         StartCoroutine(ChangeIsDone());
     }
 
@@ -96,7 +131,7 @@ public class CountCollectedEggs : MonoBehaviour
 
     public void FinishFirstTask()
     {
-        if (_eggs.Count == 0 && FirstTask._isDoneChecker == 3)
+        if (_eggs.Count == 0 && FirstTask._isDoneChecker == 3 && _eggs != null)
         {
             OnCollectedAllEggs?.Invoke();
             OnEnded?.Invoke();
@@ -110,7 +145,20 @@ public class CountCollectedEggs : MonoBehaviour
     {
         for (int i = 0; i < _eggs.Count; i++)
         {
-            _eggs[i].GetComponent<EggsPickUpper>().OnPickedUp -= CheckCollectedEggs;
+            if (_eggs[i] != null)
+            {
+                _eggs[i].GetComponent<EggsPickUpper>().OnPickedUp -= CheckCollectedEggs;
+            }
         }
+    }
+
+    private void OnEnable()
+    {
+        RestartFirstTask.OnRestarted += ResetStats;
+    }
+
+    private void OnDisable()
+    {
+        RestartFirstTask.OnRestarted -= ResetStats;
     }
 }
