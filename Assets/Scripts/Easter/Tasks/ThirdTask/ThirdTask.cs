@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -10,11 +9,14 @@ public class ThirdTask : MonoBehaviour
 {
     public static int AddNewCarrotsCount;
 
+    [SerializeField] private EasterProvider _easterProvider;
+
     [SerializeField] private GameObject _carrot;
+    [SerializeField] private GameObject _bunny;
 
     [SerializeField] private List<Transform> _positions = new List<Transform>();
 
-    [SerializeField] private NavMeshAgent bunnyAgent;
+    [SerializeField] private NavMeshAgent _bunnyAgent;
 
     [SerializeField] private CanvasGroup _thirdTask;
 
@@ -22,9 +24,23 @@ public class ThirdTask : MonoBehaviour
 
     private List<int> usedIndices = new List<int>();
 
-    private const int Default = 19;
+    [SerializeField] private Transform _startPosition;
+    private Quaternion _startRotation;
 
+    public static float StartSpeed = 10;
+
+    private const int Default = 19;
     private const float QuaternionRotation = 15.0f;
+
+    private bool _isRestarted;
+
+    public void Start()
+    {
+        _startPosition.position = _bunny.transform.position;
+        _startRotation = _bunny.transform.rotation;
+
+        _bunnyAgent.speed = StartSpeed;
+    }
 
     public void OnThirdTask()
     {
@@ -34,6 +50,9 @@ public class ThirdTask : MonoBehaviour
 
         AddNewCarrotsCount = Default;
         StartCoroutine(CarrotSpawner());
+
+        _isRestarted = false;
+        _bunnyAgent.enabled = true;
     }
 
     public void RemoveCarrotFromList(GameObject carrot)
@@ -42,15 +61,47 @@ public class ThirdTask : MonoBehaviour
             _carrots.Remove(carrot);
     }
 
+    public void RestartedTask()
+    {
+        PassingAndTakingTasks.IsDone = false;
+
+        _bunny.transform.position = _startPosition.position;
+        _bunny.transform.rotation = _startRotation;
+
+        _isRestarted = true;
+        _bunnyAgent.enabled = false;
+
+        _carrots.Clear();
+        usedIndices.Clear();
+
+        FadeUI();
+
+        foreach (var carrot in _carrots)
+        {
+            if (carrot != null)
+            {
+                Destroy(carrot);
+            }
+        }
+    }
+
+    public void FadeUI()
+    {
+        Sequence sequence = DOTween.Sequence();
+
+        sequence.Append(_thirdTask.DOFade(0f, 2f));
+    }
 
     private void Update()
     {
-        GameObject nearestCarrot = FindNearestCarrot();
-
-        if (nearestCarrot != null)
+        if (!_isRestarted && _carrots.Count > 0 && _bunnyAgent != null && _bunnyAgent.enabled && EasterPickUp.IsStoppedGame == false)
         {
-            bunnyAgent.transform.localRotation.SetLookRotation(nearestCarrot.transform.position);
-            bunnyAgent.SetDestination(nearestCarrot.transform.position);
+            GameObject nearestCarrot = FindNearestCarrot();
+
+            if (nearestCarrot != null)
+            {
+                _bunnyAgent.SetDestination(nearestCarrot.transform.position);
+            }
         }
     }
 
@@ -66,8 +117,7 @@ public class ThirdTask : MonoBehaviour
 
             usedIndices.Add(randomIndex);
 
-            GameObject newCarrot = Instantiate(_carrot, _positions[randomIndex].position, rototationX);
-
+            GameObject newCarrot = _easterProvider.CreateItem(_carrot, _positions[randomIndex].position, rototationX);
             _carrots.Add(newCarrot);
         }
     }
@@ -86,34 +136,37 @@ public class ThirdTask : MonoBehaviour
 
     private GameObject FindNearestCarrot()
     {
-
         GameObject nearest = null;
         float minDist = Mathf.Infinity;
 
         foreach (GameObject carrot in _carrots)
         {
-            float dist = Vector3.Distance(bunnyAgent.transform.position, carrot.transform.position);
-
-            if (dist < minDist)
+            if (carrot != null)
             {
-                nearest = carrot;
-                minDist = dist;
+                float dist = Vector3.Distance(_bunnyAgent.transform.position, carrot.transform.position);
+
+                if (dist < minDist)
+                {
+                    nearest = carrot;
+                    minDist = dist;
+                }
             }
         }
 
         return nearest;
-
     }
 
     private void OnEnable()
     {
         PassingAndTakingTasks.OnTakenThirdTask += OnThirdTask;
         PickingThingsUp.OnRemovedCarrot += RemoveCarrotFromList;
+        RestartThirdTask.OnRestarted += RestartedTask;
     }
 
     private void OnDisable()
     {
         PassingAndTakingTasks.OnTakenThirdTask -= OnThirdTask;
         PickingThingsUp.OnRemovedCarrot -= RemoveCarrotFromList;
+        RestartThirdTask.OnRestarted -= RestartedTask;
     }
 }
