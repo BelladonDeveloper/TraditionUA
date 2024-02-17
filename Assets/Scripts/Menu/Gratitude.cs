@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gratitude : MonoBehaviour
 {
@@ -9,32 +10,30 @@ public class Gratitude : MonoBehaviour
     private void Start()
     {
         _yPosition = gameObject.transform.position.y;
+
     }
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.DownArrow)) // It will be necessary to remake it for the phone
-        {
-            _yPosition += _speed * -2;
+        _yPosition += _speed;
 
-            gameObject.transform.position =
-                new Vector3(gameObject.transform.position.x, _yPosition, gameObject.transform.position.z);
-        }
-
-        if (Input.GetKey(KeyCode.UpArrow)) // It will be necessary to remake it for the phone
-        {
-            _yPosition += _speed * 2;
-
-            gameObject.transform.position =
-                new Vector3(gameObject.transform.position.x, _yPosition, gameObject.transform.position.z);
-        }
-
-        else
-        {
-            _yPosition += _speed;
-
-            gameObject.transform.position =
-                new Vector3(gameObject.transform.position.x, _yPosition, gameObject.transform.position.z);
-        }
+        gameObject.transform.position =
+            new Vector3(gameObject.transform.position.x, _yPosition, gameObject.transform.position.z);
     }
+
+    //public void ScrollUp()
+    //{
+    //    _yPosition += _speed * -2;
+
+    //    gameObject.transform.position =
+    //        new Vector3(gameObject.transform.position.x, _yPosition, gameObject.transform.position.z);
+    //}
+
+    //public void ScrollDown()
+    //{
+    //    _yPosition += _speed * 2;
+
+    //    gameObject.transform.position =
+    //        new Vector3(gameObject.transform.position.x, _yPosition, gameObject.transform.position.z);
+    //}
 }
