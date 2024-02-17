@@ -23,6 +23,7 @@ public class EasterFinishTask : MonoBehaviour
         //There we can play sound 
         sequence.Append(_stars[PassingAndTakingTasks.SequenceOfTasks].DOFade(1, TimeToAppearing));
 
+
         StartCoroutine(WaitBeforeExit());
     }
 
@@ -39,14 +40,13 @@ public class EasterFinishTask : MonoBehaviour
         _easterWinMenu.gameObject.SetActive(false);
 
         PassingAndTakingTasks.SequenceOfTasks++;
+        Debug.Log(PassingAndTakingTasks.SequenceOfTasks);
 
         if (PassingAndTakingTasks.SequenceOfTasks == 3)
         {
             OnFinishedTradition?.Invoke();
         }
-
     }
-
 
     private void OnEnable()
     {

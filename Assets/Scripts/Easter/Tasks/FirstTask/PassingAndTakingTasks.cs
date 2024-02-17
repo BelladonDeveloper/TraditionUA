@@ -26,7 +26,8 @@ public class PassingAndTakingTasks : MonoBehaviour
 
     public void TakeSecondTask() //We can use it with buttons in UI
     {
-        Debug.Log("2");
+        SecondTask._isRestarted = false;
+
         OnTakenSecondTask?.Invoke();
     }
 
@@ -34,7 +35,6 @@ public class PassingAndTakingTasks : MonoBehaviour
     {
         if (IsDone == false)
         {
-            Debug.Log("3");
             OnTakenThirdTask?.Invoke();
 
             IsDone = true;
@@ -46,7 +46,6 @@ public class PassingAndTakingTasks : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //TakeThirdTask();
         if (SequenceOfTasks == 0)
         {
             if (other.gameObject.tag == "Player")
