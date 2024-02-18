@@ -51,7 +51,7 @@ public class Menu : MonoBehaviour
     }
     private void StartGame()
     {
-        initialController.soundManager.PlayMusic(Music.None,false);
+        //initialController.soundManager.PlayMusic(Music.None,false);
         SceneManager.LoadScene(menuData.level+1);
     }
     //Settings
@@ -156,7 +156,7 @@ public class Menu : MonoBehaviour
     //Click Sound
     private void Click()
     {
-        initialController.soundManager.PlaySound(Sound.Click);
+        //initialController.soundManager.PlaySound(Sound.Click);
     }
     
 }

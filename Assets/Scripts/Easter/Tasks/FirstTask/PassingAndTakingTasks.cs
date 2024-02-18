@@ -12,6 +12,8 @@ public class PassingAndTakingTasks : MonoBehaviour
     public static int SequenceOfTasks = 0;
     #region Tasks
 
+    public static bool IsDone;
+
     public void Start()
     {
         SingleTon = this;
@@ -24,14 +26,20 @@ public class PassingAndTakingTasks : MonoBehaviour
 
     public void TakeSecondTask() //We can use it with buttons in UI
     {
-        Debug.Log("2");
+        SecondTask._isRestarted = false;
+
         OnTakenSecondTask?.Invoke();
     }
 
     public void TakeThirdTask() //We can use it with buttons in UI
     {
-        Debug.Log("3");
-        OnTakenThirdTask?.Invoke();
+        if (IsDone == false)
+        {
+            OnTakenThirdTask?.Invoke();
+
+            IsDone = true;
+        }
+
     }
 
     #endregion

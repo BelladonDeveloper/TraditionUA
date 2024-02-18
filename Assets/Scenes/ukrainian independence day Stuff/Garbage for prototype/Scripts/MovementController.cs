@@ -37,4 +37,9 @@ public class MovementController : MonoBehaviour
     {
         _canMove = true;
     }
+
+    public void ChangeSpeed(float speed)
+    {
+        _speed = speed;
+    }
 }

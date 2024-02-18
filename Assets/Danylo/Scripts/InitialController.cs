@@ -1,127 +1,58 @@
 ﻿using System.Collections.Generic;
-using Base;
 using UnityEngine;
 
-public sealed class InitialController : MonoBehaviour
+namespace Base
 {
-    private static InitialController _instance;
-    private static bool _isInstanceActive = false;
-
-    [SerializeField] private UIManager uiManager;
-    public SoundManager soundManager;
-
-    private List<IManager> managerPrefabs = new List<IManager>();
-
-    public static InitialController Instance => _instance;
-
-    private InitialController()
+    public sealed class InitialController : MonoBehaviour
     {
-    }
+        private static InitialController instance { get; set; }
 
-    private void Awake()
-    {
-        if (_isInstanceActive)
+        [SerializeField] private UIManager uiManager;
+        [SerializeField] private SoundManager soundManager;
+
+        private List<IManager> managerPrefabs = new List<IManager>();
+
+        private void Awake()
         {
-            enabled = false;
-            return;
+            if (instance == null)
+            {
+                instance = this;
+                DontDestroyOnLoad(this.gameObject);
+                RegisterManagers();
+                InitializeManagers();
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
         }
 
-        _isInstanceActive = true;
-        _instance = this;
+        private void RegisterManagers()
+        {
+            managerPrefabs.Add(uiManager);
+            Register.Add(uiManager);
 
-        DontDestroyOnLoad(gameObject);
-        RegisterManagers();
-        InitializeManagers();
-    }
+            managerPrefabs.Add(soundManager);
+            Register.Add(soundManager);
+        }
 
-    private void RegisterManagers()
-    {
-        managerPrefabs.Add(uiManager);
-        Register.Add(uiManager);
+        private void InitializeManagers()
+        {
+            managerPrefabs.ForEach(e => e.Init());
+        }
 
-        managerPrefabs.Add(soundManager);//aax
-        Register.Add(soundManager); //aax
-    }
+        private void DisposeManagers()
+        {
+            managerPrefabs.ForEach(e => e.Dispose());
+            managerPrefabs.Clear();
 
-    private void InitializeManagers()
-    {
-        managerPrefabs.ForEach(e => e.Init());
-    }
+            Register.Remove(uiManager);
+            Register.Remove(soundManager);
+        }
 
-    private void DisposeManagers()
-    {
-        managerPrefabs.ForEach(e => e.Dispose());
-        managerPrefabs.Clear();
-        Register.Remove(uiManager);
-
-        Register.Remove(soundManager);//aax
-    }
-
-    private void OnDestroy()
-    {
-        _isInstanceActive = false;
-        DisposeManagers();
+        private void OnApplicationQuit()
+        {
+            DisposeManagers();
+        }
     }
 }
-
-
-
-
-
-//using System;
-//using System.Collections.Generic;
-//using Base;
-//using Unity.VisualScripting;
-//using UnityEngine;
-//using UnityEngine.Serialization;
-
-//public sealed class InitialController : MonoBehaviour 
-//{
-//    private InitialController() { }
-
-//    private static InitialController _instance;
-
-//    [SerializeField] private UIManager uiManager;
-
-//    private List<IManager> managerPrefabs = new List<IManager>();
-
-
-//    public static InitialController GetInstance()
-//    {
-//        if (_instance == null)
-//        {
-//            _instance = new InitialController();
-//        }
-//        return _instance;
-//    }
-
-//    private void Awake()
-//    {
-//        DontDestroyOnLoad(gameObject);
-//        RegisterManagers();
-//        InitializeManagers();
-//    }
-
-//    private void RegisterManagers()
-//    {
-//        managerPrefabs.Add(uiManager);
-//        Register.Add(uiManager);
-//    }
-
-//    private void InitializeManagers()
-//    {
-//        managerPrefabs.ForEach(e => e.Init());
-//    }
-
-//    private void DisposeManagers()
-//    {
-//        managerPrefabs.ForEach(e => e.Dispose());
-//        managerPrefabs.Clear();
-//        Register.Remove(uiManager);
-//    }
-
-//    private void OnDestroy()
-//    {
-//        DisposeManagers();
-//    }
-//}

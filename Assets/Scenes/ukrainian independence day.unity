@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 34666708}
   - component: {fileID: 34666707}
   - component: {fileID: 34666706}
-  - component: {fileID: 34666705}
+  - component: {fileID: 34666710}
   m_Layer: 0
   m_Name: CameraForOpenQuarter
   m_TagString: MainCamera
@@ -149,21 +149,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &34666705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 34666704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b9aa6112a32f3c45800ee80272b08e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 2128126717}
-  distance: 12
-  height: 0
 --- !u!114 &34666706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +235,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 7
   m_Depth: -1
   m_CullingMask:
@@ -282,6 +267,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &34666710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34666704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8e948589d147a949ad49d193f9e64cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 2128126717}
+  distance: 10
+  height: 1
 --- !u!1 &40463383
 GameObject:
   m_ObjectHideFlags: 0
@@ -2544,7 +2544,7 @@ PrefabInstance:
     - target: {fileID: 8977567032876321761, guid: 8f8b05beb76c4924fa71274045020ee4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.99
+      value: -8.61
       objectReference: {fileID: 0}
     - target: {fileID: 8977567032876321761, guid: 8f8b05beb76c4924fa71274045020ee4,
         type: 3}
@@ -2554,7 +2554,7 @@ PrefabInstance:
     - target: {fileID: 8977567032876321761, guid: 8f8b05beb76c4924fa71274045020ee4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 33.55
+      value: 13.67
       objectReference: {fileID: 0}
     - target: {fileID: 8977567032876321761, guid: 8f8b05beb76c4924fa71274045020ee4,
         type: 3}
@@ -8518,12 +8518,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1532985714}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b9aa6112a32f3c45800ee80272b08e3, type: 3}
+  m_Script: {fileID: 11500000, guid: c8e948589d147a949ad49d193f9e64cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2128126717}
-  distance: 12
-  height: 0
+  distance: 15
+  height: 1
 --- !u!1 &1572629516
 GameObject:
   m_ObjectHideFlags: 0
@@ -11063,6 +11063,11 @@ PrefabInstance:
       objectReference: {fileID: 1434735642}
     - target: {fileID: 1548879173136397963, guid: f8663af5b582c984eaa0d33a7d6a93f0,
         type: 3}
+      propertyPath: _dialogueWindow
+      value: 
+      objectReference: {fileID: 1434735642}
+    - target: {fileID: 1548879173136397963, guid: f8663af5b582c984eaa0d33a7d6a93f0,
+        type: 3}
       propertyPath: _isPlayerCanMove
       value: 1
       objectReference: {fileID: 0}
@@ -11227,6 +11232,11 @@ PrefabInstance:
     - target: {fileID: 2106806784218760647, guid: 1258f2aae4c916540abcdbb2ba7a1714,
         type: 3}
       propertyPath: _dialoguePanel
+      value: 
+      objectReference: {fileID: 1419322822}
+    - target: {fileID: 2106806784218760647, guid: 1258f2aae4c916540abcdbb2ba7a1714,
+        type: 3}
+      propertyPath: _dialogueWindow
       value: 
       objectReference: {fileID: 1419322822}
     - target: {fileID: 2106806784218760647, guid: 1258f2aae4c916540abcdbb2ba7a1714,
@@ -11410,11 +11420,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1797487187129820031, guid: 1258f2aae4c916540abcdbb2ba7a1714,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1258f2aae4c916540abcdbb2ba7a1714, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

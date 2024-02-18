@@ -3,29 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using Base;
+using Unity.VisualScripting;
 
 public class SliderScript : MonoBehaviour
 {
-    [SerializeField] private SettingsScript settingsScript;
     [SerializeField] private Image iconImage;
     [SerializeField] private Sprite[] IconPrefs;
     [SerializeField] private Slider slider;
+    
     private float PreviousValue = -1f;
-    private void Start() 
-    {
-        if(gameObject.name == "SoundSlider")
-        {
-            slider.value = settingsScript.SoundVolume;
-        }
-        else if(gameObject.name == "MusicSlider")
-        {
-            slider.value = settingsScript.MusicVolume;
-        }
-    }
 
-    void Update()
+    public void ChangeVolume()
     {
-        if(slider.value != PreviousValue)
+        //if(slider.value != PreviousValue)
         {
             PreviousValue = slider.value;
             int val;
@@ -38,11 +29,13 @@ public class SliderScript : MonoBehaviour
 
             if(gameObject.name == "SoundSlider")
             {
-                settingsScript.SoundVolume = (float)Math.Floor(slider.value);
+                float volume = (float)Math.Floor(slider.value);
+                Register.Get<SoundManager>().Settings_SetSoundVolume(Mathf.RoundToInt(volume));
             }
             else if(gameObject.name == "MusicSlider")
             {
-                settingsScript.MusicVolume = (float)Math.Floor(slider.value);
+                float volume = (float)Math.Floor(slider.value);
+                Register.Get<SoundManager>().Settings_SetMusicVolume(Mathf.RoundToInt(volume));
             }
         }
     }

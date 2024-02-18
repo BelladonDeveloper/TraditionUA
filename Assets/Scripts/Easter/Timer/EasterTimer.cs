@@ -9,7 +9,7 @@ public class EasterTimer : MonoBehaviour
     public static event Action OnWin;
     public static EasterTimer Singleton;
 
-    public TextMeshProUGUI timerText;
+    public TextMeshProUGUI TimerText;
 
     public const float TIME_TO_FADE = 1.0f;
 
@@ -24,7 +24,7 @@ public class EasterTimer : MonoBehaviour
     {
         Sequence fade = DOTween.Sequence();
 
-        fade.Append(timerText.DOFade(1, 1f));
+        fade.Append(TimerText.DOFade(1, 1f));
 
         if (_currentTime > 0)
         {
@@ -47,7 +47,7 @@ public class EasterTimer : MonoBehaviour
     void UpdateTimerText()
     {
         int seconds = Mathf.FloorToInt(_currentTime % 60);
-        timerText.text = seconds.ToString();
+        TimerText.text = seconds.ToString();
     }
 
     public void MoreTime(float time)
@@ -59,7 +59,9 @@ public class EasterTimer : MonoBehaviour
     {
         Sequence fade = DOTween.Sequence();
 
-        fade.Append(timerText.DOFade(0, TIME_TO_FADE));
+        fade.Append(TimerText.DOFade(0, TIME_TO_FADE));
+
+        TimerText.text = "";
     }
 
     private void OnEnable()
@@ -67,6 +69,7 @@ public class EasterTimer : MonoBehaviour
         FirstTask.OnStartedTimer += OnTimerStarted;
         FirstTask.OnGivenMoreTime += MoreTime;
         CountCollectedEggs.OnEnded += OnEnded;
+        RestartFirstTask.OnRestarted += OnEnded;
     }
 
     private void OnDisable()
@@ -74,6 +77,7 @@ public class EasterTimer : MonoBehaviour
         FirstTask.OnStartedTimer -= OnTimerStarted;
         FirstTask.OnGivenMoreTime -= MoreTime;
         CountCollectedEggs.OnEnded -= OnEnded;
+        RestartFirstTask.OnRestarted -= OnEnded;
     }
 
 }

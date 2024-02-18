@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2283650498668210357}
   - component: {fileID: 7789156955143952307}
   - component: {fileID: 8602305634500682658}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Currot
   m_Icon: {fileID: 0}

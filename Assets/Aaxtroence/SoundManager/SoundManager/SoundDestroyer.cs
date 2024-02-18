@@ -10,13 +10,13 @@ public class SoundDestroyer : MonoBehaviour
     [SerializeField] private GameObject SoundObj;
     public int _volume;
 
-    private void Awake() 
+    private void Awake()
     {
         audioSource.Play();
     }
     void Update()
     {
-        float vol = 0.01f * soundScript.SettingsSoundVolume/100 * _volume;
+        float vol = 0.01f * soundScript.SettingsSoundVolume / 100 * _volume;
         audioSource.volume = vol;
         if (!audioSource.isPlaying)
         {

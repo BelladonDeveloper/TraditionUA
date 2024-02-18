@@ -5,13 +5,21 @@ public class PickingThingsUp : MonoBehaviour
 {
     public static event Action OnPickedUpByPlayer;
     public static event Action OnPickedUpByBunny;
+    public static event Action OnFinishedTradition;
 
-    public string CurrentTag = "Currot";
+    public static event Action<GameObject> OnRemovedCarrot;
+
+    public string CarrotTag = "Currot";
+    public string GoldCarrot = "GoldCarrot";
+
+    private bool _isDone;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == CurrentTag)
+        if (other.gameObject.tag == CarrotTag)
         {
+            OnRemovedCarrot?.Invoke(other.gameObject);
+
             Destroy(other.gameObject);
 
             if (this.gameObject.tag == "Player")
@@ -23,6 +31,15 @@ public class PickingThingsUp : MonoBehaviour
             {
                 OnPickedUpByBunny?.Invoke();
             }
+        }
+
+        if (other.gameObject.tag == GoldCarrot && !_isDone)
+        {
+            Debug.Log("Pick");
+
+            OnFinishedTradition?.Invoke();
+
+            _isDone = true;
         }
     }
 }

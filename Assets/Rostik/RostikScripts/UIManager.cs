@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour, IManager
@@ -7,6 +7,16 @@ public class UIManager : MonoBehaviour, IManager
 
     public UIPopup Show(UIPopupType type)
     {
+        foreach (UIPopup popup in _uiPopups)//Dnil
+        {
+            if (popup.UIPopupType == type)//Dnil
+            {
+                popup.Show();//Dnil
+                return popup;//Dnil
+            }
+        }
+
+
         UIPopup _popup = Resources.Load<UIPopup>(type.ToString());
 
         UIPopup newPopup = null;
@@ -60,4 +70,7 @@ public enum UIPopupType
     POPUP1,
     LevelChanger,
     DialogueButton,
+    PauseButton,
+    PauseMenu,
+    PauseMenuSettings
 }

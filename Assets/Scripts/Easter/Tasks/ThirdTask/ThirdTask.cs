@@ -1,63 +1,172 @@
 using System.Collections;
+using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
 public class ThirdTask : MonoBehaviour
 {
+    public static int AddNewCarrotsCount;
+
+    [SerializeField] private EasterProvider _easterProvider;
+
     [SerializeField] private GameObject _carrot;
+    [SerializeField] private GameObject _bunny;
 
-    private const float _POSITION_Y = 1.0f;
-    private const float _QUATERNION_ROTATION = 15.0f;
-    private const float _TIME_TO_CARROT_GAME = 1.0f;
+    [SerializeField] private List<Transform> _positions = new List<Transform>();
 
-    private float _randomX;
-    private float _randomZ;
+    [SerializeField] private NavMeshAgent _bunnyAgent;
 
-    private IEnumerator Start()
+    [SerializeField] private CanvasGroup _thirdTask;
+
+    private List<GameObject> _carrots = new List<GameObject>();
+
+    private List<int> usedIndices = new List<int>();
+
+    [SerializeField] private Transform _startPosition;
+    private Quaternion _startRotation;
+
+    public static float StartSpeed = 10;
+
+    private const int Default = 19;
+    private const float QuaternionRotation = 15.0f;
+
+    private bool _isRestarted;
+
+    public void Start()
     {
+        _startPosition.position = _bunny.transform.position;
+        _startRotation = _bunny.transform.rotation;
 
-
-        yield return new WaitForSeconds(1f);
-        PassingAndTakingTasks.SingleTon.TakeThirdTask();    
+        _bunnyAgent.speed = StartSpeed;
     }
 
     public void OnThirdTask()
     {
-        for (int i = 0; i < 10; i++)
+        Sequence appear = DOTween.Sequence();
+
+        appear.Append(_thirdTask.DOFade(1f, 2f));
+
+        AddNewCarrotsCount = Default;
+        StartCoroutine(CarrotSpawner());
+
+        _isRestarted = false;
+        _bunnyAgent.enabled = true;
+    }
+
+    public void RemoveCarrotFromList(GameObject carrot)
+    {
+        if (_carrots.Contains(carrot))
+            _carrots.Remove(carrot);
+    }
+
+    public void RestartedTask()
+    {
+        PassingAndTakingTasks.IsDone = false;
+
+        _bunny.transform.position = _startPosition.position;
+        _bunny.transform.rotation = _startRotation;
+
+        _isRestarted = true;
+        _bunnyAgent.enabled = false;
+
+        _carrots.Clear();
+        usedIndices.Clear();
+
+        FadeUI();
+
+        foreach (var carrot in _carrots)
         {
-            CarrotSpawner();
+            if (carrot != null)
+            {
+                Destroy(carrot);
+            }
+        }
+    }
+
+    public void FadeUI()
+    {
+        Sequence sequence = DOTween.Sequence();
+
+        sequence.Append(_thirdTask.DOFade(0f, 2f));
+    }
+
+    private void Update()
+    {
+        if (!_isRestarted && _carrots.Count > 0 && _bunnyAgent != null && _bunnyAgent.enabled && EasterPickUp.IsStoppedGame == false)
+        {
+            GameObject nearestCarrot = FindNearestCarrot();
+
+            if (nearestCarrot != null)
+            {
+                _bunnyAgent.SetDestination(nearestCarrot.transform.position);
+            }
+        }
+    }
+
+    private IEnumerator CarrotSpawner()
+    {
+        Quaternion rototationX = Quaternion.Euler(QuaternionRotation, 0, 0);
+
+        for (int i = 0; i < AddNewCarrotsCount; i++)
+        {
+            yield return new WaitForSeconds(1f);
+
+            int randomIndex = GetRandomIndex();
+
+            usedIndices.Add(randomIndex);
+
+            GameObject newCarrot = _easterProvider.CreateItem(_carrot, _positions[randomIndex].position, rototationX);
+            _carrots.Add(newCarrot);
+        }
+    }
+
+    private int GetRandomIndex()
+    {
+        int randomIndex = Random.Range(0, _positions.Count);
+
+        while (usedIndices.Contains(randomIndex))
+        {
+            randomIndex = Random.Range(0, _positions.Count);
         }
 
-        StartCoroutine(MoreCarrots());
-
+        return randomIndex;
     }
 
-    private IEnumerator MoreCarrots()
+    private GameObject FindNearestCarrot()
     {
-        yield return new WaitForSeconds(5f);
+        GameObject nearest = null;
+        float minDist = Mathf.Infinity;
 
-        int i = 0;
-
-        while (i < 10)
+        foreach (GameObject carrot in _carrots)
         {
-            CarrotSpawner();
+            if (carrot != null)
+            {
+                float dist = Vector3.Distance(_bunnyAgent.transform.position, carrot.transform.position);
 
-            yield return new WaitForSeconds(_TIME_TO_CARROT_GAME);
+                if (dist < minDist)
+                {
+                    nearest = carrot;
+                    minDist = dist;
+                }
+            }
         }
+
+        return nearest;
     }
 
-    public void CarrotSpawner()
+    private void OnEnable()
     {
-        _randomX = Random.Range(-10.0f, 2.0f);
-        _randomZ = Random.Range(-8.0f, 10.0f);
-
-        Quaternion rototationX = Quaternion.Euler(_QUATERNION_ROTATION, 0, 0);
-
-        Vector3 randomPositions = new Vector3(_randomX, _POSITION_Y, _randomZ);
-        Instantiate(_carrot, randomPositions, rototationX);
+        PassingAndTakingTasks.OnTakenThirdTask += OnThirdTask;
+        PickingThingsUp.OnRemovedCarrot += RemoveCarrotFromList;
+        RestartThirdTask.OnRestarted += RestartedTask;
     }
 
-    private void OnEnable() => PassingAndTakingTasks.OnTakenThirdTask += OnThirdTask;
-
-    private void OnDisable() => PassingAndTakingTasks.OnTakenThirdTask -= OnThirdTask;
+    private void OnDisable()
+    {
+        PassingAndTakingTasks.OnTakenThirdTask -= OnThirdTask;
+        PickingThingsUp.OnRemovedCarrot -= RemoveCarrotFromList;
+        RestartThirdTask.OnRestarted -= RestartedTask;
+    }
 }

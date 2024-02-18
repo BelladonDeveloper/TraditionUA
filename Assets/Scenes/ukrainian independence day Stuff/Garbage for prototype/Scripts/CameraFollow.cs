@@ -11,7 +11,7 @@ public class CameraFollow : MonoBehaviour
         if (target != null)
         {
             Vector3 offset = new Vector3(0f, height, -distance);
-            Quaternion rotation = Quaternion.Euler(45f, 0f, 0f);  
+            Quaternion rotation = Quaternion.Euler(45f, 0f, 0f);
             Vector3 desiredPosition = target.position + rotation * offset;
 
             float currentDistance = Vector3.Distance(transform.position, desiredPosition);

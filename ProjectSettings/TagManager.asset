@@ -12,7 +12,11 @@ TagManager:
   - UIObjectsToActive
   - Currot
   - villager
-  - Bread Component
+  - Flowers
+  - Weed
+  - Bunny
+  - GoldCarrot
+  - Heart
   layers:
   - Default
   - TransparentFX
@@ -21,7 +25,7 @@ TagManager:
   - Water
   - UI
   - Interaction
-  - 
+  - Artifact
   - Player
   - 
   - 

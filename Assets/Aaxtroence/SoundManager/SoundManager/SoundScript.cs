@@ -18,7 +18,7 @@ public class SoundScript : MonoBehaviour
         soundDestroyer._volume = 100;
         CreateClone();
     }
-    public void PlaySound(int SoundIndex,int volume)
+    public void PlaySound(int SoundIndex, int volume)
     {
         audioSource.clip = soundManager.Sounds[SoundIndex];
         soundDestroyer._volume = volume;
@@ -26,7 +26,7 @@ public class SoundScript : MonoBehaviour
     }
     private void CreateClone()
     {
-        GameObject prefab = Instantiate(soundPrefab,SoundParent);
+        GameObject prefab = Instantiate(soundPrefab, SoundParent);
         prefab.SetActive(true);
     }
 }

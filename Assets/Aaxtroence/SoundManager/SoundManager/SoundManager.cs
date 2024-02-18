@@ -10,14 +10,14 @@ public class SoundManager : MonoBehaviour, IManager
     [SerializeField] private SoundScript soundScript;
     public bool pause = false;
     // Music
-    public void PlayMusic(Music Index,bool Upscaling)
+    public void PlayMusic(Music Index, bool Upscaling)
     {
-        musicSwitcher.PlayMusic((int)Index,Upscaling);
+        musicSwitcher.PlayMusic((int)Index, Upscaling);
     }
 
-    public void PlayMusic(Music Index,bool Upscaling,int volume)
+    public void PlayMusic(Music Index, bool Upscaling, int volume)
     {
-        musicSwitcher.PlayMusic((int)Index,Upscaling);
+        musicSwitcher.PlayMusic((int)Index, Upscaling);
         musicSwitcher.ChangeVolumeTarget(volume);
     }
 
@@ -32,8 +32,9 @@ public class SoundManager : MonoBehaviour, IManager
     }
     public void PlaySound(Sound Index, int volume)
     {
-        soundScript.PlaySound((int)Index,volume);
+        soundScript.PlaySound((int)Index, volume);
     }
+    
     // Settings
     public void Settings_SetMusicVolume(int volume)
     {
@@ -45,8 +46,8 @@ public class SoundManager : MonoBehaviour, IManager
     }
 
 
-    public void Init(){}
-    public void Dispose(){}
+    public void Init() { }
+    public void Dispose() { }
 }
 
 public enum Music

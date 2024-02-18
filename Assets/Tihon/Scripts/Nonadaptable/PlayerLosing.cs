@@ -31,7 +31,7 @@ public class PlayerLosing : MonoBehaviour
         else
         {
             Destroy(player);
-            gameOver.transform.position = new Vector3(367.6667f, 147.6667f, 0   );
+            gameOver.GetComponent<CanvasGroup>().alpha = 1;
             Time.timeScale = 0;
         }
     }

@@ -16,7 +16,7 @@ public class MusicSwitcher : MonoBehaviour
     private int AS2VolumePercentage = 0;
 
     private int VolumeTarget = 100;
-    
+
     private float _tick = 0.05f;
     private float _time = 0;
     [SerializeField] private SoundManager soundManager;
@@ -25,7 +25,7 @@ public class MusicSwitcher : MonoBehaviour
 
     void Start()
     {
-        if(PlayOnStart)
+        if (PlayOnStart)
         {
             audioSource1.clip = soundManager.Music[StartMusicIndex];
             audioSource1.Play();
@@ -35,7 +35,7 @@ public class MusicSwitcher : MonoBehaviour
 
     void Update()
     {
-        if(_time < _tick)
+        if (_time < _tick)
         {
             _time += Time.deltaTime;
         }
@@ -44,13 +44,13 @@ public class MusicSwitcher : MonoBehaviour
             _Tick();
             _time = 0f;
         }
-        audioSource1.volume = SettingsMusicVolume/10000 * AS1VolumePercentage;
-        audioSource2.volume = SettingsMusicVolume/10000 * AS2VolumePercentage;
+        audioSource1.volume = SettingsMusicVolume / 10000 * AS1VolumePercentage;
+        audioSource2.volume = SettingsMusicVolume / 10000 * AS2VolumePercentage;
 
-        if(_pause != soundManager.pause)
+        if (_pause != soundManager.pause)
         {
             _pause = soundManager.pause;
-            if(_pause)
+            if (_pause)
             {
                 audioSource1.pitch = 0;
                 audioSource2.pitch = 0;
@@ -65,44 +65,44 @@ public class MusicSwitcher : MonoBehaviour
 
     private void _Tick()
     {
-        if(AudioPlayer1)
+        if (AudioPlayer1)
         {
-            if(AS1VolumePercentage < VolumeTarget)
+            if (AS1VolumePercentage < VolumeTarget)
             {
                 AS1VolumePercentage++;
             }
-            else if(AS1VolumePercentage > VolumeTarget)
+            else if (AS1VolumePercentage > VolumeTarget)
             {
                 AS1VolumePercentage -= 1;
             }
-            if(AS2VolumePercentage > 0)
+            if (AS2VolumePercentage > 0)
             {
                 AS2VolumePercentage -= 1;
             }
         }
         else
         {
-            if(AS2VolumePercentage < VolumeTarget)
+            if (AS2VolumePercentage < VolumeTarget)
             {
                 AS2VolumePercentage++;
             }
-            else if(AS2VolumePercentage > VolumeTarget)
+            else if (AS2VolumePercentage > VolumeTarget)
             {
                 AS2VolumePercentage -= 1;
             }
-            if(AS1VolumePercentage > 0)
+            if (AS1VolumePercentage > 0)
             {
                 AS1VolumePercentage -= 1;
             }
         }
     }
-    public void PlayMusic(int MusicIndex,bool UpscalingMusic)
+    public void PlayMusic(int MusicIndex, bool UpscalingMusic)
     {
         if (AudioPlayer1)
         {
             audioSource2.clip = soundManager.Music[MusicIndex];
             audioSource2.Play();
-            if(UpscalingMusic == false)
+            if (UpscalingMusic == false)
             {
                 AS2VolumePercentage = VolumeTarget;
                 AS1VolumePercentage = 0;
@@ -112,7 +112,7 @@ public class MusicSwitcher : MonoBehaviour
         {
             audioSource1.clip = soundManager.Music[MusicIndex];
             audioSource1.Play();
-            if(UpscalingMusic == false)
+            if (UpscalingMusic == false)
             {
                 AS1VolumePercentage = VolumeTarget;
                 AS2VolumePercentage = 0;
