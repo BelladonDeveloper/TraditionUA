@@ -1,39 +1,50 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Gratitude : MonoBehaviour
 {
+    [SerializeField] private RectTransform _transformRect;
+    [SerializeField] private RectTransform _transformRectContent;
+    [SerializeField] private Button _gratitudeButton;
     [SerializeField] private float _speed;
 
+    private Vector2 _startPosition; 
     private float _yPosition;
+    private bool _isTakenStartPositions;
 
-    private void Start()
+    public void Start()
     {
-        _yPosition = gameObject.transform.position.y;
-
+        _yPosition = _transformRect.anchoredPosition.y;
+        _startPosition = _transformRect.anchoredPosition; 
     }
 
     private void Update()
     {
-        _yPosition += _speed;
-
-        gameObject.transform.position =
-            new Vector3(gameObject.transform.position.x, _yPosition, gameObject.transform.position.z);
+        if (!_isTakenStartPositions)
+        {
+            _yPosition += _speed * Time.deltaTime;
+            _transformRect.anchoredPosition = new Vector2(_transformRect.anchoredPosition.x, _yPosition);
+        }
     }
 
-    //public void ScrollUp()
-    //{
-    //    _yPosition += _speed * -2;
+    public void SetStartPositions()
+    {
+        _isTakenStartPositions = true;
+        _transformRect.anchoredPosition = _startPosition;
+        _transformRectContent.anchoredPosition = _startPosition;
+        _yPosition = _transformRect.anchoredPosition.y;
+        StartCoroutine(ChangeIsTakenStartPositions());
+    }
 
-    //    gameObject.transform.position =
-    //        new Vector3(gameObject.transform.position.x, _yPosition, gameObject.transform.position.z);
-    //}
+    private IEnumerator ChangeIsTakenStartPositions()
+    {
+        yield return new WaitForSeconds(2f);
+        _isTakenStartPositions = false;
+    }
 
-    //public void ScrollDown()
-    //{
-    //    _yPosition += _speed * 2;
-
-    //    gameObject.transform.position =
-    //        new Vector3(gameObject.transform.position.x, _yPosition, gameObject.transform.position.z);
-    //}
+    private void OnEnable()
+    {
+        _gratitudeButton.onClick.AddListener(SetStartPositions);
+    }
 }
