@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 422da79eb72faa64c9b12a873b1f9301
   - enabled: 1
-    path: "Assets/Tihon/\u0412\u0430\u0441\u0438\u043B\u0456\u0432_\u0414\u0435\u043D\u044C.unity"
+    path: "Assets/Tihon/Scenes/\u0412\u0430\u0441\u0438\u043B\u0456\u0432_\u0414\u0435\u043D\u044C.unity"
     guid: fddfc6ff324ebaf4b917a1777a4b4acd
   - enabled: 1
     path: Assets/Scenes/Easter.unity
