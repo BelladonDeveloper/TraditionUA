@@ -8,6 +8,12 @@ public class NeedleFinding : MonoBehaviour
     public int counter = 0;
     public int needles = 3;
     public Image gameOver;
+    public Image youWin;
+
+    public void Start()
+    {
+        gameOver.GetComponent<CanvasGroup>().alpha = 1;
+    }
 
     private void Update()
     {
@@ -17,7 +23,11 @@ public class NeedleFinding : MonoBehaviour
         }
         if(needles == 0)
         {
-            if(counter != 3) 
+            if(counter == 3) 
+            {
+                youWin.GetComponent<CanvasGroup>().alpha = 1;
+            }
+            else
             {
                 gameOver.GetComponent<CanvasGroup>().alpha = 1;
             }

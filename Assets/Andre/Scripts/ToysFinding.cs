@@ -14,7 +14,7 @@ public class ToysFinding : MonoBehaviour
     public Sprite a;
     private void OnMouseDown()
     {
-        Destroy(transform.gameObject);
+        Destroy(gameObject);
         x.sprite = a;
         toysTask.GetComponent<ToysTask>().counter++;
     }
