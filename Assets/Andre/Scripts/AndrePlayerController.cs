@@ -11,7 +11,9 @@ public class AndrePlayerController : MonoBehaviour
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private FixedJoystick _joystick;
     [SerializeField] private Animator _animator;
-    [SerializeField] public static float _moveSpeed = 6;
+    public static float _moveSpeed = 6;
+    
+    
 
     public static int flowers;
     public static int weed;
