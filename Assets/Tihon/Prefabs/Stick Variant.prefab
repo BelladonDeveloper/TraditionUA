@@ -85,15 +85,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7962908734096404503, guid: e8d11a0c3bea4a54982873e995173bf4,
         type: 3}
+      propertyPath: m_Size.x
+      value: 14.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7962908734096404503, guid: e8d11a0c3bea4a54982873e995173bf4,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 8.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7962908734096404503, guid: e8d11a0c3bea4a54982873e995173bf4,
+        type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 335e9d8ebdc147c46986ff66e53d398d,
+      objectReference: {fileID: 21300000, guid: 41c11fbcdb679fa4f885015ab2736ea1,
         type: 3}
+    - target: {fileID: 7962908734096404503, guid: e8d11a0c3bea4a54982873e995173bf4,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2472211375031643845, guid: e8d11a0c3bea4a54982873e995173bf4, type: 3}
+    - {fileID: 9097088311515431539, guid: e8d11a0c3bea4a54982873e995173bf4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5707114954927840422, guid: e8d11a0c3bea4a54982873e995173bf4,
+        type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 4068859687711761482}
     - targetCorrespondingSourceObject: {fileID: 5707114954927840422, guid: e8d11a0c3bea4a54982873e995173bf4,
         type: 3}
       insertIndex: -1
@@ -105,6 +125,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2682300813840078630}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4068859687711761482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7641144776915864448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b69cdebf182c0594ba6dc5d14fa18108, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sino: {fileID: 0}
+  counterText: {fileID: 0}
 --- !u!65 &8825659227123751469
 BoxCollider:
   m_ObjectHideFlags: 0
