@@ -9,9 +9,16 @@ public class TraditionEnding : MonoBehaviour
 
     [SerializeField] private Transform _centerOfMap;
 
+    private Quaternion _defaultRotation;
+
     private const float _timeToIncrease = 1;
 
     private const float _timeToDecrease = 4;
+
+    public void Start()
+    {
+        _defaultRotation = Quaternion.Euler(0f, 0f, 60f);
+    }
 
     public void OnFinishTradition()
     {
@@ -24,7 +31,7 @@ public class TraditionEnding : MonoBehaviour
 
         _timelineTraditionEnding.SetActive(true);
 
-        GameObject newGoldCarrot = Instantiate(_goldCarrot, _centerOfMap.position, Quaternion.identity);
+        GameObject newGoldCarrot = Instantiate(_goldCarrot, _centerOfMap.position, _defaultRotation);
 
         //Todo:
         //Add sound 
@@ -35,7 +42,7 @@ public class TraditionEnding : MonoBehaviour
         sequence.Append(newGoldCarrot.transform.DOScale(Vector3.one * 13, _timeToIncrease));
         sequence.Append(newGoldCarrot.transform.DOScale(Vector3.one * 3, _timeToDecrease));
         newGoldCarrot.GetComponent<PingPongMovement>().enabled = false;
-        sequence.Append(newGoldCarrot.transform.DOMoveY(2.5f, _timeToDecrease - _timeToIncrease)); //3
+        sequence.Append(newGoldCarrot.transform.DOMoveY(5f, _timeToDecrease - _timeToIncrease)); //3
 
     }
 
