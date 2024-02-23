@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TraditionEnding : MonoBehaviour
 {
+    [SerializeField] private AudioSource _spawnSound;
+
     [SerializeField] private GameObject _goldCarrot;
     [SerializeField] private GameObject _timelineTraditionEnding;
 
@@ -34,6 +36,8 @@ public class TraditionEnding : MonoBehaviour
         GameObject newGoldCarrot = Instantiate(_goldCarrot, _centerOfMap.position, _defaultRotation);
 
         //Todo:
+        _spawnSound.Play();
+
         //Add sound 
         //Add particles 
 
