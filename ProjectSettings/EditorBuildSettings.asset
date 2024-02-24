@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Teymur.unity
     guid: 1dfeadda27bc4b5478963432e8921c6f
   - enabled: 1
+    path: Assets/Aaxtroence/Scenes/NicolasDay.unity
+    guid: 0e6e20cfec0529c408e407e6f03eb868
+  - enabled: 1
     path: Assets/Scenes/NewYearTester.unity
     guid: 90ce18c0012145748876318359f74031
   - enabled: 1

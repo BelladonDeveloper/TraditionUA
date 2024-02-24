@@ -4767,7 +4767,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 297.4
+  m_fontSize: 328.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -13482,7 +13482,7 @@ PrefabInstance:
     - target: {fileID: 1107018364050183838, guid: c0c29ff70818243449e2829ed601315b,
         type: 3}
       propertyPath: Sounds.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1107018364050183838, guid: c0c29ff70818243449e2829ed601315b,
         type: 3}
@@ -13503,12 +13503,17 @@ PrefabInstance:
         type: 3}
       propertyPath: Sounds.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 9b3afb2e5d4080a44a5669bef147c15e, type: 3}
+      objectReference: {fileID: 8300000, guid: 79cf0b8aa4ea37b438f6e35115ccb1f0, type: 3}
     - target: {fileID: 1107018364050183838, guid: c0c29ff70818243449e2829ed601315b,
         type: 3}
       propertyPath: Sounds.Array.data[2]
       value: 
-      objectReference: {fileID: 8300000, guid: 1a9565903e847f045a8bc32a1c4370ee, type: 3}
+      objectReference: {fileID: 8300000, guid: 79cf0b8aa4ea37b438f6e35115ccb1f0, type: 3}
+    - target: {fileID: 1107018364050183838, guid: c0c29ff70818243449e2829ed601315b,
+        type: 3}
+      propertyPath: Sounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: cb53e7ffd0f2c634aa3f8f42b2694930, type: 3}
     - target: {fileID: 1107018364050183839, guid: c0c29ff70818243449e2829ed601315b,
         type: 3}
       propertyPath: m_Name
