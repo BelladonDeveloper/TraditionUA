@@ -126,8 +126,10 @@ public class EasterMessageForSecondTaskMemory : MonoBehaviour
 
     private void UpdateTimerText()
     {
-        int seconds = Mathf.FloorToInt(_currentTime % 60);
-        _timerText.text = seconds.ToString();
+        //int seconds = Mathf.FloorToInt(_currentTime % 60);
+        //_timerText.text = seconds.ToString();
+
+        _timerText.text = _currentTime.ToString("F1");
     }
 
     private void OnEnable()

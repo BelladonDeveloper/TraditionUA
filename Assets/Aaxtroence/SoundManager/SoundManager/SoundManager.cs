@@ -63,5 +63,6 @@ public enum Sound
 {
     Click,
     Open,
-    Close
+    Close,
+    WitchVoice
 }
