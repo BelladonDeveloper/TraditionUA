@@ -4767,7 +4767,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 328.35
+  m_fontSize: 328.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6096,7 +6096,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00012207031, y: 0.00012207031}
+  m_AnchoredPosition: {x: 0, y: 0.00012207031}
   m_SizeDelta: {x: 1122.3071, y: 565.8198}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &898511455
@@ -6216,7 +6216,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00012207031, y: 0.00012207031}
+  m_AnchoredPosition: {x: 0, y: 0.00012207031}
   m_SizeDelta: {x: 1122.3071, y: 565.8198}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &946727311
@@ -10118,7 +10118,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -16.918823, y: 8.033447}
+  m_AnchoredPosition: {x: -16.918945, y: 8.033447}
   m_SizeDelta: {x: 1875.6152, y: 1036.0632}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1475040528
@@ -12838,7 +12838,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00036621094, y: 493.45776}
+  m_AnchoredPosition: {x: 0.00048828125, y: 493.45776}
   m_SizeDelta: {x: 1882.7104, y: 58.69397}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1907655425
@@ -13482,7 +13482,7 @@ PrefabInstance:
     - target: {fileID: 1107018364050183838, guid: c0c29ff70818243449e2829ed601315b,
         type: 3}
       propertyPath: Sounds.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1107018364050183838, guid: c0c29ff70818243449e2829ed601315b,
         type: 3}
@@ -13503,12 +13503,17 @@ PrefabInstance:
         type: 3}
       propertyPath: Sounds.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 9b3afb2e5d4080a44a5669bef147c15e, type: 3}
+      objectReference: {fileID: 8300000, guid: 79cf0b8aa4ea37b438f6e35115ccb1f0, type: 3}
     - target: {fileID: 1107018364050183838, guid: c0c29ff70818243449e2829ed601315b,
         type: 3}
       propertyPath: Sounds.Array.data[2]
       value: 
-      objectReference: {fileID: 8300000, guid: 1a9565903e847f045a8bc32a1c4370ee, type: 3}
+      objectReference: {fileID: 8300000, guid: 79cf0b8aa4ea37b438f6e35115ccb1f0, type: 3}
+    - target: {fileID: 1107018364050183838, guid: c0c29ff70818243449e2829ed601315b,
+        type: 3}
+      propertyPath: Sounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: cb53e7ffd0f2c634aa3f8f42b2694930, type: 3}
     - target: {fileID: 1107018364050183839, guid: c0c29ff70818243449e2829ed601315b,
         type: 3}
       propertyPath: m_Name

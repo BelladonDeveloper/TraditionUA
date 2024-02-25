@@ -8,8 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 422da79eb72faa64c9b12a873b1f9301
-  - enabled: 1
-    path: "Assets/Tihon/\u0412\u0430\u0441\u0438\u043B\u0456\u0432_\u0414\u0435\u043D\u044C.unity"
+  - enabled: 0
+    path: "Assets/Tihon/Scenes/\u0412\u0430\u0441\u0438\u043B\u0456\u0432_\u0414\u0435\u043D\u044C.unity"
     guid: fddfc6ff324ebaf4b917a1777a4b4acd
   - enabled: 1
     path: Assets/Scenes/Easter.unity
@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Teymur.unity
     guid: 1dfeadda27bc4b5478963432e8921c6f
   - enabled: 1
+    path: Assets/Aaxtroence/Scenes/NicolasDay.unity
+    guid: 0e6e20cfec0529c408e407e6f03eb868
+  - enabled: 1
     path: Assets/Scenes/NewYearTester.unity
     guid: 90ce18c0012145748876318359f74031
   - enabled: 1
@@ -33,9 +36,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Ihor`sPrototype.unity
     guid: 17e3b8ede1ddb8c45935cd96f5759cac
   - enabled: 1
-    path: Assets/Scenes/Day of Malanka/MalankaDay.unity
-    guid: 8211dbe5f1e7f984b857b02d441e58c6
-  - enabled: 1
-    path: Assets/Scenes/Day of Malanka/CookingScene.unity
-    guid: 65571d5f356c7ba47b1074faae7152d0
+    path: Assets/Tihon/Scenes/FindAToy.unity
+    guid: 32aaebcdc10467349898910edc40d228
   m_configObjects: {}

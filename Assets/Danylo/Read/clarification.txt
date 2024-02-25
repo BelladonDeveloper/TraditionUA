@@ -103,10 +103,12 @@ DIALOG
 
 	PAUSE
 	
-	InitPauseButton - прототип, додайте цей скрипт нп будь-який обект на сцені 
+	InitPauseButton - додайте цей рядок коду Register.Get<UIManager>().Show(UIPopupType.PauseButton); в старті в будь-якому скрипті на вашому рівні 
 
-	InitialManeger - проблема не в сінглтоні, в якомусь зі скриптів із папки Assets/Aaxtroence/SoundManager/SoundManager, тимчасово призупинив роботу скриптів, які видавали помилки  
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+	CHARACTER ANIMATION
 
+		зайдіть на сцену ukrainian independence day у папці Scense, використовуйте Player як референс 
 
 
