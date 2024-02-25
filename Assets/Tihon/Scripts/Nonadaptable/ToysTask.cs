@@ -8,6 +8,7 @@ public class ToysTask : MonoBehaviour
 {
     public GameObject home;
     public GameObject home1;
+    public GameObject home2;
     public Sprite openHome;
     public int counter = 0;
     public string lvlName;
@@ -21,6 +22,10 @@ public class ToysTask : MonoBehaviour
         {
             home1.GetComponent<SpriteRenderer>().sprite = openHome;
         }
+        if (collision.gameObject.name == "Villager2")
+        {
+            home2.GetComponent<SpriteRenderer>().sprite = openHome;
+        }
         if (collision.gameObject.name == "hatka")
         {
             SceneManager.LoadScene("FindAToy");
@@ -28,6 +33,10 @@ public class ToysTask : MonoBehaviour
         if (collision.gameObject.name == "hatka1")
         {
             SceneManager.LoadScene("NeedleFinding");
+        }
+        if (collision.gameObject.name == "hatka2")
+        {
+            SceneManager.LoadScene("Василів_День_Раннер");
         }
     }
     private void Update()

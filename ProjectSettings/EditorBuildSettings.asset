@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Tihon/Scenes/\u0412\u0430\u0441\u0438\u043B\u0456\u0432_\u0414\u0435\u043D\u044C_\u041E\u0441\u043D\u043E\u0432\u0430.unity"
     guid: 4660e63c8d7b7c142853e39a10de03d7
+  - enabled: 1
+    path: "Assets/Tihon/Scenes/\u0412\u0430\u0441\u0438\u043B\u0456\u0432_\u0414\u0435\u043D\u044C_\u0420\u0430\u043D\u043D\u0435\u0440.unity"
+    guid: 3e062a9fc41481b49b8757fba8f4e1ca
   m_configObjects: {}
