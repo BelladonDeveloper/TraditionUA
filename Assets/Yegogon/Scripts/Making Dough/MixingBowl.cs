@@ -18,7 +18,7 @@ public class MixingBowl : MonoBehaviour
         ComponentType.Water, ComponentType.Oil
     };
 
-    private void TheMixer()
+    private void AddingComponents()
     {
         if (stage.Stage == DoughStage.Empty && !CheckForWetSubstances())
         {
@@ -39,7 +39,7 @@ public class MixingBowl : MonoBehaviour
             if (info == null)
             {
                 AddedComponents.Add(otherInfo);
-                TheMixer();
+                AddingComponents();
             }
             else
                 Debug.LogError($"Oops! {otherInfo.Type} somehow got in the bowl!");
@@ -80,6 +80,12 @@ public class MixingBowl : MonoBehaviour
 
         //if there are no "wet" components in the bowl:
         return false;
+    }
+
+    public void MixingStuff()
+    {
+        if (stage.Stage == DoughStage.Soup)
+            stage.NextDoughStage();
     }
 
     #region StageProgressCheck 

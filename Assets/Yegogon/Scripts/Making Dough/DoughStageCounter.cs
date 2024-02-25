@@ -4,9 +4,20 @@ using UnityEngine;
 
 public class DoughStageCounter : MonoBehaviour
 {
+    [Header("Important Stage References")]
     [SerializeField] private GameObject stage1;
     [SerializeField] private GameObject stage2;
     [SerializeField] private GameObject stage3;
+
+    [Header("Dry Bread Components To Consume")]
+    [SerializeField] private GameObject Flour;
+    [SerializeField] private GameObject Salt;
+    [SerializeField] private GameObject Sugar;
+    [SerializeField] private GameObject Yeast;
+    [Header("Dry Bread Components To Consume")]
+    [SerializeField] private GameObject Water;
+    [SerializeField] private GameObject Oil;
+
 
     public DoughStage Stage;
     
@@ -25,6 +36,11 @@ public class DoughStageCounter : MonoBehaviour
             //Disable:
             stage2.SetActive(false);
             stage3.SetActive(false);
+
+            Flour.SetActive(false);
+            Salt.SetActive(false);
+            Sugar.SetActive(false);
+            Yeast.SetActive(false);
         }
         else if (Stage == DoughStage.Soup)
         {
@@ -34,6 +50,9 @@ public class DoughStageCounter : MonoBehaviour
             //Disable:
             stage1.SetActive(false);
             stage3.SetActive(false);
+
+            Water.SetActive(false);
+            Oil.SetActive(false);
         }
         else if (Stage == DoughStage.ReadyDough)
         {
