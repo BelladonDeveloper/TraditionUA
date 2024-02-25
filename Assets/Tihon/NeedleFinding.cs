@@ -1,6 +1,8 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class NeedleFinding : MonoBehaviour
@@ -16,11 +18,11 @@ public class NeedleFinding : MonoBehaviour
         {
             if (counter == 3)
             {
-                youWin.GetComponent<CanvasGroup>().alpha = 1;
+                StartCoroutine("Wining");
             }
             else
             {
-                gameOver.GetComponent<CanvasGroup>().alpha = 1;
+                StartCoroutine("Losing");
             }
         } 
 
@@ -28,5 +30,17 @@ public class NeedleFinding : MonoBehaviour
         {
             transform.GetComponent<PlayerWining>().score = counter;
         }
+    }
+    public IEnumerator Wining()
+    {
+        youWin.GetComponent<CanvasGroup>().alpha = 1;
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("Василів_День_Основа");
+    }
+    public IEnumerator Losing()
+    {
+        gameOver.GetComponent<CanvasGroup>().alpha = 1;
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("NeedleFinding");
     }
 }
