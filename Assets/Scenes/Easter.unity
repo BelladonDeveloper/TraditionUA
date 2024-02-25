@@ -3731,7 +3731,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -23.999878, y: 3}
+  m_AnchoredPosition: {x: -23.999512, y: 3}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &323580832
@@ -7360,7 +7360,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.7435625, y: 0.093}
   m_AnchorMax: {x: 0.98777086, y: 0.3293382}
-  m_AnchoredPosition: {x: -2, y: -6.499634}
+  m_AnchoredPosition: {x: -2, y: -6.4996414}
   m_SizeDelta: {x: -310, y: -71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &623608826
@@ -11630,8 +11630,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -11655,7 +11655,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -11714,8 +11714,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.48535416, y: 0.8148519}
   m_AnchorMax: {x: 0.5167291, y: 0.90200007}
-  m_AnchoredPosition: {x: -53, y: 7.300049}
-  m_SizeDelta: {x: 517.6949, y: 103.20419}
+  m_AnchoredPosition: {x: -47.076218, y: 77.84899}
+  m_SizeDelta: {x: 505.84756, y: 244.30202}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &962514941
 CanvasGroup:
@@ -12250,7 +12250,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.81200004, y: 0.081}
   m_AnchorMax: {x: 0.91600007, y: 0.27}
-  m_AnchoredPosition: {x: 131, y: -31.000305}
+  m_AnchoredPosition: {x: 131, y: -31.000488}
   m_SizeDelta: {x: -3.960022, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1007110946
@@ -22748,22 +22748,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!111 &1930845595
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941865975}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 059659377357c7f4da639e9b3ab32204, type: 3}
-  m_Animations:
-  - {fileID: 7400000, guid: 059659377357c7f4da639e9b3ab32204, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 1
 --- !u!1 &1933633941
 GameObject:
   m_ObjectHideFlags: 0
@@ -23224,7 +23208,7 @@ Transform:
   m_GameObject: {fileID: 1941865975}
   serializedVersion: 2
   m_LocalRotation: {x: 0.13052616, y: -0, z: -0, w: 0.9914449}
-  m_LocalPosition: {x: 39.04673, y: -26.994692, z: 58.94763}
+  m_LocalPosition: {x: 39.04673, y: -27.25, z: 59.008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -25401,11 +25385,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1941510167}
-  - component: {fileID: 1930845595}
   - component: {fileID: 2027716390}
   - component: {fileID: 2027716395}
   - component: {fileID: 2027716397}
   - component: {fileID: 2027716398}
+  - component: {fileID: 2027716399}
   m_Layer: 6
   m_Name: Rabbit_LowPoly_RigUnity_Final
   m_TagString: Bunny
@@ -26568,6 +26552,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CarrotTag: Currot
   GoldCarrot: GoldCurrot
+--- !u!95 &2027716399
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941865975}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 059659377357c7f4da639e9b3ab32204, type: 3}
+  m_Controller: {fileID: 9100000, guid: 76bbda953f0aa0a46aa79972ad099e16, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2041836820
 GameObject:
   m_ObjectHideFlags: 0
@@ -34511,7 +34516,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
@@ -34545,6 +34550,7 @@ GameObject:
   - component: {fileID: 2128126714}
   - component: {fileID: 2128126719}
   - component: {fileID: 2128126720}
+  - component: {fileID: 8977567032742408672}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -34552,6 +34558,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!143 &8977567032742408672
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8977567032742408671}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &8977567032758487290
 Transform:
   m_ObjectHideFlags: 0
