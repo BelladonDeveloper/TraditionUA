@@ -181,6 +181,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -88.097
       objectReference: {fileID: 0}
+    - target: {fileID: 4068859687711761482, guid: 4e281f57f2ca45a48a2082b063eeb3a0,
+        type: 3}
+      propertyPath: sino
+      value: 
+      objectReference: {fileID: 485658970}
+    - target: {fileID: 4068859687711761482, guid: 4e281f57f2ca45a48a2082b063eeb3a0,
+        type: 3}
+      propertyPath: counterText
+      value: 
+      objectReference: {fileID: 1173141865}
     - target: {fileID: 6558978277360375125, guid: 4e281f57f2ca45a48a2082b063eeb3a0,
         type: 3}
       propertyPath: sino
@@ -196,7 +206,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stick Variant (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9169030873242730237, guid: 4e281f57f2ca45a48a2082b063eeb3a0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -209,6 +220,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2472211375031643845, guid: e8d11a0c3bea4a54982873e995173bf4,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.2903166
+      objectReference: {fileID: 0}
+    - target: {fileID: 2472211375031643845, guid: e8d11a0c3bea4a54982873e995173bf4,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.20000097
+      objectReference: {fileID: 0}
+    - target: {fileID: 2472211375031643845, guid: e8d11a0c3bea4a54982873e995173bf4,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.60484207
+      objectReference: {fileID: 0}
+    - target: {fileID: 2472211375031643845, guid: e8d11a0c3bea4a54982873e995173bf4,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.0000002517508
+      objectReference: {fileID: 0}
+    - target: {fileID: 2472211375031643845, guid: e8d11a0c3bea4a54982873e995173bf4,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.00000092770836
+      objectReference: {fileID: 0}
     - target: {fileID: 3397812986811122465, guid: e8d11a0c3bea4a54982873e995173bf4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -264,6 +300,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Needle
       objectReference: {fileID: 0}
+    - target: {fileID: 6487297407990442459, guid: e8d11a0c3bea4a54982873e995173bf4,
+        type: 3}
+      propertyPath: sino
+      value: 
+      objectReference: {fileID: 485658970}
+    - target: {fileID: 6487297407990442459, guid: e8d11a0c3bea4a54982873e995173bf4,
+        type: 3}
+      propertyPath: counterText
+      value: 
+      objectReference: {fileID: 1173141865}
     - target: {fileID: 9097088311515431539, guid: e8d11a0c3bea4a54982873e995173bf4,
         type: 3}
       propertyPath: sino
@@ -274,10 +320,15 @@ PrefabInstance:
       propertyPath: counterText
       value: 
       objectReference: {fileID: 1173141865}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2472211375031643845, guid: e8d11a0c3bea4a54982873e995173bf4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5707114954927840422, guid: e8d11a0c3bea4a54982873e995173bf4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 272031887}
   m_SourcePrefab: {fileID: 100100000, guid: e8d11a0c3bea4a54982873e995173bf4, type: 3}
 --- !u!1001 &226278626
 PrefabInstance:
@@ -342,6 +393,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Needle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6487297407990442459, guid: e8d11a0c3bea4a54982873e995173bf4,
+        type: 3}
+      propertyPath: sino
+      value: 
+      objectReference: {fileID: 485658970}
+    - target: {fileID: 6487297407990442459, guid: e8d11a0c3bea4a54982873e995173bf4,
+        type: 3}
+      propertyPath: counterText
+      value: 
+      objectReference: {fileID: 1173141865}
     - target: {fileID: 9097088311515431539, guid: e8d11a0c3bea4a54982873e995173bf4,
         type: 3}
       propertyPath: sino
@@ -414,7 +475,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1c099415fe6499f478dcf8824418a2d4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 590a1fbcdc6bbc44baa36c9ee8c286ed, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -432,6 +493,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265412670}
   m_CullTransparentMesh: 1
+--- !u!1 &272031881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5707114954927840422, guid: e8d11a0c3bea4a54982873e995173bf4,
+    type: 3}
+  m_PrefabInstance: {fileID: 176872191}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &272031887
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272031881}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.4999998, y: 2.4199998, z: 0.20000006}
+  m_Center: {x: 0, y: -0.00000023841858, z: -0.00000023841858}
 --- !u!1001 &409836584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -490,6 +578,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -88.097
       objectReference: {fileID: 0}
+    - target: {fileID: 4068859687711761482, guid: 4e281f57f2ca45a48a2082b063eeb3a0,
+        type: 3}
+      propertyPath: sino
+      value: 
+      objectReference: {fileID: 485658970}
+    - target: {fileID: 4068859687711761482, guid: 4e281f57f2ca45a48a2082b063eeb3a0,
+        type: 3}
+      propertyPath: counterText
+      value: 
+      objectReference: {fileID: 1173141865}
     - target: {fileID: 6558978277360375125, guid: 4e281f57f2ca45a48a2082b063eeb3a0,
         type: 3}
       propertyPath: sino
@@ -505,7 +603,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stick Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9169030873242730237, guid: 4e281f57f2ca45a48a2082b063eeb3a0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -612,7 +711,7 @@ GameObject:
   m_Component:
   - component: {fileID: 485658973}
   - component: {fileID: 485658972}
-  - component: {fileID: 485658971}
+  - component: {fileID: 485658974}
   m_Layer: 0
   m_Name: "\u0441\u0456\u043D\u043E"
   m_TagString: Untagged
@@ -620,22 +719,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &485658971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 485658970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47faee752a66d8043adf9fe9012f5a9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  counter: 0
-  needles: 3
-  gameOver: {fileID: 1845260758}
-  youWin: {fileID: 861967223}
 --- !u!212 &485658972
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -677,7 +760,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: eefca6a1a7c782c4592f6738e7044c1b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 786f57f5f4bbb6a41a22abc67610f163, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -703,6 +786,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &485658974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485658970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a7125772f92364bb488c0a7e2be26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counter: 0
+  needles: 3
+  gameOver: {fileID: 1845260758}
+  youWin: {fileID: 861967223}
 --- !u!1 &513755711
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,6 +1022,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -88.097
       objectReference: {fileID: 0}
+    - target: {fileID: 4068859687711761482, guid: 4e281f57f2ca45a48a2082b063eeb3a0,
+        type: 3}
+      propertyPath: sino
+      value: 
+      objectReference: {fileID: 485658970}
+    - target: {fileID: 4068859687711761482, guid: 4e281f57f2ca45a48a2082b063eeb3a0,
+        type: 3}
+      propertyPath: counterText
+      value: 
+      objectReference: {fileID: 1173141865}
     - target: {fileID: 6558978277360375125, guid: 4e281f57f2ca45a48a2082b063eeb3a0,
         type: 3}
       propertyPath: sino
@@ -938,7 +1047,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stick Variant (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9169030873242730237, guid: 4e281f57f2ca45a48a2082b063eeb3a0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1089,7 +1199,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 663c0e9967c6a434cb4f77b2f4338707, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 777dbc5947ba3b34b9cc2b755d126b05, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1170,6 +1280,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Needle (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6487297407990442459, guid: e8d11a0c3bea4a54982873e995173bf4,
+        type: 3}
+      propertyPath: sino
+      value: 
+      objectReference: {fileID: 485658970}
+    - target: {fileID: 6487297407990442459, guid: e8d11a0c3bea4a54982873e995173bf4,
+        type: 3}
+      propertyPath: counterText
+      value: 
+      objectReference: {fileID: 1173141865}
     - target: {fileID: 9097088311515431539, guid: e8d11a0c3bea4a54982873e995173bf4,
         type: 3}
       propertyPath: sino
@@ -1398,7 +1518,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ff9ba5309f13d904f9513622885ce957, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a694f7ab2cfe9fa4d8462d24d207d177, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -17,6 +17,9 @@ TagManager:
   - Bunny
   - GoldCarrot
   - Heart
+  - needle
+  - stick
+  - hatka
   layers:
   - Default
   - TransparentFX
