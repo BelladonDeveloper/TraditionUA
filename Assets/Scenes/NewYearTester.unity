@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 800593095}
-  Player: {fileID: 0}
+  Player: {fileID: 1259939820}
 --- !u!195 &800593095
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1334,6 +1334,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 883741461}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1259939822 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5353512945825022111, guid: 8f8b05beb76c4924fa71274045020ee4,
+    type: 3}
+  m_PrefabInstance: {fileID: 883741461}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a79e015f3ef379498e892217a520b58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1309408045
 GameObject:
   m_ObjectHideFlags: 0
@@ -1884,6 +1896,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1509724945}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: abb2384981fd6fd498e2629a6c28e4c1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1509724946}
   m_SourcePrefab: {fileID: 100100000, guid: abb2384981fd6fd498e2629a6c28e4c1, type: 3}
 --- !u!4 &1509724943 stripped
 Transform:
@@ -1919,6 +1935,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: abb2384981fd6fd498e2629a6c28e4c1, type: 3}
+--- !u!208 &1509724946
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509724944}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.37, y: 1, z: 0.37}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1677600807
 GameObject:
   m_ObjectHideFlags: 0
@@ -2404,7 +2436,7 @@ MonoBehaviour:
   _joystickArea: {fileID: 1875102074}
   inActiveJoystickColor: {r: 0, g: 0, b: 0, a: 1}
   activeJoystickColor: {r: 0, g: 0, b: 0, a: 1}
-  characterMovement: {fileID: 0}
+  characterMovement: {fileID: 1259939822}
 --- !u!114 &1875102074
 MonoBehaviour:
   m_ObjectHideFlags: 0
