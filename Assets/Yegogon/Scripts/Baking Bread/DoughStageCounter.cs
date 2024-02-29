@@ -18,7 +18,11 @@ public class DoughStageCounter : MonoBehaviour
     [SerializeField] private GameObject Water;
     [SerializeField] private GameObject Oil;
 
+    [Header("Button references")]
+    [SerializeField] private GameObject MixButton;
+    [SerializeField] private GameObject BakeButton;
 
+    [Header("Current dough stage")]
     public DoughStage Stage;
     
     private void Awake()
@@ -37,6 +41,9 @@ public class DoughStageCounter : MonoBehaviour
             stage2.SetActive(false);
             stage3.SetActive(false);
 
+            MixButton.SetActive(false);
+            BakeButton.SetActive(false);
+
             Flour.SetActive(false);
             Salt.SetActive(false);
             Sugar.SetActive(false);
@@ -47,9 +54,13 @@ public class DoughStageCounter : MonoBehaviour
             //Enable:
             stage2.SetActive(true);
 
+            MixButton.SetActive(true);
+
             //Disable:
             stage1.SetActive(false);
             stage3.SetActive(false);
+
+            BakeButton.SetActive(false);
 
             Water.SetActive(false);
             Oil.SetActive(false);
@@ -59,9 +70,13 @@ public class DoughStageCounter : MonoBehaviour
             //Enable:
             stage3.SetActive(true);
 
+            BakeButton.SetActive(true);
+
             //Disable:
             stage1.SetActive(false);
             stage2.SetActive(false);
+
+            MixButton.SetActive(false);
         }
         else
             Reset();
@@ -73,6 +88,8 @@ public class DoughStageCounter : MonoBehaviour
         stage1.SetActive(false);
         stage2.SetActive(false);
         stage3.SetActive(false);
+        MixButton.SetActive(false);
+        BakeButton.SetActive(false);
     }
 
     public void NextDoughStage()
