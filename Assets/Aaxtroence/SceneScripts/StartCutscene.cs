@@ -15,9 +15,16 @@ public class StartCutscene : MonoBehaviour
     [SerializeField] private GameObject Transition;
     [SerializeField] private Transform PlayerTF;
     [SerializeField] private Transform Pos1;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private MovementController movementController;
 
     void Start()
     {
+        movementController.CutSceneBool = true;
+        _animator.SetFloat("MovementX", 5); 
+        _animator.SetBool("IsMove", true); 
+
+
         Transition.SetActive(true);
         DOTransition();
         MovePlayer1();
@@ -26,10 +33,11 @@ public class StartCutscene : MonoBehaviour
     private void MovePlayer1()
     {
         Sequence _MovePlayer = DOTween.Sequence();
-        _MovePlayer.Append(PlayerTF.DOMove(Pos1.position, WalkTime));
+        _MovePlayer.Append(PlayerTF.DOMove(Pos1.position, WalkTime).SetEase(Ease.Linear));
         _MovePlayer.OnComplete(() => 
         {
             Dialogue.Dialogue(Characters.SaintNicolas,SNText);
+            movementController.CutSceneBool = false;
         });
     }
 

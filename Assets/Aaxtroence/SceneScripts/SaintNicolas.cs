@@ -12,11 +12,22 @@ public class SaintNicolas : MonoBehaviour
     [SerializeField] private RectTransform TaskUI;
     [SerializeField] private TMP_Text TaskText;
     [SerializeField] private int CollectedPresents = 0;
-    [SerializeField] private int TotalPresents;
+    [SerializeField] private int AdditionalPresents;
+    private int TotalPresents;
     [SerializeField] private DialogueScriptAax dialogueScript;
     [SerializeField] private string[] DialogueTexts;
     [SerializeField] private Characters[] characters;
     private int DialogueNum = 0;
+
+    private void Start() 
+    {
+        TotalPresents += AdditionalPresents;
+        foreach (PresentScript presentScript in FindObjectsOfType<PresentScript>())
+        {
+            TotalPresents++;
+        }
+    }
+
     private void OnTriggerEnter(Collider other) 
     {
         if(other.CompareTag("Player"))

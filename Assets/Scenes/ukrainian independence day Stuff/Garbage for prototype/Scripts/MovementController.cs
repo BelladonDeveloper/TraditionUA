@@ -12,6 +12,8 @@ public class MovementController : MonoBehaviour
     private bool _canMove;
     private Vector3 _moveDirectionZ;
 
+    public bool CutSceneBool = false;
+
     private void Start()
     {
         PermitMovement();
@@ -31,13 +33,16 @@ public class MovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Animation();
-
+        if(!CutSceneBool)
+        {
+            Animation();
+        }
+        
         if (_canMove == false)
             return;
 
         _rb.MovePosition(_rb.position + _moveDirectionZ * Time.fixedDeltaTime);
-
+        
         CheckMovement();
     }
 
