@@ -4,9 +4,9 @@ using System.Collections;
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField] private TransparencyController transparencyController;
-    [SerializeField] private Transform target;  // Объект, за которым следит камера
-    [SerializeField] private float distance = 5f;  // Отдаление от объекта
-    [SerializeField] private float height = 2f;  // Высота от объекта
+    [SerializeField] private Transform target;  
+    [SerializeField] private float distance = 5f;  
+    [SerializeField] private float height = 2f;  
 
     void LateUpdate()
     {

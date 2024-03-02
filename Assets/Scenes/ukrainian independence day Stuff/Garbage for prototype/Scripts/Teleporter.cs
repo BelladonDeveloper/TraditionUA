@@ -4,8 +4,8 @@ using UnityEngine;
 public class Teleporter : MonoBehaviour
 {
     [SerializeField] private CameraFollow _camFollow;
-    public Transform destination; // Пункт назначения, куда будет производиться телепортация
-    public float teleportDelay = 3f; // Задержка перед телепортацией
+    public Transform destination; 
+    public float teleportDelay = 3f; 
     public float FadeDelay = 1f; 
 
     private bool playerInRange = false;
@@ -28,7 +28,7 @@ public class Teleporter : MonoBehaviour
         }
         else
         {
-            timer = 0f; // Сброс таймера, если игрок вышел из триггера
+            timer = 0f; 
         }
     }
 
@@ -53,7 +53,7 @@ public class Teleporter : MonoBehaviour
     private void Teleport(GameObject objectToTeleport)
     {
         _camFollow.Light();
-        objectToTeleport.transform.position = destination.position; // Устанавливаем позицию объекта телепортирования равной позиции пункта назначения
+        objectToTeleport.transform.position = destination.position; 
     }
 
     private void SwichCam()

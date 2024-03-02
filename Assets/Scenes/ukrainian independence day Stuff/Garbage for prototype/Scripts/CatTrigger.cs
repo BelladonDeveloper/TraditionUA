@@ -35,9 +35,9 @@ public class CatTrigger : MonoBehaviour
                 timer += Time.deltaTime;
                 if (timer >= 2f)
                 {
-                    // Вызываем ваш метод здесь
+                    
                     Jump();
-                    // Сбрасываем таймер и флаг
+                   
                     timer = 0f;
                     playerInside = false;
                 }
