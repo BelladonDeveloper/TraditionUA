@@ -19,7 +19,6 @@ public class BushScript : MonoBehaviour
 
     public void AddBerry()
     {
-        Debug.Log("a");
         spriteRenderer.sprite = BushSprites[1];
         HasBerry = true;
     }

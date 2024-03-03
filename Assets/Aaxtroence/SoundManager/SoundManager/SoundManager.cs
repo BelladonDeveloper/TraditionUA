@@ -21,6 +21,22 @@ public class SoundManager : MonoBehaviour, IManager
         musicSwitcher.ChangeVolumeTarget(volume);
     }
 
+    public void PlayMusic(AudioClip Music, bool Upscaling)
+    {
+        musicSwitcher.PlayMusic(Music, Upscaling);
+    }
+
+    public void PlayMusic(AudioClip Music, bool Upscaling, int volume)
+    {
+        musicSwitcher.PlayMusic(Music, Upscaling);
+        musicSwitcher.ChangeVolumeTarget(volume);
+    }
+
+
+
+
+
+
     public void Music_SetVolume(int number)
     {
         musicSwitcher.ChangeVolumeTarget(number);
@@ -35,6 +51,16 @@ public class SoundManager : MonoBehaviour, IManager
         soundScript.PlaySound((int)Index, volume);
     }
     
+    public void PlaySound(AudioClip Sound)
+    {
+        soundScript.PlaySound(Sound);
+    }
+
+    public void PlaySound(AudioClip Sound, int volume)
+    {
+        soundScript.PlaySound(Sound,volume);
+    }
+
     // Settings
     public void Settings_SetMusicVolume(int volume)
     {
@@ -56,13 +82,14 @@ public enum Music
     MainMenu,
     Game1,
     Game2,
-    Game3
+    Game3,
+    SaintNicolas1,
+    SaintNicolas2
 }
 
 public enum Sound
 {
     Click,
     Open,
-    Close,
-    WitchVoice
+    Close
 }

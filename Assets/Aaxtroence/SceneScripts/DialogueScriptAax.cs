@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System;
+using Base;
 
 public class DialogueScriptAax : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class DialogueScriptAax : MonoBehaviour
     [SerializeField] private Button dialogueButton;
     [SerializeField] private Sprite[] Faces;
     [SerializeField] private string[] CharNames;
+    [SerializeField] private AudioClip[] Voices;
     [SerializeField] private Rigidbody PlayerRB;
     [SerializeField] private Transform JoystickParent;
     [SerializeField] private Animator _animator;
@@ -27,10 +29,15 @@ public class DialogueScriptAax : MonoBehaviour
     
     private Action _action;
 
+    private float VoiceCooldown = 0.075f;
+    private float VoiceCd = 0;
     private float LetterTime;
+    private SoundManager soundManager;
+    private int voiceIndex;
 
     private void Start() 
     {
+        soundManager = Register.Get<SoundManager>();
         DialoguePanel.SetActive(false);
         Subscribe();
         dialogueButton.gameObject.SetActive(true);
@@ -45,8 +52,15 @@ public class DialogueScriptAax : MonoBehaviour
         Msg.text = "";
         yield return new WaitForSeconds(0.5f);
         LetterTime = 0.025f;
+        VoiceCd = 0f;
         foreach (char letter in MsgText)
         {
+            VoiceCd += (LetterTime == 0.025f)? LetterTime : LetterTime * 2;
+            if(VoiceCd >= VoiceCooldown)
+            {
+                VoiceCd = 0f;
+                soundManager.PlaySound(Voices[voiceIndex]);
+            }
             Msg.text += letter;
             yield return new WaitForSeconds(LetterTime);
         }
@@ -62,28 +76,21 @@ public class DialogueScriptAax : MonoBehaviour
     }
     public void Dialogue(Characters character,string DialogueText)
     {
+        _action = null;
+        voiceIndex = (int)character;
         SetFace(character);
         CharName.text = CharNames[(int)character];
         DialoguePanel.SetActive(true);
         StartCoroutine(_WriteText(DialogueText));
         Triangle.SetActive(false);
-
         ButtonTask_FasterOrClose = true;
-        _action = null;
         Joystick(false);
     }
 
     public void Dialogue(Characters character,string DialogueText,Action action)
     {
-        SetFace(character);
-        CharName.text = CharNames[(int)character];
-        DialoguePanel.SetActive(true);
-        StartCoroutine(_WriteText(DialogueText));
-        Triangle.SetActive(false);
-
-        ButtonTask_FasterOrClose = true;
+        Dialogue(character,DialogueText);
         _action = action;
-        Joystick(false);
     }
 
     private void DialogueButton()
@@ -136,5 +143,6 @@ public enum Characters
     SaintNicolas,
     Witch,
     Krampus,
-    Unknown
+    Unknown,
+    Rabbit
 }
