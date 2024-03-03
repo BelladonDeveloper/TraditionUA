@@ -18,7 +18,6 @@ public class ToysTask : MonoBehaviour
         if(collision.gameObject.name == "Villager")
         {
             collision.gameObject.GetComponent<VDDialogue>().start = true;
-            home.GetComponent<SpriteRenderer>().sprite = openHome;
         }
         if (collision.gameObject.name == "Villager1")
         {
@@ -32,6 +31,7 @@ public class ToysTask : MonoBehaviour
         {
             if(villager.GetComponent<VDDialogue>().end == true)
             {
+                home.GetComponent<SpriteRenderer>().sprite = openHome;
                 SceneManager.LoadScene("FindAToy");
             }
         }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VDDialogue : MonoBehaviour
 {
@@ -22,9 +23,11 @@ public class VDDialogue : MonoBehaviour
     public string phrase7;
     public string phrase8;
     public int phrasesCount = 0;
+    public string lvl;
 
     public void Start()
     {
+        start = false;
         next.onClick.AddListener(Dialoguing);
         if (phrase1 != null) {phrasesCount++;}
         if(phrase2 != null) {phrasesCount++;}
@@ -66,9 +69,10 @@ public class VDDialogue : MonoBehaviour
         }
         else
         {
+            SceneManager.LoadScene(lvl);
+            Time.timeScale = 1;
             bubble.GetComponent<CanvasGroup>().alpha = 0;
             joystick.GetComponent<CanvasGroup>().alpha = 1;
-            Time.timeScale = 1;
             end = true;
         }
     }
