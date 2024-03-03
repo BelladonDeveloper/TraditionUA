@@ -16,7 +16,7 @@ public class SliderScript : MonoBehaviour
 
     public void ChangeVolume()
     {
-        //if(slider.value != PreviousValue)
+        if(slider.value != PreviousValue)
         {
             PreviousValue = slider.value;
             int val;

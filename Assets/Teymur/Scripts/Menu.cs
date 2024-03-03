@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using System;
 using UnityEngine.SceneManagement;
+using Base;
 
 public class Menu : MonoBehaviour
 {
@@ -51,7 +52,6 @@ public class Menu : MonoBehaviour
     }
     private void StartGame()
     {
-        //initialController.soundManager.PlayMusic(Music.None,false);
         SceneManager.LoadScene(menuData.level+1);
     }
     //Settings
@@ -156,7 +156,7 @@ public class Menu : MonoBehaviour
     //Click Sound
     private void Click()
     {
-        //initialController.soundManager.PlaySound(Sound.Click);
+        Register.Get<SoundManager>().PlaySound(Sound.Click);
     }
     
 }
