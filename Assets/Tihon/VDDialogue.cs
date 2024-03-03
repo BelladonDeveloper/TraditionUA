@@ -47,9 +47,9 @@ public class VDDialogue : MonoBehaviour
         if(phrase7 != null) {phrasesCount++;}
         if(phrase8 != null) {phrasesCount++;}
     }
+    
     public void Update()
     {
-
         if(dialogueText.text != script)
         {
             dialogueText.text = script;
@@ -61,9 +61,9 @@ public class VDDialogue : MonoBehaviour
             Time.timeScale = 0;
         }
     }
+    
     public void Dialoguing()
     {
-        Debug.Log(1);
         if(phrasesCount > 0)
         {
             if(meeting == 1)
@@ -93,12 +93,13 @@ public class VDDialogue : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(lvl);
             meeting++;
+            start = false;
             Time.timeScale = 1;
             bubble.GetComponent<CanvasGroup>().alpha = 0;
             joystick.GetComponent<CanvasGroup>().alpha = 1;
             end = true;
+            SceneManager.LoadScene(lvl);
         }
     }
 }

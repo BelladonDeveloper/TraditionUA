@@ -41,14 +41,15 @@ public class ToysTask : MonoBehaviour
         }
         if (collision.gameObject.name == "hatka2")
         {
-            SceneManager.LoadScene("Василів_День_Раннер");
+            SceneManager.LoadScene("Р’Р°СЃРёР»С–РІ_Р”РµРЅСЊ_РћСЃРЅРѕРІР°");
         }
     }
+    
     private void Update()
     {
         if(counter == 3) 
         {
-            SceneManager.LoadScene("Василів_День_Основа");
+            SceneManager.LoadScene("Р’Р°СЃРёР»С–РІ_Р”РµРЅСЊ_РћСЃРЅРѕРІР°");
         }
     }
 }
