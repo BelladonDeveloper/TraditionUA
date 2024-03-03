@@ -25,7 +25,7 @@ public class ToysTask : MonoBehaviour
         }
         if (collision.gameObject.name == "Villager2")
         {
-            home2.GetComponent<SpriteRenderer>().sprite = openHome;
+            
         }
         if (collision.gameObject.name == "hatka")
         {
