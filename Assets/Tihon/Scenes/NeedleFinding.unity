@@ -757,6 +757,7 @@ GameObject:
   - component: {fileID: 485658973}
   - component: {fileID: 485658972}
   - component: {fileID: 485658974}
+  - component: {fileID: 485658975}
   m_Layer: 0
   m_Name: "\u0441\u0456\u043D\u043E"
   m_TagString: Untagged
@@ -847,6 +848,22 @@ MonoBehaviour:
   needles: 3
   gameOver: {fileID: 1845260758}
   youWin: {fileID: 861967223}
+--- !u!114 &485658975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485658970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a7125772f92364bb488c0a7e2be26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counter: 0
+  needles: 3
+  gameOver: {fileID: 0}
+  youWin: {fileID: 0}
 --- !u!1 &513755711
 GameObject:
   m_ObjectHideFlags: 0

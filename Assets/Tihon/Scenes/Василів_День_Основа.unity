@@ -454,22 +454,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80ffb71aaf3d03e4db04b887e9f9746f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 948779756}
-  dialogueText: {fileID: 320345184}
-  bubble: {fileID: 1115485772}
-  joystick: {fileID: 785312656}
-  script: 
-  start: 1
+  player: {fileID: 0}
+  dialogueText: {fileID: 0}
+  bubble: {fileID: 0}
+  joystick: {fileID: 0}
+  start: 0
   end: 0
-  next: {fileID: 2057334514}
-  phrase1: 8
-  phrase2: 7
-  phrase3: 6
-  phrase4: 5
-  phrase5: 4
-  phrase6: 3
-  phrase7: 2
-  phrase8: 1
+  next: {fileID: 0}
+  phrase1: 
+  phrase2: 
+  phrase3: 
+  phrase4: 
+  phrase5: 
+  phrase6: 
+  phrase7: 
+  phrase8: 
   phrasesCount: 0
   phrase11: 
   phrase12: 
@@ -480,7 +479,7 @@ MonoBehaviour:
   phrase17: 
   phrase18: 
   meeting: 1
-  lvl: "\u0412\u0430\u0441\u0438\u043B\u0456\u0432_\u0414\u0435\u043D\u044C_\u0420\u0430\u043D\u043D\u0435\u0440"
+  lvl: 
 --- !u!1 &261918369
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,6 +706,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 752198692}
     m_Modifications:
+    - target: {fileID: 5545569304529657953, guid: a492750c24c15db47970cac463fe7008,
+        type: 3}
+      propertyPath: UIPopupType
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8413281581912265857, guid: a492750c24c15db47970cac463fe7008,
         type: 3}
       propertyPath: m_Name
@@ -2453,22 +2457,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80ffb71aaf3d03e4db04b887e9f9746f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 948779756}
-  dialogueText: {fileID: 320345184}
-  bubble: {fileID: 1115485772}
-  joystick: {fileID: 785312656}
-  script: 
+  player: {fileID: 0}
+  dialogueText: {fileID: 0}
+  bubble: {fileID: 0}
+  joystick: {fileID: 0}
   start: 0
   end: 0
-  next: {fileID: 2057334514}
-  phrase1: 8
-  phrase2: 7
-  phrase3: 6
-  phrase4: 5
-  phrase5: 4
-  phrase6: 3
-  phrase7: 2
-  phrase8: 1
+  next: {fileID: 0}
+  phrase1: 
+  phrase2: 
+  phrase3: 
+  phrase4: 
+  phrase5: 
+  phrase6: 
+  phrase7: 
+  phrase8: 
   phrasesCount: 0
   phrase11: 
   phrase12: 
@@ -2479,7 +2482,7 @@ MonoBehaviour:
   phrase17: 
   phrase18: 
   meeting: 1
-  lvl: NeedleFinding
+  lvl: 
 --- !u!1 &1361372159
 GameObject:
   m_ObjectHideFlags: 0
@@ -2815,7 +2818,7 @@ PrefabInstance:
     - target: {fileID: 8977567032876321765, guid: 8f8b05beb76c4924fa71274045020ee4,
         type: 3}
       propertyPath: m_Name
-      value: Player (1)
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2832,7 +2835,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8977567032876321765, guid: 8f8b05beb76c4924fa71274045020ee4,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2075261704}
+      addedObject: {fileID: 2075261708}
   m_SourcePrefab: {fileID: 100100000, guid: 8f8b05beb76c4924fa71274045020ee4, type: 3}
 --- !u!1 &1627925287
 GameObject:
@@ -2845,8 +2848,8 @@ GameObject:
   - component: {fileID: 1627925289}
   - component: {fileID: 1627925288}
   - component: {fileID: 1627925291}
-  - component: {fileID: 1627925292}
   - component: {fileID: 1627925290}
+  - component: {fileID: 1627925292}
   m_Layer: 0
   m_Name: Villager
   m_TagString: villager
@@ -2985,29 +2988,26 @@ MonoBehaviour:
   dialogueText: {fileID: 320345184}
   bubble: {fileID: 1115485772}
   joystick: {fileID: 785312656}
-  script: 
-  start: 1
+  start: 0
   end: 0
   next: {fileID: 2057334514}
-  phrase1: "\u0425\u043B\u043E\u043F\u0447\u0438\u043A: \u0417\u043D\u0430\u0439\u0434\u0456\u0442\u044C
+  phrase1: "\u0425\u043B\u043E\u043F\u0435\u0446\u044C: \u0417\u043D\u0430\u0439\u0434\u0456\u0442\u044C
     \u0457\u0445."
-  phrase2: "\u0425\u043B\u043E\u043F\u0447\u0438\u043A: \u042F \u0437\u0430\u0433\u0443\u0431\u0438\u0432
-    \u0441\u0432\u043E\u0457 \u0456\u0433\u0440\u0430\u0448\u043A\u0438,"
-  phrase3: "\u0412\u0438: \u041D\u0443 \u0456 \u044F\u043A  \u043C\u0435\u043D\u0456
+  phrase2: "\u0425\u043B\u043E\u043F\u0435\u0446\u044C: \u042F \u0437\u0430\u0433\u0443\u0431\u0438\u0432
+    \u0432 \u0445\u0430\u0442\u0456 \u0441\u0432\u043E\u0457 \u0456\u0433\u0440\u0430\u0448\u043A\u0438,"
+  phrase3: "\u0412\u0438: \u041D\u0443 \u0456 \u044F\u043A \u043C\u0435\u043D\u0456
     \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438?"
-  phrase4: "\u0425\u043B\u043E\u043F\u0447\u0438\u043A: \u041C\u043E\u0436\u0443
-    \u0440\u043E\u0437\u043F\u043E\u0432\u0456\u0441\u0442\u0438 \u0434\u0435 \u0432\u0456\u043D
-    \u044F\u043A\u0449\u043E \u0434\u043E\u043F\u043E\u043C\u043E\u0436\u0435\u0442\u0435
-    \u043C\u0435\u043D\u0456."
-  phrase5: "\u0425\u043B\u043E\u043F\u0447\u0438\u043A: \u0422\u0430\u0442\u043E
-    \u0449\u043E\u0441\u044C \u043F\u0440\u043E \u0442\u0430\u043A\u0435 \u0440\u043E\u0437\u043F\u043E\u0432\u0456\u0434\u0430\u0432."
-  phrase6: "\u0412\u0438: \u0410 \u0445\u0456\u0431\u0430 \u0442\u0438 \u043D\u0435
+  phrase4: "\u0425\u043B\u043E\u043F\u0435\u0446\u044C: \u041C\u043E\u0436\u0443
+    \u0440\u043E\u0437\u043F\u043E\u0432\u0456\u0441\u0442\u0438 \u0434\u0435 \u0432\u0456\u043D,
+    \u044F\u043A\u0449\u043E \u0434\u043E\u043F\u043E\u0436\u0435\u0442\u0435."
+  phrase5: "\u0425\u043B\u043E\u043F\u0435\u0446\u044C: \u0422\u0430\u0442\u043E
+    \u0449\u043E\u0441\u044C \u043F\u0440\u043E \u0446\u0435 \u0440\u043E\u0437\u043F\u043E\u0432\u0456\u0434\u0430\u0432."
+  phrase6: "\u0412\u0438: \u041D\u0435 \u0432\u0436\u0435 \u0442\u0438 \u043D\u0435
     \u0447\u0443\u0432 \u043F\u0440\u043E \u0412\u0430\u0441\u0438\u043B\u0456\u0432
-    \u0434\u0435\u043D\u044C?"
-  phrase7: "\u0425\u043B\u043E\u043F\u0447\u0438\u043A: ... \u041F\u043E\u043D\u0435\u0434\u0456\u043B\u043E\u043A?"
-  phrase8: "\u0412\u0438: \u0425\u043B\u043E\u043F\u0447\u0438\u043A\u0443, \u0430
-    \u0442\u0438 \u0437\u043D\u0430\u0454\u0448 \u044F\u043A\u0438\u0439 \u0441\u044C\u043E\u0433\u043E\u0434\u043D\u0456
-    \u0434\u0435\u043D\u044C?"
+    \u0414\u0435\u043D\u044C?"
+  phrase7: "\u0425\u043B\u043E\u043F\u0435\u0446\u044C: ... \u041F\u043E\u043D\u0435\u0434\u0456\u043B\u043E\u043A?"
+  phrase8: "\u0412\u0438: \u0425\u043B\u043E\u043F\u0447\u0435, \u0442\u0438 \u0437\u043D\u0430\u0454\u0448
+    \u044F\u043A\u0438\u0439 \u0441\u044C\u043E\u0433\u043E\u0434\u043D\u0456 \u0434\u0435\u043D\u044C?"
   phrasesCount: 0
   phrase11: 
   phrase12: 
@@ -3541,7 +3541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a79e015f3ef379498e892217a520b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2075261704
+--- !u!114 &2075261708
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3550,10 +3550,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 948779756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbbf1f60f25359e48ad16bf4de9164d2, type: 3}
+  m_Script: {fileID: 11500000, guid: bce4055ee1cd85340bc943ea6a68b295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  villager: {fileID: 0}
+  villager: {fileID: 1627925287}
   home: {fileID: 2049156415}
   home1: {fileID: 1078505426}
   home2: {fileID: 1135367217}
