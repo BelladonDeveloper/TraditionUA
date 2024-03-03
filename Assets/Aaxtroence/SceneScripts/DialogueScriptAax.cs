@@ -18,15 +18,22 @@ public class DialogueScriptAax : MonoBehaviour
     [SerializeField] private string[] CharNames;
     [SerializeField] private Rigidbody PlayerRB;
     [SerializeField] private Transform JoystickParent;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private MovementController movementController;
+
+    private bool ButtonTask_FasterOrClose;
 
     private GameObject prevJoystick;
     
     private Action _action;
 
+    private float LetterTime;
+
     private void Start() 
     {
         DialoguePanel.SetActive(false);
         Subscribe();
+        dialogueButton.gameObject.SetActive(true);
     }
     private void OnDestroy()
     {
@@ -37,14 +44,16 @@ public class DialogueScriptAax : MonoBehaviour
         string MsgText = _messageText;
         Msg.text = "";
         yield return new WaitForSeconds(0.5f);
+        LetterTime = 0.025f;
         foreach (char letter in MsgText)
         {
             Msg.text += letter;
-            yield return new WaitForSeconds(0.025f);
+            yield return new WaitForSeconds(LetterTime);
         }
         yield return new WaitForSeconds(0.025f);
         Triangle.SetActive(true);
-        dialogueButton.gameObject.SetActive(true);
+
+        ButtonTask_FasterOrClose = false;
     }
 
     private void SetFace(Characters character)
@@ -58,7 +67,8 @@ public class DialogueScriptAax : MonoBehaviour
         DialoguePanel.SetActive(true);
         StartCoroutine(_WriteText(DialogueText));
         Triangle.SetActive(false);
-        dialogueButton.gameObject.SetActive(false);
+
+        ButtonTask_FasterOrClose = true;
         _action = null;
         Joystick(false);
     }
@@ -70,20 +80,30 @@ public class DialogueScriptAax : MonoBehaviour
         DialoguePanel.SetActive(true);
         StartCoroutine(_WriteText(DialogueText));
         Triangle.SetActive(false);
-        dialogueButton.gameObject.SetActive(false);
+
+        ButtonTask_FasterOrClose = true;
         _action = action;
         Joystick(false);
     }
 
     private void DialogueButton()
     {
-        DialoguePanel.SetActive(false);
-        Joystick(true);
-        _action?.Invoke();
+        if(ButtonTask_FasterOrClose)
+        {
+            LetterTime = 0.005f;
+        }
+        else
+        {
+            DialoguePanel.SetActive(false);
+            Joystick(true);
+            _action?.Invoke();
+        }
+        
     }
 
     private void Joystick(bool TF)
     {
+        movementController.CutSceneBool = !TF;
         if (TF)
         {
             prevJoystick = Instantiate(_Joystick,JoystickParent);
@@ -93,6 +113,7 @@ public class DialogueScriptAax : MonoBehaviour
         }
         else
         {
+            _animator.SetBool("IsMove", false); 
             Destroy(prevJoystick);
             PlayerRB.constraints |= RigidbodyConstraints.FreezePositionX;
             PlayerRB.constraints |= RigidbodyConstraints.FreezePositionZ;

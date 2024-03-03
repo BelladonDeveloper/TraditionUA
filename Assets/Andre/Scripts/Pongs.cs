@@ -37,10 +37,10 @@ public class Pongs : MonoBehaviour
     void СlosingWeed()
     {
         _joysticks.SetActive(true);
-        AndrePlayerController._moveSpeed = 6;
         Camera1.target = targes;
         Camera1.Quaternions = 45;
         MiniGame1.SetActive(false);
+        //AndrePlayerController._moveSpeed = 6;
         AndrePlayerController.weed = +1;
         WeedT.SetActive(true);
         FlowersT.SetActive(true);
@@ -50,10 +50,11 @@ public class Pongs : MonoBehaviour
         WeedT.SetActive(true);
         FlowersT.SetActive(true);
         _joysticks.SetActive(true);
-        AndrePlayerController._moveSpeed = 6;
+        //AndrePlayerController._moveSpeed = 6;
         Camera1.target = targes;
         Camera1.Quaternions = 45;
         MiniGame1.SetActive(false);
         AndrePlayerController.flowers = +1;
     }
 }
+//if (AndrePlayerController.rectTransform.anchoredPosition != Vector2.zero) { AndrePlayerController._moveSpeed = 6;}

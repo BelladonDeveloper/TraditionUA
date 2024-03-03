@@ -19,7 +19,19 @@
           <e p="MenuData.cs" t="Include" />
           <e p="NameTextAnimationLoop.cs" t="Include" />
           <e p="PageScript.cs" t="Include" />
-          <e p="SettingsScript.cs" t="Include" />
+          <e p="Scenes" t="Include" />
+          <e p="SceneScripts" t="Include">
+            <e p="BushGenerator.cs" t="Include" />
+            <e p="BushScript.cs" t="Include" />
+            <e p="DialogueScriptAax.cs" t="Include" />
+            <e p="PresentScript.cs" t="Include" />
+            <e p="SaintNicolas.cs" t="Include" />
+            <e p="StartCutscene.cs" t="Include" />
+            <e p="TransparentObjects.cs" t="Include" />
+            <e p="Witch.cs" t="Include" />
+            <e p="WitchItemScript.cs" t="Include" />
+          </e>
+          <e p="SceneSprites" t="Include" />
           <e p="SliderScript.cs" t="Include" />
           <e p="SoundManager" t="Include">
             <e p="SoundManager" t="Include">
@@ -31,6 +43,9 @@
             </e>
           </e>
           <e p="Sprites" t="Include" />
+          <e p="Terrain" t="Include" />
+          <e p="TestSprites" t="Include" />
+          <e p="VersionScript.cs" t="Include" />
         </e>
         <e p="Andre" t="Include">
           <e p="Joystick Pack" t="Include">
@@ -68,11 +83,21 @@
           <e p="Scripts" t="Include">
             <e p="AndrePlayerController.cs" t="Include" />
             <e p="Camera1.cs" t="Include" />
+            <e p="Church.cs" t="Include" />
             <e p="FlowrsAndWeed.cs" t="Include" />
+            <e p="Inventory.cs" t="Include" />
             <e p="PickingFlowers.cs" t="Include" />
             <e p="Pongs.cs" t="Include" />
             <e p="ReadWriteSaving.cs" t="Include" />
             <e p="SavingManager.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Animations" t="Include">
+          <e p="Easter" t="Include">
+            <e p="Bunny" t="Include">
+              <e p="AnimationController" t="Include" />
+              <e p="Animations" t="Include" />
+            </e>
           </e>
         </e>
         <e p="Audio" t="Include">
@@ -213,6 +238,12 @@
         </e>
         <e p="Fonts" t="Include" />
         <e p="Ihor" t="Include" />
+        <e p="Images" t="Include">
+          <e p="Materials" t="Include" />
+        </e>
+        <e p="Music" t="Include">
+          <e p="Easter" t="Include" />
+        </e>
         <e p="Plugins" t="Include">
           <e p="Demigiant" t="Include">
             <e p="DOTween" t="Include">
@@ -255,6 +286,7 @@
               <e p="Rabbit_LowPoly_RigUnity_Final.fbm" t="Include" />
               <e p="Textures" t="Include" />
             </e>
+            <e p="TraditionEnding" t="Include" />
             <e p="Trees" t="Include">
               <e p="LowPolyTreePack" t="Include">
                 <e p="Materials" t="Include" />
@@ -278,6 +310,7 @@
             <e p="MainMenuData.txt" t="Include" />
             <e p="ГДД.txt" t="Include" />
           </e>
+          <e p="Pause" t="Include" />
         </e>
         <e p="Rostik" t="Include">
           <e p="Christmas pack" t="Include">
@@ -313,6 +346,7 @@
           </e>
           <e p="RostikScripts" t="Include">
             <e p="ColectToys" t="Include">
+              <e p="ChangeToPresent.cs" t="Include" />
               <e p="InventoryUI.cs" t="Include" />
               <e p="PlayerInventory.cs" t="Include" />
               <e p="Toys.cs" t="Include" />
@@ -320,8 +354,12 @@
             <e p="Dialogue" t="Include">
               <e p="Dialogue.cs" t="Include" />
             </e>
+            <e p="EnemyScripts" t="Include">
+              <e p="EnemyMonster.cs" t="Include" />
+            </e>
             <e p="LevelChangerPopup.cs" t="Include" />
             <e p="PopupScript.cs" t="Include" />
+            <e p="SpriteChanger.cs" t="Include" />
             <e p="TesterPopup.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
           </e>
@@ -329,7 +367,9 @@
           <e p="Scenes" t="Include" />
         </e>
         <e p="Scenes" t="Include">
+          <e p="Day of Malanka" t="Include" />
           <e p="Easter" t="Include" />
+          <e p="NewYearTester" t="Include" />
           <e p="Prototype" t="Include" />
           <e p="ukrainian independence day Stuff" t="Include">
             <e p="Garbage for prototype" t="Include">
@@ -411,12 +451,21 @@
               <e p="Prefabs" t="Include" />
               <e p="Scripts" t="Include">
                 <e p="CameraFollow.cs" t="Include" />
+                <e p="CatTask.cs" t="Include" />
+                <e p="CatTrigger.cs" t="Include" />
                 <e p="IsCanMoveForDialogue.cs" t="Include" />
+                <e p="LiftDoorController.cs" t="Include" />
+                <e p="MoveForwardOnTrigger.cs" t="Include" />
                 <e p="MovementController.cs" t="Include" />
                 <e p="NPCDialogue.cs" t="Include" />
+                <e p="OpenDoorsTrigger.cs" t="Include" />
                 <e p="RoofControl.cs" t="Include" />
+                <e p="Teleporter.cs" t="Include" />
+                <e p="TransparencyController.cs" t="Include" />
               </e>
-              <e p="Sprite" t="Include" />
+              <e p="Sprite" t="Include">
+                <e p="Character Animations" t="Include" />
+              </e>
               <e p="Texture" t="Include" />
             </e>
           </e>
@@ -444,6 +493,12 @@
             <e p="CameraMoving" t="Include">
               <e p="CinemachineCamerasChangingByPriority.cs" t="Include" />
             </e>
+            <e p="DarknessChangeInteractable.cs" t="Include" />
+            <e p="Ending" t="Include">
+              <e p="FinishTradition.cs" t="Include" />
+              <e p="PingPongMovement.cs" t="Include" />
+              <e p="TraditionEnding.cs" t="Include" />
+            </e>
             <e p="Player tracking" t="Include">
               <e p="Player tracking.cs" t="Include" />
             </e>
@@ -454,17 +509,31 @@
                 <e p="EggsPickUpper.cs" t="Include" />
                 <e p="PassingAndTakingTasks.cs" t="Include" />
               </e>
+              <e p="LoseVariation" t="Include">
+                <e p="EasterLoseVariation.cs" t="Include" />
+                <e p="EasterNextTry.cs" t="Include" />
+                <e p="EasterProvider.cs" t="Include" />
+                <e p="EasterRestartDIContainer.cs" t="Include" />
+                <e p="IDestroyElements.cs" t="Include" />
+                <e p="IEasterProvider.cs" t="Include" />
+                <e p="IRestart.cs" t="Include" />
+                <e p="RestartFirstTask.cs" t="Include" />
+                <e p="RestartSecondTask.cs" t="Include" />
+                <e p="RestartThirdTask.cs" t="Include" />
+              </e>
               <e p="SecondTask" t="Include">
                 <e p="EasterCurrentSprite.cs" t="Include" />
                 <e p="EasterMessageForSecondTaskMemory.cs" t="Include" />
                 <e p="EasterSpriteEnum.cs" t="Include" />
+                <e p="EasterWrongAnswer.cs" t="Include" />
                 <e p="FinishSecondTask.cs" t="Include" />
                 <e p="SecondTask.cs" t="Include" />
                 <e p="SecondTaskManager.cs" t="Include" />
               </e>
               <e p="ThirdTask" t="Include">
+                <e p="EasterFinishTask.cs" t="Include" />
+                <e p="EasterPickUp.cs" t="Include" />
                 <e p="PickingThingsUp.cs" t="Include" />
-                <e p="PickUpUI.cs" t="Include" />
                 <e p="ThirdTask.cs" t="Include" />
               </e>
             </e>
@@ -473,6 +542,7 @@
             </e>
           </e>
           <e p="MENU" t="Include">
+            <e p="Gratitude.cs" t="Include" />
             <e p="Levels" t="Include">
               <e p="HiderNotNeddedObjects.cs" t="Include" />
               <e p="Level.cs" t="Include" />
@@ -484,6 +554,12 @@
               <e p="MainMenuSceneChanger.cs" t="Include" />
             </e>
           </e>
+          <e p="Pause" t="Include">
+            <e p="InitPauseButton.cs" t="Include" />
+            <e p="PauseButton.cs" t="Include" />
+            <e p="PauseMenu.cs" t="Include" />
+            <e p="PauseMenuSettings.cs" t="Include" />
+          </e>
           <e p="Tasks" t="Include">
             <e p="ITaskManager.cs" t="Include" />
             <e p="TaskForPlayer.cs" t="Include" />
@@ -492,7 +568,9 @@
           </e>
         </e>
         <e p="Settings" t="Include" />
-        <e p="Sprites" t="Include" />
+        <e p="Sprites" t="Include">
+          <e p="Easter" t="Include" />
+        </e>
         <e p="Terrain" t="Include">
           <e p="Easter" t="Include">
             <e p="Materials" t="Include" />
@@ -607,7 +685,6 @@
               <e p="ItemScritableObject.cs" t="Include" />
             </e>
             <e p="Menu.cs" t="Include" />
-            <e p="PauseMenu.cs" t="Include" />
             <e p="Player.cs" t="Include" />
             <e p="RecipeCollector.cs" t="Include" />
             <e p="Save" t="Include" />
@@ -618,7 +695,29 @@
           <e p="InGamePopUp.cs" t="Include" />
           <e p="lvlButton.cs" t="Include" />
           <e p="Materials" t="Include" />
+          <e p="Needle.cs" t="Include" />
+          <e p="NeedleFinding.cs" t="Include" />
+          <e p="Prefabs" t="Include" />
+          <e p="Scenes" t="Include" />
+          <e p="Scripts" t="Include">
+            <e p="Adaptable" t="Include">
+              <e p="PlayerWining.cs" t="Include" />
+              <e p="Spawner.cs" t="Include" />
+              <e p="Timer.cs" t="Include" />
+            </e>
+            <e p="ArrowMovement.cs" t="Include" />
+            <e p="Nonadaptable" t="Include">
+              <e p="DoorRanomizer.cs" t="Include" />
+              <e p="PlayerLosing.cs" t="Include" />
+              <e p="RandomMovement.cs" t="Include" />
+              <e p="Seeding.cs" t="Include" />
+              <e p="Simple3SidesMovement.cs" t="Include" />
+              <e p="ToysTask.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Sprites" t="Include" />
           <e p="TaskManager.cs" t="Include" />
+          <e p="ToysFinding.cs" t="Include" />
         </e>
         <e p="TimeLines" t="Include">
           <e p="Easter" t="Include" />
@@ -642,8 +741,37 @@
           </e>
         </e>
         <e p="Yegogon" t="Include">
-          <e p="Hand Drawn" t="Include" />
-          <e p="Pixel Art" t="Include" />
+          <e p="Materials" t="Include" />
+          <e p="Prefabs" t="Include" />
+          <e p="Scene Prototypes" t="Include">
+            <e p="Backup Copies" t="Include" />
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Baking Bread" t="Include">
+              <e p="ComponentInfo.cs" t="Include" />
+              <e p="DnD.cs" t="Include" />
+              <e p="DnD_by_Belladon.cs" t="Include" />
+              <e p="DnD_for_Baking.cs" t="Include" />
+              <e p="DoughStageCounter.cs" t="Include" />
+              <e p="MixingBowl.cs" t="Include" />
+            </e>
+            <e p="enums" t="Include">
+              <e p="ComponentType.cs" t="Include" />
+              <e p="DoughStage.cs" t="Include" />
+            </e>
+            <e p="Other" t="Include">
+              <e p="GoToSceneViaButton.cs" t="Include" />
+              <e p="TemporarySceneTransitionScript.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Textures" t="Include">
+            <e p="Baking Bread" t="Include">
+              <e p="Bread" t="Include" />
+              <e p="Equipment" t="Include" />
+              <e p="TOP SECRET" t="Include" />
+            </e>
+            <e p="Materials" t="Include" />
+          </e>
         </e>
       </e>
       <e p="Boxophobic.SkyboxCubemapExtended.Editor.csproj" t="IncludeRecursive" />

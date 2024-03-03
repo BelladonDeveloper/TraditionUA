@@ -47,4 +47,13 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Tihon/Scenes/\u0412\u0430\u0441\u0438\u043B\u0456\u0432_\u0414\u0435\u043D\u044C_\u0420\u0430\u043D\u043D\u0435\u0440.unity"
     guid: 3e062a9fc41481b49b8757fba8f4e1ca
+  - enabled: 1
+    path: Assets/Scenes/Day of Malanka/MalankaDay.unity
+    guid: 8211dbe5f1e7f984b857b02d441e58c6
+  - enabled: 1
+    path: Assets/Scenes/Day of Malanka/CookingScene.unity
+    guid: 65571d5f356c7ba47b1074faae7152d0
+  - enabled: 1
+    path: Assets/Scenes/Day of Malanka/BakingBread.unity
+    guid: 26f22fc160669fc46be294ff04499782
   m_configObjects: {}

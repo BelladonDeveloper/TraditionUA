@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private Transform target;  // Объект, за которым следит камера
-    [SerializeField] private float distance = 5f;  // Отдаление от объекта
-    [SerializeField] private float height = 2f;  // Высота от объекта
+    [SerializeField] private TransparencyController transparencyController;
+    [SerializeField] private Transform target;  
+    [SerializeField] private float distance = 5f;  
+    [SerializeField] private float height = 2f;  
 
     void LateUpdate()
     {
@@ -20,5 +22,20 @@ public class CameraFollow : MonoBehaviour
 
             transform.rotation = rotation;
         }
+    }
+
+    public void Fade()
+    {
+        transparencyController.Darken();
+    }  
+    public void Light()
+    {
+        transparencyController.Lighten();
+    }
+
+    public void SetFloatToOut()
+    {
+        distance = 10f;
+        height = 1f;
     }
 }
