@@ -20,6 +20,8 @@ TagManager:
   - needle
   - stick
   - hatka
+  - Bread Component
+  - Church
   layers:
   - Default
   - TransparentFX

@@ -23,6 +23,7 @@ public class PickingFlowers : MonoBehaviour
 
     private void Camera1Changs()
     {
+        AndrePlayerController.rectTransform.anchoredPosition = Vector2.zero;
         Camera1.Quaternions = 0;
     }
     
