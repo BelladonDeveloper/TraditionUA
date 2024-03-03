@@ -59,5 +59,6 @@ public class PauseMenu : UIPopup
         Register.Get<UIManager>().Hide(UIPopupType.PauseMenuSettings);
         Register.Get<UIManager>().Hide(UIPopupType.PauseMenu);
         Register.Get<UIManager>().Show(UIPopupType.PauseButton);
+        Time.timeScale = 1f;
     }
 }
