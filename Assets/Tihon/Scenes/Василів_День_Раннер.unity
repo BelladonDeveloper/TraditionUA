@@ -468,8 +468,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &59363766
@@ -485,7 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &59363767
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2229,8 +2229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &342166911
@@ -2246,7 +2246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &342166912
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2849,8 +2849,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &493122167
@@ -2866,7 +2866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &493122168
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3079,8 +3079,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &508123499
@@ -3096,7 +3096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &508123500
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3274,8 +3274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &529213540
@@ -3291,7 +3291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &529213541
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3905,8 +3905,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &738708572
@@ -3922,7 +3922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &738708573
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4579,8 +4579,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &882795840
@@ -4596,7 +4596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &882795841
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4974,8 +4974,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &982613457
@@ -4991,7 +4991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &982613458
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5094,8 +5094,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &1036088497
@@ -5111,7 +5111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &1036088498
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5444,8 +5444,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &1082327704
@@ -5461,7 +5461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &1082327705
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5642,8 +5642,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &1106708472
@@ -5659,7 +5659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &1106708473
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5855,8 +5855,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &1200598556
@@ -5872,7 +5872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &1200598557
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6186,8 +6186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &1360837599
@@ -6203,7 +6203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &1360837600
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6505,8 +6505,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &1493966164
@@ -6522,7 +6522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &1493966165
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6714,8 +6714,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &1519680349
@@ -6731,7 +6731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &1519680350
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6966,8 +6966,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &1621205894
@@ -6983,7 +6983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &1621205895
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7214,6 +7214,7 @@ RectTransform:
   - {fileID: 1477916538}
   - {fileID: 1374607854}
   - {fileID: 83878073}
+  - {fileID: 1980813108}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7266,8 +7267,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &1686174077
@@ -7283,7 +7284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &1686174078
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7454,8 +7455,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &1732392440
@@ -7471,7 +7472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &1732392441
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7574,8 +7575,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &1762337833
@@ -7591,7 +7592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &1762337834
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7786,8 +7787,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &1858873829
@@ -7803,7 +7804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &1858873830
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8496,8 +8497,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &1939426442
@@ -8513,7 +8514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &1939426443
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8727,8 +8728,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &1974161748
@@ -8744,7 +8745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &1974161749
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8819,6 +8820,130 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 20, y: 19.999998, z: 0.20000003}
   m_Center: {x: -0.0000076293945, y: 0, z: 0.0000076293945}
+--- !u!1001 &1980813107
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1677796893}
+    m_Modifications:
+    - target: {fileID: 8413281581912265857, guid: a492750c24c15db47970cac463fe7008,
+        type: 3}
+      propertyPath: m_Name
+      value: PauseButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487984266386357909, guid: a492750c24c15db47970cac463fe7008,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487984266386357909, guid: a492750c24c15db47970cac463fe7008,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487984266386357909, guid: a492750c24c15db47970cac463fe7008,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487984266386357909, guid: a492750c24c15db47970cac463fe7008,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487984266386357909, guid: a492750c24c15db47970cac463fe7008,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.90652084
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487984266386357909, guid: a492750c24c15db47970cac463fe7008,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.83400005
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487984266386357909, guid: a492750c24c15db47970cac463fe7008,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487984266386357909, guid: a492750c24c15db47970cac463fe7008,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487984266386357909, guid: a492750c24c15db47970cac463fe7008,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487984266386357909, guid: a492750c24c15db47970cac463fe7008,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487984266386357909, guid: a492750c24c15db47970cac463fe7008,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487984266386357909, guid: a492750c24c15db47970cac463fe7008,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487984266386357909, guid: a492750c24c15db47970cac463fe7008,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487984266386357909, guid: a492750c24c15db47970cac463fe7008,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487984266386357909, guid: a492750c24c15db47970cac463fe7008,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487984266386357909, guid: a492750c24c15db47970cac463fe7008,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487984266386357909, guid: a492750c24c15db47970cac463fe7008,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487984266386357909, guid: a492750c24c15db47970cac463fe7008,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487984266386357909, guid: a492750c24c15db47970cac463fe7008,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487984266386357909, guid: a492750c24c15db47970cac463fe7008,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a492750c24c15db47970cac463fe7008, type: 3}
+--- !u!224 &1980813108 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8487984266386357909, guid: a492750c24c15db47970cac463fe7008,
+    type: 3}
+  m_PrefabInstance: {fileID: 1980813107}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1989238653
 GameObject:
   m_ObjectHideFlags: 0
@@ -9059,8 +9184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &2119185148
@@ -9076,7 +9201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &2119185149
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9179,8 +9304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c831ee730ae81fa478870465414ffe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
-  seeded: {fileID: 21300000, guid: dad5ab3b28d107f42af4fdafab3adb6e, type: 3}
+  open: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
+  seeded: {fileID: 21300000, guid: c3b16806c51703c41869393927c6c0c7, type: 3}
   closed: {fileID: 21300000, guid: 8146942a1ca799a43a0f6c3d943f3676, type: 3}
   player: {fileID: 1910120929}
 --- !u!114 &2135780809
@@ -9196,7 +9321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba8828c8a6dd344ab3c4015ed198ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSprite: {fileID: 21300000, guid: 6bf74b6d71c1c1340a667e97eb8f9e0e, type: 3}
+  openSprite: {fileID: 21300000, guid: e0dea4ecd8c771045a51a7b79e2d7fa5, type: 3}
 --- !u!212 &2135780810
 SpriteRenderer:
   m_ObjectHideFlags: 0
