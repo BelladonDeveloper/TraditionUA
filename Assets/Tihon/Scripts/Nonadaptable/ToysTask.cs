@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ToysTask : MonoBehaviour
 {
+    public GameObject villager;
     public GameObject home;
     public GameObject home1;
     public GameObject home2;
@@ -16,6 +17,7 @@ public class ToysTask : MonoBehaviour
     {
         if(collision.gameObject.name == "Villager")
         {
+            collision.gameObject.GetComponent<VDDialogue>().start = true;
             home.GetComponent<SpriteRenderer>().sprite = openHome;
         }
         if (collision.gameObject.name == "Villager1")
@@ -28,7 +30,10 @@ public class ToysTask : MonoBehaviour
         }
         if (collision.gameObject.name == "hatka")
         {
-            SceneManager.LoadScene("FindAToy");
+            if(villager.GetComponent<VDDialogue>().end == true)
+            {
+                SceneManager.LoadScene("FindAToy");
+            }
         }
         if (collision.gameObject.name == "hatka1")
         {
