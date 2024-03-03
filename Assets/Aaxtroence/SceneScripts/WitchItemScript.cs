@@ -1,26 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Base;
 
 public class WitchItemScript : MonoBehaviour
 {
     [SerializeField] private Witch WitchScript;
-    [SerializeField] private bool BerryOrCone;
+    [SerializeField] private AudioClip audioClip;
 
     private void OnTriggerEnter(Collider other) 
     {
-        if(other.CompareTag("Player") && WitchScript.Task == true)
+        if(other.CompareTag("Player") && WitchScript.Task == true && WitchScript.CollectedCones < WitchScript.TotalCones)
         {
-            if(BerryOrCone && WitchScript.CollectedBerries < WitchScript.TotalBerries)
-            {
-                WitchScript.CollectedItem(BerryOrCone);
-                Destroy(gameObject);
-            }
-            if(!BerryOrCone && WitchScript.CollectedCones < WitchScript.TotalCones)
-            {
-                WitchScript.CollectedItem(BerryOrCone);
-                Destroy(gameObject);
-            }
+            WitchScript.CollectedItem(false);
+            Destroy(gameObject);
+            Register.Get<SoundManager>().PlaySound(audioClip);
         }
     }
 }

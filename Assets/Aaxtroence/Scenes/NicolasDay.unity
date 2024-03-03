@@ -653,6 +653,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 689fd5fe03fc81e4e822f7c0ba09415d, type: 3}
   - {fileID: 21300000, guid: 1008823ae48d59e448209aa4ae1f06f9, type: 3}
   spriteRenderer: {fileID: 786863587}
+  audioClip: {fileID: 8300000, guid: 6b449560bcd621048ae0c1b80bb7e3d2, type: 3}
 --- !u!136 &30656680
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1728,7 +1729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WitchScript: {fileID: 877779810}
-  BerryOrCone: 0
+  audioClip: {fileID: 8300000, guid: 783f5344c9492fa49a439fb52ab234af, type: 3}
 --- !u!136 &122847139
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2210,7 +2211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WitchScript: {fileID: 877779810}
-  BerryOrCone: 0
+  audioClip: {fileID: 8300000, guid: 783f5344c9492fa49a439fb52ab234af, type: 3}
 --- !u!136 &170704578
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2357,7 +2358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WitchScript: {fileID: 877779810}
-  BerryOrCone: 0
+  audioClip: {fileID: 8300000, guid: 783f5344c9492fa49a439fb52ab234af, type: 3}
 --- !u!136 &171761066
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3107,7 +3108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WitchScript: {fileID: 877779810}
-  BerryOrCone: 0
+  audioClip: {fileID: 8300000, guid: 783f5344c9492fa49a439fb52ab234af, type: 3}
 --- !u!136 &214072747
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4017,6 +4018,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 689fd5fe03fc81e4e822f7c0ba09415d, type: 3}
   - {fileID: 21300000, guid: 1008823ae48d59e448209aa4ae1f06f9, type: 3}
   spriteRenderer: {fileID: 2030573392}
+  audioClip: {fileID: 8300000, guid: 6b449560bcd621048ae0c1b80bb7e3d2, type: 3}
 --- !u!136 &286311660
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4087,7 +4089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WitchScript: {fileID: 877779810}
-  BerryOrCone: 0
+  audioClip: {fileID: 8300000, guid: 783f5344c9492fa49a439fb52ab234af, type: 3}
 --- !u!136 &291344897
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4576,7 +4578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WitchScript: {fileID: 877779810}
-  BerryOrCone: 0
+  audioClip: {fileID: 8300000, guid: 783f5344c9492fa49a439fb52ab234af, type: 3}
 --- !u!136 &314999191
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5148,6 +5150,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 689fd5fe03fc81e4e822f7c0ba09415d, type: 3}
   - {fileID: 21300000, guid: 1008823ae48d59e448209aa4ae1f06f9, type: 3}
   spriteRenderer: {fileID: 1890680109}
+  audioClip: {fileID: 8300000, guid: 6b449560bcd621048ae0c1b80bb7e3d2, type: 3}
 --- !u!136 &341376428
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12380,7 +12383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WitchScript: {fileID: 877779810}
-  BerryOrCone: 0
+  audioClip: {fileID: 8300000, guid: 783f5344c9492fa49a439fb52ab234af, type: 3}
 --- !u!136 &486084718
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15875,7 +15878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WitchScript: {fileID: 877779810}
-  BerryOrCone: 0
+  audioClip: {fileID: 8300000, guid: 783f5344c9492fa49a439fb52ab234af, type: 3}
 --- !u!136 &729574907
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15973,6 +15976,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 689fd5fe03fc81e4e822f7c0ba09415d, type: 3}
   - {fileID: 21300000, guid: 1008823ae48d59e448209aa4ae1f06f9, type: 3}
   spriteRenderer: {fileID: 1454711463}
+  audioClip: {fileID: 8300000, guid: 6b449560bcd621048ae0c1b80bb7e3d2, type: 3}
 --- !u!136 &729642448
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16162,7 +16166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WitchScript: {fileID: 877779810}
-  BerryOrCone: 0
+  audioClip: {fileID: 8300000, guid: 783f5344c9492fa49a439fb52ab234af, type: 3}
 --- !u!136 &748520285
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16912,7 +16916,7 @@ MonoBehaviour:
   Voices:
   - {fileID: 8300000, guid: 3cca6e6b5ebfed34b99d7bb50570901f, type: 3}
   - {fileID: 8300000, guid: f56d45eed892e214ab1c0ca61d040773, type: 3}
-  - {fileID: 8300000, guid: 3cca6e6b5ebfed34b99d7bb50570901f, type: 3}
+  - {fileID: 8300000, guid: 3f1cdb7093eaea34abd2a31fcc910579, type: 3}
   - {fileID: 8300000, guid: 3cca6e6b5ebfed34b99d7bb50570901f, type: 3}
   - {fileID: 8300000, guid: 3cca6e6b5ebfed34b99d7bb50570901f, type: 3}
   - {fileID: 8300000, guid: 3cca6e6b5ebfed34b99d7bb50570901f, type: 3}
@@ -19657,7 +19661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WitchScript: {fileID: 877779810}
-  BerryOrCone: 0
+  audioClip: {fileID: 8300000, guid: 783f5344c9492fa49a439fb52ab234af, type: 3}
 --- !u!136 &1028420571
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21355,7 +21359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WitchScript: {fileID: 877779810}
-  BerryOrCone: 0
+  audioClip: {fileID: 8300000, guid: 783f5344c9492fa49a439fb52ab234af, type: 3}
 --- !u!136 &1167058877
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -23782,6 +23786,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 689fd5fe03fc81e4e822f7c0ba09415d, type: 3}
   - {fileID: 21300000, guid: 1008823ae48d59e448209aa4ae1f06f9, type: 3}
   spriteRenderer: {fileID: 2077790771}
+  audioClip: {fileID: 8300000, guid: 6b449560bcd621048ae0c1b80bb7e3d2, type: 3}
 --- !u!136 &1330383567
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -24562,7 +24567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WitchScript: {fileID: 877779810}
-  BerryOrCone: 0
+  audioClip: {fileID: 8300000, guid: 783f5344c9492fa49a439fb52ab234af, type: 3}
 --- !u!136 &1411055614
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -25180,6 +25185,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 689fd5fe03fc81e4e822f7c0ba09415d, type: 3}
   - {fileID: 21300000, guid: 1008823ae48d59e448209aa4ae1f06f9, type: 3}
   spriteRenderer: {fileID: 1882035985}
+  audioClip: {fileID: 8300000, guid: 6b449560bcd621048ae0c1b80bb7e3d2, type: 3}
 --- !u!136 &1486718906
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -26295,6 +26301,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 689fd5fe03fc81e4e822f7c0ba09415d, type: 3}
   - {fileID: 21300000, guid: 1008823ae48d59e448209aa4ae1f06f9, type: 3}
   spriteRenderer: {fileID: 1038661730}
+  audioClip: {fileID: 8300000, guid: 6b449560bcd621048ae0c1b80bb7e3d2, type: 3}
 --- !u!136 &1570366171
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -26804,7 +26811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WitchScript: {fileID: 877779810}
-  BerryOrCone: 0
+  audioClip: {fileID: 8300000, guid: 783f5344c9492fa49a439fb52ab234af, type: 3}
 --- !u!136 &1600065909
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -26966,7 +26973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WitchScript: {fileID: 877779810}
-  BerryOrCone: 0
+  audioClip: {fileID: 8300000, guid: 783f5344c9492fa49a439fb52ab234af, type: 3}
 --- !u!136 &1607058877
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -27037,7 +27044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WitchScript: {fileID: 877779810}
-  BerryOrCone: 0
+  audioClip: {fileID: 8300000, guid: 783f5344c9492fa49a439fb52ab234af, type: 3}
 --- !u!136 &1612036872
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -28530,6 +28537,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 689fd5fe03fc81e4e822f7c0ba09415d, type: 3}
   - {fileID: 21300000, guid: 1008823ae48d59e448209aa4ae1f06f9, type: 3}
   spriteRenderer: {fileID: 820866242}
+  audioClip: {fileID: 8300000, guid: 6b449560bcd621048ae0c1b80bb7e3d2, type: 3}
 --- !u!136 &1722402350
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -28705,6 +28713,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 689fd5fe03fc81e4e822f7c0ba09415d, type: 3}
   - {fileID: 21300000, guid: 1008823ae48d59e448209aa4ae1f06f9, type: 3}
   spriteRenderer: {fileID: 75615707}
+  audioClip: {fileID: 8300000, guid: 6b449560bcd621048ae0c1b80bb7e3d2, type: 3}
 --- !u!136 &1735750712
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -28893,6 +28902,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 689fd5fe03fc81e4e822f7c0ba09415d, type: 3}
   - {fileID: 21300000, guid: 1008823ae48d59e448209aa4ae1f06f9, type: 3}
   spriteRenderer: {fileID: 667039244}
+  audioClip: {fileID: 8300000, guid: 6b449560bcd621048ae0c1b80bb7e3d2, type: 3}
 --- !u!136 &1741812783
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -29265,7 +29275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WitchScript: {fileID: 877779810}
-  BerryOrCone: 0
+  audioClip: {fileID: 8300000, guid: 783f5344c9492fa49a439fb52ab234af, type: 3}
 --- !u!136 &1815737222
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -38383,7 +38393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WitchScript: {fileID: 877779810}
-  BerryOrCone: 0
+  audioClip: {fileID: 8300000, guid: 783f5344c9492fa49a439fb52ab234af, type: 3}
 --- !u!136 &2141597804
 CapsuleCollider:
   m_ObjectHideFlags: 0
