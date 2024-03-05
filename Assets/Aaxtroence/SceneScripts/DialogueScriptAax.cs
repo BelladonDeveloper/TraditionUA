@@ -110,6 +110,7 @@ public class DialogueScriptAax : MonoBehaviour
 
     private void Joystick(bool TF)
     {
+        _Joystick.SetActive(false);
         movementController.CutSceneBool = !TF;
         if (TF)
         {
