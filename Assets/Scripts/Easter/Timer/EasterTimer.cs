@@ -6,8 +6,9 @@ using DG.Tweening;
 public class EasterTimer : MonoBehaviour
 {
     public static event Action OnLost;
-    public static event Action OnWin;
     public static EasterTimer Singleton;
+
+    public static bool IsNextLevel;
 
     public TextMeshProUGUI TimerText;
 
@@ -37,10 +38,6 @@ public class EasterTimer : MonoBehaviour
                 OnLost?.Invoke();
             }
 
-            if (_currentTime <= 1 && CountCollectedEggs.Singleton.CollectedEggs == CountCollectedEggs.Singleton.NeddedCountOfEggs)
-            {
-                OnWin?.Invoke();
-            }
         }
     }
 

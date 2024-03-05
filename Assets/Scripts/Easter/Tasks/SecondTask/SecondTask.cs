@@ -76,12 +76,16 @@ public class SecondTask : MonoBehaviour
         IsDone = false;
         _isRestarted = true;
 
+        PassingAndTakingTasks._isDialogueDone = -1;
+
         RestartUI();
     }
 
     private void RestartUI()
     {
         Sequence sequence = DOTween.Sequence();
+
+        _stick = GameObject.FindGameObjectWithTag("Joystick").GetComponent<CanvasGroup>();
 
         sequence.Append(_stick.DOFade(1, TIME_TO_APPEARING).SetEase(Ease.Linear));
         sequence.Join(_uICheckMark.DOFade(0, TIME_TO_APPEARING).SetEase(Ease.Linear));
@@ -90,6 +94,8 @@ public class SecondTask : MonoBehaviour
     private IEnumerator SecondTaskWaiter()
     {
         Sequence appear = DOTween.Sequence();
+
+        _stick = GameObject.FindGameObjectWithTag("Joystick").GetComponent<CanvasGroup>();
 
         appear.Append(_stick.DOFade(0, TIME_TO_APPEARING).SetEase(Ease.Linear));
 

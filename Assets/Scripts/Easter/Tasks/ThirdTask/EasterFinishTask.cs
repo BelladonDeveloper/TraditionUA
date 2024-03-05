@@ -40,7 +40,6 @@ public class EasterFinishTask : MonoBehaviour
         _easterWinMenu.gameObject.SetActive(false);
 
         PassingAndTakingTasks.SequenceOfTasks++;
-        Debug.Log(PassingAndTakingTasks.SequenceOfTasks);
 
         if (PassingAndTakingTasks.SequenceOfTasks == 3)
         {

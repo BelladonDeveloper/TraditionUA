@@ -53,9 +53,6 @@ public class EasterPickUp : MonoBehaviour
 
     private IEnumerator PickedUpByPlayer()
     {
-        _mController.ChangeSpeed(0);
-        //Play Animation of Pick Up
-
         yield return new WaitForSeconds(1f);
 
         _mController.ChangeSpeed(_defaultPlayerSpeed);
@@ -71,25 +68,14 @@ public class EasterPickUp : MonoBehaviour
             _bunny.gameObject.transform.LookAt(_lastRotation);
 
             _thirdTask.FadeUI();
-
-            // Change Bunny Rotation to goldCarrot;
-
-            //ChangeAnimation to lose bunny animation or happy animation 
-            //ChangeAnimation to win player animation 
-
-            //Play Sound May be 
         }
     }
 
     private IEnumerator PickedUpByBunny()
     {
-        _bunnyAgent.speed = 0;
-
-        //Play Animation of Pick Up
-
         yield return new WaitForSeconds(1f);
 
-        _bunnyAgent.speed = ThirdTask.StartSpeed + _bunnyPoints; // Todo or * 4"
+        _bunnyAgent.speed = ThirdTask.StartSpeed + _bunnyPoints;
 
         if (_bunnyPoints >= 10)
         {

@@ -13,6 +13,7 @@ public class ThirdTask : MonoBehaviour
 
     [SerializeField] private GameObject _carrot;
     [SerializeField] private GameObject _bunny;
+    [SerializeField] private GameObject _secondTaskLevel;
 
     [SerializeField] private List<Transform> _positions = new List<Transform>();
 
@@ -53,6 +54,8 @@ public class ThirdTask : MonoBehaviour
 
         _isRestarted = false;
         _bunnyAgent.enabled = true;
+
+        _secondTaskLevel.SetActive(false);
     }
 
     public void RemoveCarrotFromList(GameObject carrot)
@@ -64,6 +67,8 @@ public class ThirdTask : MonoBehaviour
     public void RestartedTask()
     {
         PassingAndTakingTasks.IsDone = false;
+
+        PassingAndTakingTasks._isDialogueDone = -1;
 
         _bunny.transform.position = _startPosition.position;
         _bunny.transform.rotation = _startRotation;

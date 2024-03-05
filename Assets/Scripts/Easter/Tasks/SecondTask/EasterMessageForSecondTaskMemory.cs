@@ -84,6 +84,8 @@ public class EasterMessageForSecondTaskMemory : MonoBehaviour
 
     private IEnumerator Timer()
     {
+        _timerText.text = "";
+
         _isStarted = false;
 
         SecondTaskManager.Singleton.OnStop();
@@ -126,9 +128,6 @@ public class EasterMessageForSecondTaskMemory : MonoBehaviour
 
     private void UpdateTimerText()
     {
-        //int seconds = Mathf.FloorToInt(_currentTime % 60);
-        //_timerText.script = seconds.ToString();
-
         _timerText.text = _currentTime.ToString("F1");
     }
 

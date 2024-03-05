@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class JoystickHelper : MonoBehaviour
@@ -13,6 +11,8 @@ public class JoystickHelper : MonoBehaviour
     {
         joystick = Instantiate(objJoystick, transformParent);
         joystick.SetActive(true);
+
+        joystick.tag = "Joystick";
     }
 
 }

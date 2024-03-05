@@ -10,23 +10,44 @@ public class CountCollectedEggs : MonoBehaviour
 
     public static event Action OnCollectedAllEggs;
     public static event Action OnEnded;
+    public static event Action OnWin;
 
     public static List<GameObject> _eggs = new List<GameObject>();
 
     public TextMeshProUGUI CurrentCountOfEggsTMP;
     public TextMeshProUGUI NeddedCountOfEggsTMP;
 
-    public int NeddedCountOfEggs;
-    public int CollectedEggs;
+    [HideInInspector] public int NeddedCountOfEggs;
+    [HideInInspector] public int CollectedEggs;
 
     private bool _isDone;
+    private bool _isFinished;
 
-    public void Start() => Singleton = this;
+    public void Start()
+    {
+        NeddedCountOfEggs = 8;
+        CollectedEggs = 0;
+
+        Singleton = this;
+    }
+
+    public void Update()
+    {
+        if (_eggs.Count == 0 && FirstTask._isDoneChecker == 3 && _isFinished == false)
+        {
+            FinishFirstTask();
+
+            _isFinished = true;
+        }
+    }
 
     public void Assign()
     {
-        CurrentCountOfEggsTMP.text = CollectedEggs.ToString();
-        NeddedCountOfEggsTMP.text = NeddedCountOfEggs.ToString();
+        if (CurrentCountOfEggsTMP != null)
+            CurrentCountOfEggsTMP.text = CollectedEggs.ToString();
+
+        if (NeddedCountOfEggsTMP != null)
+            NeddedCountOfEggsTMP.text = NeddedCountOfEggs.ToString();
     }
 
     public void ResetStats()
@@ -37,13 +58,20 @@ public class CountCollectedEggs : MonoBehaviour
         Assign();
     }
 
+    public void ResetCollectedEggs()
+    {
+        CollectedEggs = 0;
+
+        Assign();
+    }
+
     public void FindAllEggs()
     {
         foreach (var egg in GameObject.FindGameObjectsWithTag("Egg"))
         {
             _eggs.Add(egg);
 
-            NeddedCountOfEggs++;
+            NeddedCountOfEggs = _eggs.Count;
         }
 
         foreach (var egg in GameObject.FindGameObjectsWithTag("Egg"))
@@ -68,7 +96,6 @@ public class CountCollectedEggs : MonoBehaviour
                 Debug.LogWarning("EggsPickUpper component not found on egg: " + _eggs[i].name);
             }
         }
-
     }
 
     public void CheckCollectedEggs(GameObject currentGameObject)
@@ -79,20 +106,10 @@ public class CountCollectedEggs : MonoBehaviour
             {
                 StartCoroutine(DelayedDestroy(currentGameObject));
             }
-            else
-            {
-                Debug.LogWarning("Attempted to collect an egg that is not in the list.");
-            }
-
-            if (_eggs.Count == 0 && FirstTask._isDoneChecker == 3)
-            {
-                FinishFirstTask();
-            }
         }
 
         if (_eggs == null || !_isDone)
             return;
-
     }
 
     private IEnumerator DelayedDestroy(GameObject obj)
@@ -127,6 +144,11 @@ public class CountCollectedEggs : MonoBehaviour
     private void ChangeCurrentNumberOfCollectedEggs()
     {
         CurrentCountOfEggsTMP.text = CollectedEggs.ToString();
+
+        if (CollectedEggs == NeddedCountOfEggs)
+        {
+            OnWin?.Invoke();
+        }
     }
 
     public void FinishFirstTask()
