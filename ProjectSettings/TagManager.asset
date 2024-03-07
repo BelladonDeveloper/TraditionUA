@@ -23,6 +23,7 @@ TagManager:
   - Bread Component
   - Church
   - Joystick
+  - Interactable
   layers:
   - Default
   - TransparentFX
