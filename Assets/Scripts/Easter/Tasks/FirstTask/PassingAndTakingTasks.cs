@@ -14,6 +14,8 @@ public class PassingAndTakingTasks : MonoBehaviour
 
     public static bool IsDone;
 
+    [SerializeField] private GameObject _secondTask;
+
     [SerializeField] private DialogueScriptAax dialogueScript;
     [SerializeField] private string[] DialogueTexts;
     [SerializeField] private Characters[] characters;
@@ -28,7 +30,7 @@ public class PassingAndTakingTasks : MonoBehaviour
     {
         SingleTon = this;
 
-        
+        _secondTask.SetActive(false);
     }
 
     #region Tasks
@@ -46,6 +48,8 @@ public class PassingAndTakingTasks : MonoBehaviour
 
     public void TakeSecondTask()
     {
+        _secondTask.SetActive(true);
+
         SecondTask._isRestarted = false;
         OnTakenSecondTask?.Invoke();
 
