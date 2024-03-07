@@ -4,6 +4,7 @@ using UnityEngine;
 public class Teleporter : MonoBehaviour
 {
     [SerializeField] private CameraFollow _camFollow;
+    [SerializeField] private CarTimer _carTimer;
     public Transform destination; 
     public float teleportDelay = 3f; 
     public float FadeDelay = 1f; 
@@ -38,6 +39,7 @@ public class Teleporter : MonoBehaviour
         {
             _camFollow.Fade();
             StartCoroutine(WaitForFade());
+            _carTimer.StartTimer();
             playerInRange = true;
         }
     }

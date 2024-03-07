@@ -41,7 +41,7 @@ public class CatTask : MonoBehaviour
         }
         else if (DialogueNum == 2)
         {
-            //Когда собрал подарки
+
         }
     }
 
