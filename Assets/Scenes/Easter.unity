@@ -3004,12 +3004,12 @@ MonoBehaviour:
   CharFace: {fileID: 1884637455}
   dialogueButton: {fileID: 1548706237}
   Faces:
+  - {fileID: 104901007, guid: 3dbd2c6388b959946a413a3ff1bd9766, type: 3}
   - {fileID: 21300000, guid: 70aefe99d4da71347931f23d156dcc16, type: 3}
   - {fileID: 21300000, guid: 70aefe99d4da71347931f23d156dcc16, type: 3}
   - {fileID: 21300000, guid: 70aefe99d4da71347931f23d156dcc16, type: 3}
   - {fileID: 21300000, guid: 70aefe99d4da71347931f23d156dcc16, type: 3}
-  - {fileID: 21300000, guid: 70aefe99d4da71347931f23d156dcc16, type: 3}
-  - {fileID: 21300000, guid: 70aefe99d4da71347931f23d156dcc16, type: 3}
+  - {fileID: 21300000, guid: dc667cb59fb80e447a2b0bfd15d25062, type: 3}
   CharNames:
   - "\u0412\u0438"
   - "\u0421\u0432\u044F\u0442\u0438\u0439 \u041C\u0438\u043A\u043E\u043B\u0430\u0439"
