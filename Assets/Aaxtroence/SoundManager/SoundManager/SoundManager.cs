@@ -9,6 +9,8 @@ public class SoundManager : MonoBehaviour, IManager
     [SerializeField] private MusicSwitcher musicSwitcher;
     [SerializeField] private SoundScript soundScript;
     public bool pause = false;
+    public int Settings_SoundVolume = 100;
+    public int Settings_MusicVolume = 100;
     // Music
     public void PlayMusic(Music Index, bool Upscaling)
     {
@@ -65,10 +67,14 @@ public class SoundManager : MonoBehaviour, IManager
     public void Settings_SetMusicVolume(int volume)
     {
         musicSwitcher.SettingsMusicVolume = volume;
+        Settings_MusicVolume = volume;
     }
+
+
     public void Settings_SetSoundVolume(int volume)
     {
         soundScript.SettingsSoundVolume = volume;
+        Settings_SoundVolume = volume;
     }
 
 

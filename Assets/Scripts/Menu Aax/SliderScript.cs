@@ -14,6 +14,11 @@ public class SliderScript : MonoBehaviour
     
     private float PreviousValue = -1f;
 
+    private void Awake() 
+    {
+        slider.value = (gameObject.name == "SoundSlider") ? Register.Get<SoundManager>().Settings_SoundVolume : Register.Get<SoundManager>().Settings_MusicVolume;
+    }
+
     public void ChangeVolume()
     {
         if(slider.value != PreviousValue)

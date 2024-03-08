@@ -17,6 +17,7 @@ public class DialogueScriptAax : MonoBehaviour
     [SerializeField] private Button dialogueButton;
     [SerializeField] private Sprite[] Faces;
     [SerializeField] private string[] CharNames;
+    [SerializeField] private Animator[] CharAnimators;
     [SerializeField] private AudioClip[] Voices;
     [SerializeField] private Rigidbody PlayerRB;
     [SerializeField] private Transform JoystickParent;
@@ -33,7 +34,7 @@ public class DialogueScriptAax : MonoBehaviour
     private float VoiceCd = 0;
     private float LetterTime;
     private SoundManager soundManager;
-    private int voiceIndex;
+    private int charIndex;
 
     private void Start() 
     {
@@ -59,27 +60,39 @@ public class DialogueScriptAax : MonoBehaviour
             if(VoiceCd >= VoiceCooldown)
             {
                 VoiceCd = 0f;
-                soundManager.PlaySound(Voices[voiceIndex]);
+                soundManager.PlaySound(Voices[charIndex]);
             }
             Msg.text += letter;
             yield return new WaitForSeconds(LetterTime);
         }
         yield return new WaitForSeconds(0.025f);
+
+        IsTalking(false);
+
         Triangle.SetActive(true);
 
         ButtonTask_FasterOrClose = false;
     }
 
-    private void SetFace(Characters character)
+    private void IsTalking(bool TF)
     {
-        CharFace.sprite = Faces[(int)character];
+        if(CharAnimators[charIndex] != null)
+        {
+            CharAnimators[charIndex].SetBool("IsTalking", TF); 
+        }
+    }
+
+    private void SetFace()
+    {
+        CharFace.sprite = Faces[charIndex];
     }
     public void Dialogue(Characters character,string DialogueText)
     {
         _action = null;
-        voiceIndex = (int)character;
-        SetFace(character);
-        CharName.text = CharNames[(int)character];
+        charIndex = (int)character;
+        IsTalking(true);
+        SetFace();
+        CharName.text = CharNames[charIndex];
         DialoguePanel.SetActive(true);
         StartCoroutine(_WriteText(DialogueText));
         Triangle.SetActive(false);
