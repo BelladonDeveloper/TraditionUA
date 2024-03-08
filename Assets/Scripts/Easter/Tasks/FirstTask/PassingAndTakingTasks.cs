@@ -56,6 +56,7 @@ public class PassingAndTakingTasks : MonoBehaviour
         _isDialogueDone = -1;
     }
 
+    [ContextMenu("Third")]
     public void TakeThirdTask() 
     {
         if (IsDone == false)
@@ -89,8 +90,6 @@ public class PassingAndTakingTasks : MonoBehaviour
 
         else if (SequenceOfTasks == 1)
         {
-            NotCompletedVersionOfTaskDialogue(_dialogueChecker, 2);
-
             if (_dialogueChecker == 1)
                 Talk(6, 10, TakeSecondTask);
 
@@ -101,8 +100,6 @@ public class PassingAndTakingTasks : MonoBehaviour
         }
         else if (SequenceOfTasks == 2)
         {
-            NotCompletedVersionOfTaskDialogue(_dialogueChecker, 3);
-
             if (_dialogueChecker == 2 && _isCompletedTask)
                 Talk(11, 15, TakeThirdTask);
 

@@ -8,6 +8,8 @@ public class EasterFinishTask : MonoBehaviour
 {
     public static event Action OnFinishedTradition;
 
+    [SerializeField] private PassingAndTakingTasks _tasks;
+
     [SerializeField] private CanvasGroup _easterWinMenu;
     [SerializeField] private List<CanvasGroup> _stars;
 
@@ -23,6 +25,7 @@ public class EasterFinishTask : MonoBehaviour
         //There we can play sound 
         sequence.Append(_stars[PassingAndTakingTasks.SequenceOfTasks].DOFade(1, TimeToAppearing));
 
+        _tasks.ChangeIsDialogueDone(true);
 
         StartCoroutine(WaitBeforeExit());
     }
