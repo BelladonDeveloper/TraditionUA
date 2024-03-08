@@ -280,10 +280,10 @@ MonoBehaviour:
   _joystickBackground: {fileID: 847957427}
   _joystick: {fileID: 710283652}
   _joystickArea: {fileID: 33361959}
-  inActiveJoystickColor: {r: 1, g: 0, b: 0, a: 1}
-  activeJoystickColor: {r: 0.7264151, g: 0.15419191, b: 0.15419191, a: 1}
+  inActiveJoystickColor: {r: 0.011747932, g: 0.39307737, b: 0.8301887, a: 1}
+  activeJoystickColor: {r: 0.12061248, g: 0.754717, b: 0.10323961, a: 1}
   characterMovement: {fileID: 553817569}
-  Enable: 0
+  Enable: 1
 --- !u!114 &33361959
 MonoBehaviour:
   m_ObjectHideFlags: 0
