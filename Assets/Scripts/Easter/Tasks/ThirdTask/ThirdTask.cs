@@ -29,7 +29,7 @@ public class ThirdTask : MonoBehaviour
     [SerializeField] private Transform _startPosition;
     private Quaternion _startRotation;
 
-    public static float StartSpeed = 10;
+    public static float StartSpeed = 12;
 
     private const int Default = 19;
     private const float QuaternionRotation = 15.0f;

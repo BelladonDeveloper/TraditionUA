@@ -12635,7 +12635,6 @@ MonoBehaviour:
   _playerPointsTMP: {fileID: 1564517983}
   _bunnyPointsTMP: {fileID: 576663211}
   _bunnyAnimator: {fileID: 1941865980}
-  _defaultPlayerSpeed: 30
 --- !u!4 &851661837
 Transform:
   m_ObjectHideFlags: 0

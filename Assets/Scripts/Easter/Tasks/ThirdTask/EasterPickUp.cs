@@ -25,8 +25,6 @@ public class EasterPickUp : MonoBehaviour
 
     [SerializeField] private Animator _bunnyAnimator;
 
-    [SerializeField] private float _defaultPlayerSpeed;
-
     private int _playerPoints;
     private int _bunnyPoints;
 
@@ -78,7 +76,7 @@ public class EasterPickUp : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
-        _bunnyAgent.speed = ThirdTask.StartSpeed + _bunnyPoints * 3;
+        _bunnyAgent.speed = ThirdTask.StartSpeed += (_bunnyPoints + 3);
 
         if (_bunnyPoints >= 10)
         {
