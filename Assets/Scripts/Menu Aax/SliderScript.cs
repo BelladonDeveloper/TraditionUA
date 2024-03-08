@@ -13,10 +13,21 @@ public class SliderScript : MonoBehaviour
     [SerializeField] private Slider slider;
     
     private float PreviousValue = -1f;
+    private SoundManager soundManager;
 
     private void Awake() 
     {
-        slider.value = (gameObject.name == "SoundSlider") ? Register.Get<SoundManager>().Settings_SoundVolume : Register.Get<SoundManager>().Settings_MusicVolume;
+        soundManager = Register.Get<SoundManager>();
+        soundManager.SetVolume();
+        if(gameObject.name == "SoundSlider")
+        {
+            slider.value = soundManager.Settings_SoundVolume;
+        }
+        else if(gameObject.name == "MusicSlider")
+        {
+            slider.value = soundManager.Settings_MusicVolume;
+        }
+        
     }
 
     public void ChangeVolume()
@@ -35,12 +46,12 @@ public class SliderScript : MonoBehaviour
             if(gameObject.name == "SoundSlider")
             {
                 float volume = (float)Math.Floor(slider.value);
-                Register.Get<SoundManager>().Settings_SetSoundVolume(Mathf.RoundToInt(volume));
+                soundManager.Settings_SetSoundVolume(Mathf.RoundToInt(volume));
             }
             else if(gameObject.name == "MusicSlider")
             {
                 float volume = (float)Math.Floor(slider.value);
-                Register.Get<SoundManager>().Settings_SetMusicVolume(Mathf.RoundToInt(volume));
+                soundManager.Settings_SetMusicVolume(Mathf.RoundToInt(volume));
             }
         }
     }
