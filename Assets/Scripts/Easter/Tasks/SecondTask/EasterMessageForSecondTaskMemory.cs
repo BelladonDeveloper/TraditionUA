@@ -60,7 +60,7 @@ public class EasterMessageForSecondTaskMemory : MonoBehaviour
 
             if (EasterCurrentSprite.IsDone == true)
             {
-                _timerText.text = "Great!";
+                _timerText.text = "";
             }
         }
     }
@@ -90,7 +90,7 @@ public class EasterMessageForSecondTaskMemory : MonoBehaviour
 
         SecondTaskManager.Singleton.OnStop();
 
-        _timerText.text = "Remember";
+        _timerText.text = "";
         yield return new WaitForSeconds(3f);
 
         for (int i = 0; i < 4; i++)
@@ -100,7 +100,7 @@ public class EasterMessageForSecondTaskMemory : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
 
-        _timerText.text = "Start!";
+        _timerText.text = "";
 
         OnTimeEnded?.Invoke();
 
