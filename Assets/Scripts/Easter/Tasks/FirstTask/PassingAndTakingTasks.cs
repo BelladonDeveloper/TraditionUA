@@ -78,7 +78,7 @@ public class PassingAndTakingTasks : MonoBehaviour
         {
             NotCompletedVersionOfTaskDialogue(_dialogueChecker, 1);
 
-            if (!_isCompletedTask && _dialogueChecker == 0)
+            if (!_isCompletedTask && _dialogueChecker == 0) 
                 Talk(0, 5, TakeFirstTask);
 
             if (_isCompletedTask && _isDialogueDone == -1)
@@ -111,20 +111,10 @@ public class PassingAndTakingTasks : MonoBehaviour
 
             _dialogueChecker = 3;
         }
-
-        Debug.Log(_isCompletedTask);
     }
 
     private void NotCompletedVersionOfTaskDialogue(int first, int second)
     {
-        //if (_dialogueChecker == 1 || _dialogueChecker == 2 || _dialogueChecker == 3)
-        //{
-        //    if (_isCompletedTask == false && _isDialogueDone == -1)
-        //    {
-        //        NotCompletedTask(_dialogueChecker);
-        //    }
-        //}
-
         if (first == second)
         {
             if (_isCompletedTask == false)
