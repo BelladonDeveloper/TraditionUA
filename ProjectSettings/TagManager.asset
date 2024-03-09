@@ -24,6 +24,7 @@ TagManager:
   - Church
   - Joystick
   - Interactable
+  - Enemy
   layers:
   - Default
   - TransparentFX
