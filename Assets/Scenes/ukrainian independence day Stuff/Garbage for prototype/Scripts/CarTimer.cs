@@ -11,6 +11,7 @@ public class CarTimer : MonoBehaviour
     [SerializeField] private GameObject Player;
     [SerializeField] private GameObject _car;
     [SerializeField] private GameObject _woll;
+    [SerializeField] private FinalScreen _finalScreen;
 
     public float targetPositionZ = 10f; 
 
@@ -43,6 +44,11 @@ public class CarTimer : MonoBehaviour
                 StartCoroutine(WaitForFade());
             }
         }
+        else
+        {
+            Debug.LogWarning(11111111);
+            StartCoroutine(Final());
+        }
     }
 
 
@@ -72,5 +78,21 @@ public class CarTimer : MonoBehaviour
         isFirstTime = true;
         yield return new WaitForSeconds(0.5f);
         transform.DOMoveX(-70, 2).SetEase(Ease.Linear);
+        yield return new WaitForSeconds(30f);
+        transform.DOMoveX(140, 0.001f).SetEase(Ease.Linear);
+        yield return new WaitForSeconds(20f);
+        transform.DOMoveX(21, 4f).SetEase(Ease.Linear);
+
+    }
+
+    IEnumerator Final()
+    {
+        Player.gameObject.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        transform.DOMoveX(-70, 4f).SetEase(Ease.Linear);
+        yield return new WaitForSeconds(1f);
+        _camFollow.Fade();
+        yield return new WaitForSeconds(1f);
+        _finalScreen.StartFinal();
     }
 }

@@ -79,7 +79,10 @@ public class NPCDialogue : MonoBehaviour
         {
             HideDialogue();
             currentLine = 0;
-            _movementController.PermitMovement();
+            if(_movementController != null)
+            {
+                _movementController.PermitMovement();
+            }
         }
     }
 }

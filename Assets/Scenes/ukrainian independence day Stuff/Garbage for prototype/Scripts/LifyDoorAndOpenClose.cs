@@ -1,16 +1,20 @@
-﻿using DG.Tweening;
+using DG.Tweening;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class LiftDoorController : MonoBehaviour
+public class LifyDoorAndOpenClose : MonoBehaviour
 {
     public Transform leftDoor;
     public Transform rightDoor;
-    public float openingDistance = 2f; 
-    public float animationDuration = 1f; 
+    public float openingDistance = 2f;
+    public float animationDuration = 1f;
 
     private Vector3 originalLeftPos;
     private Vector3 originalRightPos;
-    private bool doorsOpened = false;
+
+    [SerializeField] private bool isClosing = false;
+    private bool isFirsTime = true;
 
     void Start()
     {
@@ -28,23 +32,43 @@ public class LiftDoorController : MonoBehaviour
 
         leftDoor.DOMove(leftTargetPos, animationDuration);
         rightDoor.DOMove(rightTargetPos, animationDuration);
-
-        doorsOpened = true;
     }
 
     public void CloseDoors()
     {
         leftDoor.DOMove(originalLeftPos, animationDuration);
         rightDoor.DOMove(originalRightPos, animationDuration);
-
-        doorsOpened = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            CloseDoors();
+            if (isFirsTime == true)
+            {
+                if (isClosing == true)
+                {
+                    CloseDoors();
+                }
+                else
+                {
+                    OpenDoors();
+                }
+
+                isFirsTime = false;
+            }
+            else
+            {
+                if (isClosing == true)
+                {
+                    OpenDoors();
+                }
+                else
+                {
+                    CloseDoors();
+                }
+            }
         }
     }
 }
+
