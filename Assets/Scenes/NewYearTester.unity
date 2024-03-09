@@ -8149,10 +8149,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 5
+  m_AngularSpeed: 200
   m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -20609,25 +20609,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1301385990395460559, guid: 953fbc5852a465b47a2d3f8ac4695886,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1301385990395544945, guid: 953fbc5852a465b47a2d3f8ac4695886,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1301385990395650107, guid: 953fbc5852a465b47a2d3f8ac4695886,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3573168744868410505, guid: 953fbc5852a465b47a2d3f8ac4695886,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.74
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3573168744868410505, guid: 953fbc5852a465b47a2d3f8ac4695886,
         type: 3}
@@ -20637,7 +20622,7 @@ PrefabInstance:
     - target: {fileID: 3573168744868410505, guid: 953fbc5852a465b47a2d3f8ac4695886,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.4
+      value: 11.67
       objectReference: {fileID: 0}
     - target: {fileID: 3573168744868410505, guid: 953fbc5852a465b47a2d3f8ac4695886,
         type: 3}
@@ -20679,10 +20664,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeBall
       objectReference: {fileID: 0}
-    - target: {fileID: 3679144779678496786, guid: 953fbc5852a465b47a2d3f8ac4695886,
+    - target: {fileID: 8030034081928920221, guid: 953fbc5852a465b47a2d3f8ac4695886,
         type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
+      propertyPath: m_Size.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8030034081928920221, guid: 953fbc5852a465b47a2d3f8ac4695886,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8030034081928920221, guid: 953fbc5852a465b47a2d3f8ac4695886,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
