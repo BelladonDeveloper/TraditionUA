@@ -1841,7 +1841,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 167873926}
-  - component: {fileID: 167873927}
   m_Layer: 0
   m_Name: Bushes
   m_TagString: Untagged
@@ -1875,20 +1874,6 @@ Transform:
   - {fileID: 755864578}
   m_Father: {fileID: 1427177993}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &167873927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 167873925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ad1000933df6074fa4564129bfced46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BushesList: []
-  witch: {fileID: 0}
 --- !u!1 &168442168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1958,7 +1943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   witch: {fileID: 0}
-  bushGenerator: {fileID: 167873927}
+  bushGenerator: {fileID: 0}
   BushSprites:
   - {fileID: 21300000, guid: 689fd5fe03fc81e4e822f7c0ba09415d, type: 3}
   - {fileID: 21300000, guid: 1008823ae48d59e448209aa4ae1f06f9, type: 3}
@@ -5694,15 +5679,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 661372711861913645, guid: cdc85077e94bf7f4aa13559e716ba039,
-        type: 3}
-      propertyPath: _speed
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 1319814470363476066, guid: cdc85077e94bf7f4aa13559e716ba039,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.62
+      value: 4.95
       objectReference: {fileID: 0}
     - target: {fileID: 1319814470363476066, guid: cdc85077e94bf7f4aa13559e716ba039,
         type: 3}
@@ -5712,7 +5692,7 @@ PrefabInstance:
     - target: {fileID: 1319814470363476066, guid: cdc85077e94bf7f4aa13559e716ba039,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.67
+      value: 12.08
       objectReference: {fileID: 0}
     - target: {fileID: 1319814470363476066, guid: cdc85077e94bf7f4aa13559e716ba039,
         type: 3}
@@ -5749,11 +5729,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1505253033809439517, guid: cdc85077e94bf7f4aa13559e716ba039,
+    - target: {fileID: 2094282509835685791, guid: cdc85077e94bf7f4aa13559e716ba039,
         type: 3}
-      propertyPath: transparencyController
+      propertyPath: monster
       value: 
-      objectReference: {fileID: 30770908}
+      objectReference: {fileID: 800593093}
+    - target: {fileID: 2094282509835685791, guid: cdc85077e94bf7f4aa13559e716ba039,
+        type: 3}
+      propertyPath: collectedText
+      value: 
+      objectReference: {fileID: 1827134991}
     - target: {fileID: 2441238254314757246, guid: cdc85077e94bf7f4aa13559e716ba039,
         type: 3}
       propertyPath: m_Name
@@ -7034,7 +7019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   witch: {fileID: 0}
-  bushGenerator: {fileID: 167873927}
+  bushGenerator: {fileID: 0}
   BushSprites:
   - {fileID: 21300000, guid: 689fd5fe03fc81e4e822f7c0ba09415d, type: 3}
   - {fileID: 21300000, guid: 1008823ae48d59e448209aa4ae1f06f9, type: 3}
@@ -7391,7 +7376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   witch: {fileID: 0}
-  bushGenerator: {fileID: 167873927}
+  bushGenerator: {fileID: 0}
   BushSprites:
   - {fileID: 21300000, guid: 689fd5fe03fc81e4e822f7c0ba09415d, type: 3}
   - {fileID: 21300000, guid: 1008823ae48d59e448209aa4ae1f06f9, type: 3}
@@ -7991,7 +7976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   witch: {fileID: 0}
-  bushGenerator: {fileID: 167873927}
+  bushGenerator: {fileID: 0}
   BushSprites:
   - {fileID: 21300000, guid: 689fd5fe03fc81e4e822f7c0ba09415d, type: 3}
   - {fileID: 21300000, guid: 1008823ae48d59e448209aa4ae1f06f9, type: 3}
@@ -8089,7 +8074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   witch: {fileID: 0}
-  bushGenerator: {fileID: 167873927}
+  bushGenerator: {fileID: 0}
   BushSprites:
   - {fileID: 21300000, guid: 689fd5fe03fc81e4e822f7c0ba09415d, type: 3}
   - {fileID: 21300000, guid: 1008823ae48d59e448209aa4ae1f06f9, type: 3}
@@ -8130,10 +8115,8 @@ GameObject:
   - component: {fileID: 800593099}
   - component: {fileID: 800593098}
   - component: {fileID: 800593097}
-  - component: {fileID: 800593096}
   - component: {fileID: 800593095}
   - component: {fileID: 800593094}
-  - component: {fileID: 800593101}
   - component: {fileID: 800593102}
   m_Layer: 0
   m_Name: Enemy
@@ -8178,33 +8161,6 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!54 &800593096
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 800593093}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &800593097
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8285,28 +8241,12 @@ Transform:
   m_GameObject: {fileID: 800593093}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.52, y: 0.73, z: 5.6}
+  m_LocalPosition: {x: 4.52, y: 0.73, z: 5.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!208 &800593101
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 800593093}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 1, y: 1, z: 1}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!114 &800593102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8806,7 +8746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   witch: {fileID: 0}
-  bushGenerator: {fileID: 167873927}
+  bushGenerator: {fileID: 0}
   BushSprites:
   - {fileID: 21300000, guid: 689fd5fe03fc81e4e822f7c0ba09415d, type: 3}
   - {fileID: 21300000, guid: 1008823ae48d59e448209aa4ae1f06f9, type: 3}
@@ -9469,7 +9409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   witch: {fileID: 0}
-  bushGenerator: {fileID: 167873927}
+  bushGenerator: {fileID: 0}
   BushSprites:
   - {fileID: 21300000, guid: 689fd5fe03fc81e4e822f7c0ba09415d, type: 3}
   - {fileID: 21300000, guid: 1008823ae48d59e448209aa4ae1f06f9, type: 3}
@@ -10645,7 +10585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   witch: {fileID: 0}
-  bushGenerator: {fileID: 167873927}
+  bushGenerator: {fileID: 0}
   BushSprites:
   - {fileID: 21300000, guid: 689fd5fe03fc81e4e822f7c0ba09415d, type: 3}
   - {fileID: 21300000, guid: 1008823ae48d59e448209aa4ae1f06f9, type: 3}
@@ -17686,7 +17626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   witch: {fileID: 0}
-  bushGenerator: {fileID: 167873927}
+  bushGenerator: {fileID: 0}
   BushSprites:
   - {fileID: 21300000, guid: 689fd5fe03fc81e4e822f7c0ba09415d, type: 3}
   - {fileID: 21300000, guid: 1008823ae48d59e448209aa4ae1f06f9, type: 3}
@@ -17784,7 +17724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   witch: {fileID: 0}
-  bushGenerator: {fileID: 167873927}
+  bushGenerator: {fileID: 0}
   BushSprites:
   - {fileID: 21300000, guid: 689fd5fe03fc81e4e822f7c0ba09415d, type: 3}
   - {fileID: 21300000, guid: 1008823ae48d59e448209aa4ae1f06f9, type: 3}
@@ -19848,7 +19788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   witch: {fileID: 0}
-  bushGenerator: {fileID: 167873927}
+  bushGenerator: {fileID: 0}
   BushSprites:
   - {fileID: 21300000, guid: 689fd5fe03fc81e4e822f7c0ba09415d, type: 3}
   - {fileID: 21300000, guid: 1008823ae48d59e448209aa4ae1f06f9, type: 3}
@@ -20672,17 +20612,17 @@ PrefabInstance:
     - target: {fileID: 1301385990395460559, guid: 953fbc5852a465b47a2d3f8ac4695886,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1301385990395544945, guid: 953fbc5852a465b47a2d3f8ac4695886,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1301385990395650107, guid: 953fbc5852a465b47a2d3f8ac4695886,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3573168744868410505, guid: 953fbc5852a465b47a2d3f8ac4695886,
         type: 3}
@@ -20742,7 +20682,7 @@ PrefabInstance:
     - target: {fileID: 3679144779678496786, guid: 953fbc5852a465b47a2d3f8ac4695886,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20759,7 +20699,7 @@ SceneRoots:
   - {fileID: 1677600813}
   - {fileID: 5015369598954008494}
   - {fileID: 800593100}
-  - {fileID: 553817567}
   - {fileID: 71253595}
   - {fileID: 1183380285}
   - {fileID: 1427177993}
+  - {fileID: 553817567}
