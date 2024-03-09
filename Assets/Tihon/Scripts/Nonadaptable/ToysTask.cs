@@ -19,29 +19,13 @@ public class ToysTask : MonoBehaviour
         {
             collision.gameObject.GetComponent<VDDialogue>().start = true;
         }
-        if (collision.gameObject.name == "Villager1")
-        {
-            home1.GetComponent<SpriteRenderer>().sprite = openHome;
-        }
         if (collision.gameObject.name == "Villager2")
         {
-            
-        }
-        if (collision.gameObject.name == "hatka")
-        {
-            if (villager.GetComponent<VDDialogue>().end == true)
-            {
-                home.GetComponent<SpriteRenderer>().sprite = openHome;
-                SceneManager.LoadScene("FindAToy");
-            }
+            collision.gameObject.GetComponent<VDDialogue>().start = true;
         }
         if (collision.gameObject.name == "hatka1")
         {
             SceneManager.LoadScene("NeedleFinding");
-        }
-        if (collision.gameObject.name == "hatka2")
-        {
-            SceneManager.LoadScene("Василів_День_Основа");
         }
     }
     
@@ -49,6 +33,7 @@ public class ToysTask : MonoBehaviour
     {
         if (counter == 3)
         {
+            VDDialogue.meeting += 1;
             SceneManager.LoadScene("Василів_День_Основа");
         }
     }

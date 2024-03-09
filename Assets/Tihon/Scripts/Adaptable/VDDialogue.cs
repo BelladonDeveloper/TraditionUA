@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Security.Cryptography;
 
 public class VDDialogue : MonoBehaviour
 {
@@ -31,21 +32,21 @@ public class VDDialogue : MonoBehaviour
     public string phrase16;
     public string phrase17;
     public string phrase18;
-    public int meeting = 1;
+    public static int meeting = 0;
     public string lvl;
 
     public void Start()
     {
         start = false;
         next.onClick.AddListener(Dialoguing);
-        if (phrase1 != null) { phrasesCount++; }
-        if (phrase2 != null) { phrasesCount++; }
-        if (phrase3 != null) { phrasesCount++; }
-        if (phrase4 != null) { phrasesCount++; }
-        if (phrase5 != null) { phrasesCount++; }
-        if (phrase6 != null) { phrasesCount++; }
-        if (phrase7 != null) { phrasesCount++; }
-        if (phrase8 != null) { phrasesCount++; }
+        if (phrase1 == "k") { } else { phrasesCount++; }
+        if (phrase2 == "k") { } else { phrasesCount++; }
+        if (phrase3 == "k") { } else { phrasesCount++; }
+        if (phrase4 == "k") { } else { phrasesCount++; }
+        if (phrase5 == "k") { } else { phrasesCount++; }
+        if (phrase6 == "k") { } else { phrasesCount++; }
+        if (phrase7 == "k") { } else { phrasesCount++; }
+        if (phrase8 == "k") { } else { phrasesCount++; }
     }
     public void Update()
     {
@@ -63,10 +64,9 @@ public class VDDialogue : MonoBehaviour
     }
     public void Dialoguing()
     {
-        Debug.Log(1);
         if (phrasesCount > 0)
         {
-            if (meeting == 1)
+            if (meeting == 0)
             {
                 if (phrasesCount == 1) { script = phrase1; }
                 if (phrasesCount == 2) { script = phrase2; }
