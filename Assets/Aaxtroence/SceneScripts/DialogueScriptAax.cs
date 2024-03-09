@@ -8,6 +8,7 @@ using Base;
 
 public class DialogueScriptAax : MonoBehaviour
 {
+    [SerializeField] private bool UseCamIcon = false;
     [SerializeField] private GameObject Triangle;
     [SerializeField] private GameObject _Joystick;
     [SerializeField] private GameObject DialoguePanel;
@@ -18,11 +19,15 @@ public class DialogueScriptAax : MonoBehaviour
     [SerializeField] private Sprite[] Faces;
     [SerializeField] private string[] CharNames;
     [SerializeField] private Animator[] CharAnimators;
+    [SerializeField] private Transform[] CharIconCamPositions;
     [SerializeField] private AudioClip[] Voices;
     [SerializeField] private Rigidbody PlayerRB;
     [SerializeField] private Transform JoystickParent;
     [SerializeField] private Animator _animator;
     [SerializeField] private MovementController movementController;
+    [SerializeField] private Transform IconCamera;
+    [SerializeField] private GameObject CameraIconImageObj;
+    
 
     private bool ButtonTask_FasterOrClose;
 
@@ -42,6 +47,10 @@ public class DialogueScriptAax : MonoBehaviour
         DialoguePanel.SetActive(false);
         Subscribe();
         dialogueButton.gameObject.SetActive(true);
+        if(CameraIconImageObj != null)
+        {
+            CameraIconImageObj.SetActive(UseCamIcon);
+        }
     }
     private void OnDestroy()
     {
@@ -98,6 +107,11 @@ public class DialogueScriptAax : MonoBehaviour
         Triangle.SetActive(false);
         ButtonTask_FasterOrClose = true;
         Joystick(false);
+
+        if(UseCamIcon)
+        {
+            IconCamera.position = CharIconCamPositions[charIndex].position;
+        }
     }
 
     public void Dialogue(Characters character,string DialogueText,Action action)
