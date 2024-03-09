@@ -3789,7 +3789,7 @@ GameObject:
   - component: {fileID: 108168230}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Terrain
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22838,7 +22838,7 @@ GameObject:
   - component: {fileID: 504745622}
   m_Layer: 0
   m_Name: Terrain (1)
-  m_TagString: Terrain
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -32644,7 +32644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &838381689
 Transform:
   m_ObjectHideFlags: 0
@@ -49699,7 +49699,7 @@ GameObject:
   - component: {fileID: 1466214952}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Terrain
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
