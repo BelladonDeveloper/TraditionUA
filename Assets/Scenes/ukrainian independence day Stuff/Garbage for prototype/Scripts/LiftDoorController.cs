@@ -5,8 +5,8 @@ public class LiftDoorController : MonoBehaviour
 {
     public Transform leftDoor;
     public Transform rightDoor;
-    public float openingDistance = 2f; // Расстояние, на которое двери будут открываться
-    public float animationDuration = 1f; // Продолжительность анимации открытия/закрытия дверей
+    public float openingDistance = 2f; 
+    public float animationDuration = 1f; 
 
     private Vector3 originalLeftPos;
     private Vector3 originalRightPos;
@@ -20,7 +20,6 @@ public class LiftDoorController : MonoBehaviour
 
     public void OpenDoors()
     {
-        // Посчитаем смещения для левой и правой дверей, учитывая повороты
         Vector3 leftOffset = Quaternion.Euler(0, -270, -45) * Vector3.forward * openingDistance;
         Vector3 rightOffset = Quaternion.Euler(0, 270, 45) * Vector3.forward * openingDistance;
 

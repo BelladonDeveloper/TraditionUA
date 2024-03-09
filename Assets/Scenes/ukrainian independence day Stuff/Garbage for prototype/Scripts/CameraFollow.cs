@@ -35,7 +35,15 @@ public class CameraFollow : MonoBehaviour
 
     public void SetFloatToOut()
     {
+        Camera.main.orthographic = false;
         distance = 10f;
+        height = 1f;
+    }
+
+    public void SetFloatToIn()
+    {
+        Camera.main.orthographic = true;
+        distance = 15f;
         height = 1f;
     }
 }

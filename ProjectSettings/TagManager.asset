@@ -22,6 +22,9 @@ TagManager:
   - hatka
   - Bread Component
   - Church
+  - Joystick
+  - Interactable
+  - Enemy
   layers:
   - Default
   - TransparentFX

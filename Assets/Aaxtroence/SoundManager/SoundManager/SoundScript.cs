@@ -12,6 +12,21 @@ public class SoundScript : MonoBehaviour
     public int SettingsSoundVolume;
 
 
+    public void PlaySound(AudioClip Sound)
+    {
+        audioSource.clip = Sound;
+        soundDestroyer._volume = 100;
+        CreateClone();
+    }
+
+    public void PlaySound(AudioClip Sound, int volume)
+    {
+        audioSource.clip = Sound;
+        soundDestroyer._volume = volume;
+        CreateClone();
+    }
+
+
     public void PlaySound(int SoundIndex)
     {
         audioSource.clip = soundManager.Sounds[SoundIndex];

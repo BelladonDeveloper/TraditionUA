@@ -4,9 +4,11 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System;
+using Base;
 
 public class DialogueScriptAax : MonoBehaviour
 {
+    [SerializeField] private bool UseCamIcon = false;
     [SerializeField] private GameObject Triangle;
     [SerializeField] private GameObject _Joystick;
     [SerializeField] private GameObject DialoguePanel;
@@ -16,10 +18,16 @@ public class DialogueScriptAax : MonoBehaviour
     [SerializeField] private Button dialogueButton;
     [SerializeField] private Sprite[] Faces;
     [SerializeField] private string[] CharNames;
+    [SerializeField] private Animator[] CharAnimators;
+    [SerializeField] private Transform[] CharIconCamPositions;
+    [SerializeField] private AudioClip[] Voices;
     [SerializeField] private Rigidbody PlayerRB;
     [SerializeField] private Transform JoystickParent;
     [SerializeField] private Animator _animator;
     [SerializeField] private MovementController movementController;
+    [SerializeField] private Transform IconCamera;
+    [SerializeField] private GameObject CameraIconImageObj;
+    
 
     private bool ButtonTask_FasterOrClose;
 
@@ -27,13 +35,22 @@ public class DialogueScriptAax : MonoBehaviour
     
     private Action _action;
 
+    private float VoiceCooldown = 0.075f;
+    private float VoiceCd = 0;
     private float LetterTime;
+    private SoundManager soundManager;
+    private int charIndex;
 
     private void Start() 
     {
+        soundManager = Register.Get<SoundManager>();
         DialoguePanel.SetActive(false);
         Subscribe();
         dialogueButton.gameObject.SetActive(true);
+        if(CameraIconImageObj != null)
+        {
+            CameraIconImageObj.SetActive(UseCamIcon);
+        }
     }
     private void OnDestroy()
     {
@@ -45,45 +62,62 @@ public class DialogueScriptAax : MonoBehaviour
         Msg.text = "";
         yield return new WaitForSeconds(0.5f);
         LetterTime = 0.025f;
+        VoiceCd = 0f;
         foreach (char letter in MsgText)
         {
+            VoiceCd += (LetterTime == 0.025f)? LetterTime : LetterTime * 2;
+            if(VoiceCd >= VoiceCooldown)
+            {
+                VoiceCd = 0f;
+                soundManager.PlaySound(Voices[charIndex]);
+            }
             Msg.text += letter;
             yield return new WaitForSeconds(LetterTime);
         }
         yield return new WaitForSeconds(0.025f);
+
+        IsTalking(false);
+
         Triangle.SetActive(true);
 
         ButtonTask_FasterOrClose = false;
     }
 
-    private void SetFace(Characters character)
+    private void IsTalking(bool TF)
     {
-        CharFace.sprite = Faces[(int)character];
+        if(CharAnimators[charIndex] != null)
+        {
+            CharAnimators[charIndex].SetBool("IsTalking", TF); 
+        }
+    }
+
+    private void SetFace()
+    {
+        CharFace.sprite = Faces[charIndex];
     }
     public void Dialogue(Characters character,string DialogueText)
     {
-        SetFace(character);
-        CharName.text = CharNames[(int)character];
+        _action = null;
+        charIndex = (int)character;
+        IsTalking(true);
+        SetFace();
+        CharName.text = CharNames[charIndex];
         DialoguePanel.SetActive(true);
         StartCoroutine(_WriteText(DialogueText));
         Triangle.SetActive(false);
-
         ButtonTask_FasterOrClose = true;
-        _action = null;
         Joystick(false);
+
+        if(UseCamIcon)
+        {
+            IconCamera.position = CharIconCamPositions[charIndex].position;
+        }
     }
 
     public void Dialogue(Characters character,string DialogueText,Action action)
     {
-        SetFace(character);
-        CharName.text = CharNames[(int)character];
-        DialoguePanel.SetActive(true);
-        StartCoroutine(_WriteText(DialogueText));
-        Triangle.SetActive(false);
-
-        ButtonTask_FasterOrClose = true;
+        Dialogue(character,DialogueText);
         _action = action;
-        Joystick(false);
     }
 
     private void DialogueButton()
@@ -103,6 +137,7 @@ public class DialogueScriptAax : MonoBehaviour
 
     private void Joystick(bool TF)
     {
+        _Joystick.SetActive(false);
         movementController.CutSceneBool = !TF;
         if (TF)
         {
@@ -136,5 +171,6 @@ public enum Characters
     SaintNicolas,
     Witch,
     Krampus,
-    Unknown
+    Unknown,
+    Rabbit
 }

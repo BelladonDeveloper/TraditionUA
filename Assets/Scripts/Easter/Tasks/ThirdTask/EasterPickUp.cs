@@ -23,8 +23,7 @@ public class EasterPickUp : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _playerPointsTMP;
     [SerializeField] private TextMeshProUGUI _bunnyPointsTMP;
 
-    //[SerializeField] private float _defaultBunnySpeed;
-    [SerializeField] private float _defaultPlayerSpeed;
+    [SerializeField] private Animator _bunnyAnimator;
 
     private int _playerPoints;
     private int _bunnyPoints;
@@ -49,16 +48,13 @@ public class EasterPickUp : MonoBehaviour
 
         _playerPointsTMP.text = _playerPoints.ToString();
         _bunnyPointsTMP.text = _bunnyPoints.ToString();
+
+        _bunnyAnimator.SetBool("isWalking", false);
     }
 
     private IEnumerator PickedUpByPlayer()
     {
-        _mController.ChangeSpeed(0);
-        //Play Animation of Pick Up
-
         yield return new WaitForSeconds(1f);
-
-        _mController.ChangeSpeed(_defaultPlayerSpeed);
 
         if (_playerPoints >= 10)
         {
@@ -72,24 +68,15 @@ public class EasterPickUp : MonoBehaviour
 
             _thirdTask.FadeUI();
 
-            // Change Bunny Rotation to goldCarrot;
-
-            //ChangeAnimation to lose bunny animation or happy animation 
-            //ChangeAnimation to win player animation 
-
-            //Play Sound May be 
+            _bunnyAnimator.SetBool("isWalking", false);
         }
     }
 
     private IEnumerator PickedUpByBunny()
     {
-        _bunnyAgent.speed = 0;
-
-        //Play Animation of Pick Up
-
         yield return new WaitForSeconds(1f);
 
-        _bunnyAgent.speed = ThirdTask.StartSpeed + _bunnyPoints; // Todo or * 4"
+        _bunnyAgent.speed = ThirdTask.StartSpeed += (_bunnyPoints + 3);
 
         if (_bunnyPoints >= 10)
         {

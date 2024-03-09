@@ -120,6 +120,33 @@ public class MusicSwitcher : MonoBehaviour
         }
         AudioPlayer1 = !AudioPlayer1;
     }
+
+    public void PlayMusic(AudioClip Music, bool UpscalingMusic)
+    {
+        if (AudioPlayer1)
+        {
+            audioSource2.clip = Music;
+            audioSource2.Play();
+            if (UpscalingMusic == false)
+            {
+                AS2VolumePercentage = VolumeTarget;
+                AS1VolumePercentage = 0;
+            }
+        }
+        else
+        {
+            audioSource1.clip = Music;
+            audioSource1.Play();
+            if (UpscalingMusic == false)
+            {
+                AS1VolumePercentage = VolumeTarget;
+                AS2VolumePercentage = 0;
+            }
+        }
+        AudioPlayer1 = !AudioPlayer1;
+    }
+
+    
     public void ChangeVolumeTarget(int number)
     {
         VolumeTarget = number;

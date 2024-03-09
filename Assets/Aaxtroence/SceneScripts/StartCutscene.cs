@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using DG.Tweening;
 using UnityEngine.UI;
+using Base;
 
 public class StartCutscene : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class StartCutscene : MonoBehaviour
 
     void Start()
     {
+        Register.Get<SoundManager>().PlayMusic(Music.SaintNicolas1, false, 50);
+
         movementController.CutSceneBool = true;
         _animator.SetFloat("MovementX", 5); 
         _animator.SetBool("IsMove", true); 

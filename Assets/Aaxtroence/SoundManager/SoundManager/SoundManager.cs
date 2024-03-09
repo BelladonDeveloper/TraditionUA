@@ -9,6 +9,8 @@ public class SoundManager : MonoBehaviour, IManager
     [SerializeField] private MusicSwitcher musicSwitcher;
     [SerializeField] private SoundScript soundScript;
     public bool pause = false;
+    public int Settings_SoundVolume = 100;
+    public int Settings_MusicVolume = 100;
     // Music
     public void PlayMusic(Music Index, bool Upscaling)
     {
@@ -20,6 +22,22 @@ public class SoundManager : MonoBehaviour, IManager
         musicSwitcher.PlayMusic((int)Index, Upscaling);
         musicSwitcher.ChangeVolumeTarget(volume);
     }
+
+    public void PlayMusic(AudioClip Music, bool Upscaling)
+    {
+        musicSwitcher.PlayMusic(Music, Upscaling);
+    }
+
+    public void PlayMusic(AudioClip Music, bool Upscaling, int volume)
+    {
+        musicSwitcher.PlayMusic(Music, Upscaling);
+        musicSwitcher.ChangeVolumeTarget(volume);
+    }
+
+
+
+
+
 
     public void Music_SetVolume(int number)
     {
@@ -35,14 +53,34 @@ public class SoundManager : MonoBehaviour, IManager
         soundScript.PlaySound((int)Index, volume);
     }
     
+    public void PlaySound(AudioClip Sound)
+    {
+        soundScript.PlaySound(Sound);
+    }
+
+    public void PlaySound(AudioClip Sound, int volume)
+    {
+        soundScript.PlaySound(Sound,volume);
+    }
+
     // Settings
     public void Settings_SetMusicVolume(int volume)
     {
         musicSwitcher.SettingsMusicVolume = volume;
+        Settings_MusicVolume = volume;
     }
+
+
     public void Settings_SetSoundVolume(int volume)
     {
         soundScript.SettingsSoundVolume = volume;
+        Settings_SoundVolume = volume;
+    }
+
+    public void SetVolume()
+    {
+        Settings_MusicVolume = (int)musicSwitcher.SettingsMusicVolume;
+        Settings_SoundVolume = (int)soundScript.SettingsSoundVolume;
     }
 
 
@@ -56,13 +94,14 @@ public enum Music
     MainMenu,
     Game1,
     Game2,
-    Game3
+    Game3,
+    SaintNicolas1,
+    SaintNicolas2
 }
 
 public enum Sound
 {
     Click,
     Open,
-    Close,
-    WitchVoice
+    Close
 }

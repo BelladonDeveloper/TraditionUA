@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Base;
 
 public class BushScript : MonoBehaviour
 {
@@ -8,10 +9,12 @@ public class BushScript : MonoBehaviour
     [SerializeField] private BushGenerator bushGenerator;
     [SerializeField] private Sprite[] BushSprites;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private AudioClip audioClip;
     private bool HasBerry = false;
     
     private void PickUp()
     {
+        Register.Get<SoundManager>().PlaySound(audioClip);
         spriteRenderer.sprite = BushSprites[0];
         witch.CollectedItem(true);
         HasBerry = false;
@@ -19,7 +22,6 @@ public class BushScript : MonoBehaviour
 
     public void AddBerry()
     {
-        Debug.Log("a");
         spriteRenderer.sprite = BushSprites[1];
         HasBerry = true;
     }

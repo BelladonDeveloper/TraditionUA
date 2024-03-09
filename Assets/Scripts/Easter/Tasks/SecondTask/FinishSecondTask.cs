@@ -33,6 +33,8 @@ public class FinishSecondTask : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
+        _stick = GameObject.FindGameObjectWithTag("Joystick").GetComponent<CanvasGroup>();
+
         appearing.Append(_stick.DOFade(1, TIME_TO_FINISH));
         appearing.Join(_checkMarkUI.DOFade(0, TIME_TO_FINISH));
         appearing.Join(_heartsUI.DOFade(0, TIME_TO_FINISH));

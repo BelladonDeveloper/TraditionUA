@@ -13,6 +13,8 @@ public class ThirdTask : MonoBehaviour
 
     [SerializeField] private GameObject _carrot;
     [SerializeField] private GameObject _bunny;
+    [SerializeField] private GameObject _secondTaskLevel;
+    [SerializeField] private Animator _animator;
 
     [SerializeField] private List<Transform> _positions = new List<Transform>();
 
@@ -27,7 +29,7 @@ public class ThirdTask : MonoBehaviour
     [SerializeField] private Transform _startPosition;
     private Quaternion _startRotation;
 
-    public static float StartSpeed = 10;
+    public static float StartSpeed = 12;
 
     private const int Default = 19;
     private const float QuaternionRotation = 15.0f;
@@ -53,6 +55,8 @@ public class ThirdTask : MonoBehaviour
 
         _isRestarted = false;
         _bunnyAgent.enabled = true;
+
+        _secondTaskLevel.SetActive(false);
     }
 
     public void RemoveCarrotFromList(GameObject carrot)
@@ -63,7 +67,11 @@ public class ThirdTask : MonoBehaviour
 
     public void RestartedTask()
     {
+        _bunnyAgent.enabled = false;
+
         PassingAndTakingTasks.IsDone = false;
+
+        PassingAndTakingTasks._isDialogueDone = -1;
 
         _bunny.transform.position = _startPosition.position;
         _bunny.transform.rotation = _startRotation;
@@ -83,6 +91,8 @@ public class ThirdTask : MonoBehaviour
                 Destroy(carrot);
             }
         }
+
+        _animator.SetBool("isWalking", false);
     }
 
     public void FadeUI()
@@ -101,6 +111,8 @@ public class ThirdTask : MonoBehaviour
             if (nearestCarrot != null)
             {
                 _bunnyAgent.SetDestination(nearestCarrot.transform.position);
+
+                _animator.SetBool("isWalking", true);
             }
         }
     }

@@ -13,12 +13,6 @@
           <e p="Tilemap" t="Include" />
         </e>
         <e p="Aaxtroence" t="Include">
-          <e p="ImageSpin.cs" t="Include" />
-          <e p="LoadingScreen.cs" t="Include" />
-          <e p="LoadingScreenActivator.cs" t="Include" />
-          <e p="MenuData.cs" t="Include" />
-          <e p="NameTextAnimationLoop.cs" t="Include" />
-          <e p="PageScript.cs" t="Include" />
           <e p="Scenes" t="Include" />
           <e p="SceneScripts" t="Include">
             <e p="BushGenerator.cs" t="Include" />
@@ -32,7 +26,6 @@
             <e p="WitchItemScript.cs" t="Include" />
           </e>
           <e p="SceneSprites" t="Include" />
-          <e p="SliderScript.cs" t="Include" />
           <e p="SoundManager" t="Include">
             <e p="SoundManager" t="Include">
               <e p="MusicSwitcher.cs" t="Include" />
@@ -42,10 +35,10 @@
               <e p="TestScript.cs" t="Include" />
             </e>
           </e>
+          <e p="Sounds" t="Include" />
           <e p="Sprites" t="Include" />
           <e p="Terrain" t="Include" />
           <e p="TestSprites" t="Include" />
-          <e p="VersionScript.cs" t="Include" />
         </e>
         <e p="Andre" t="Include">
           <e p="Joystick Pack" t="Include">
@@ -86,6 +79,7 @@
             <e p="Church.cs" t="Include" />
             <e p="FlowrsAndWeed.cs" t="Include" />
             <e p="Inventory.cs" t="Include" />
+            <e p="MakoviaSpawner.cs" t="Include" />
             <e p="PickingFlowers.cs" t="Include" />
             <e p="Pongs.cs" t="Include" />
             <e p="ReadWriteSaving.cs" t="Include" />
@@ -357,6 +351,7 @@
             <e p="EnemyScripts" t="Include">
               <e p="EnemyMonster.cs" t="Include" />
             </e>
+            <e p="EnemyWay.cs" t="Include" />
             <e p="LevelChangerPopup.cs" t="Include" />
             <e p="PopupScript.cs" t="Include" />
             <e p="SpriteChanger.cs" t="Include" />
@@ -451,6 +446,7 @@
               <e p="Prefabs" t="Include" />
               <e p="Scripts" t="Include">
                 <e p="CameraFollow.cs" t="Include" />
+                <e p="CarTimer.cs" t="Include" />
                 <e p="CatTask.cs" t="Include" />
                 <e p="CatTrigger.cs" t="Include" />
                 <e p="IsCanMoveForDialogue.cs" t="Include" />
@@ -493,12 +489,14 @@
             <e p="CameraMoving" t="Include">
               <e p="CinemachineCamerasChangingByPriority.cs" t="Include" />
             </e>
+            <e p="ChangeAlpha.cs" t="Include" />
             <e p="DarknessChangeInteractable.cs" t="Include" />
             <e p="Ending" t="Include">
               <e p="FinishTradition.cs" t="Include" />
               <e p="PingPongMovement.cs" t="Include" />
               <e p="TraditionEnding.cs" t="Include" />
             </e>
+            <e p="JoystickHelper.cs" t="Include" />
             <e p="Player tracking" t="Include">
               <e p="Player tracking.cs" t="Include" />
             </e>
@@ -553,6 +551,17 @@
             <e p="PlayerSwitcher" t="Include">
               <e p="MainMenuSceneChanger.cs" t="Include" />
             </e>
+          </e>
+          <e p="Menu Aax" t="Include">
+            <e p="ImageSpin.cs" t="Include" />
+            <e p="LoadingScreen.cs" t="Include" />
+            <e p="LoadingScreenActivator.cs" t="Include" />
+            <e p="MenuData.cs" t="Include" />
+            <e p="NameTextAnimationLoop.cs" t="Include" />
+            <e p="PageScript.cs" t="Include" />
+            <e p="SavingData.cs" t="Include" />
+            <e p="SliderScript.cs" t="Include" />
+            <e p="VersionScript.cs" t="Include" />
           </e>
           <e p="Pause" t="Include">
             <e p="InitPauseButton.cs" t="Include" />
@@ -692,32 +701,33 @@
           <e p="UI" t="Include" />
         </e>
         <e p="Tihon" t="Include">
-          <e p="InGamePopUp.cs" t="Include" />
-          <e p="lvlButton.cs" t="Include" />
           <e p="Materials" t="Include" />
-          <e p="Needle.cs" t="Include" />
-          <e p="NeedleFinding.cs" t="Include" />
           <e p="Prefabs" t="Include" />
           <e p="Scenes" t="Include" />
           <e p="Scripts" t="Include">
             <e p="Adaptable" t="Include">
+              <e p="ArrowMovement.cs" t="Include" />
+              <e p="GoToMenu_.cs" t="Include" />
+              <e p="InGamePopUp.cs" t="Include" />
+              <e p="lvlButton.cs" t="Include" />
               <e p="PlayerWining.cs" t="Include" />
               <e p="Spawner.cs" t="Include" />
-              <e p="Timer.cs" t="Include" />
+              <e p="TaskManager.cs" t="Include" />
+              <e p="VDDialogue.cs" t="Include" />
             </e>
-            <e p="ArrowMovement.cs" t="Include" />
             <e p="Nonadaptable" t="Include">
               <e p="DoorRanomizer.cs" t="Include" />
+              <e p="Needle_.cs" t="Include" />
+              <e p="NeedleFinding.cs" t="Include" />
               <e p="PlayerLosing.cs" t="Include" />
               <e p="RandomMovement.cs" t="Include" />
               <e p="Seeding.cs" t="Include" />
               <e p="Simple3SidesMovement.cs" t="Include" />
+              <e p="ToysFinding.cs" t="Include" />
               <e p="ToysTask.cs" t="Include" />
             </e>
           </e>
           <e p="Sprites" t="Include" />
-          <e p="TaskManager.cs" t="Include" />
-          <e p="ToysFinding.cs" t="Include" />
         </e>
         <e p="TimeLines" t="Include">
           <e p="Easter" t="Include" />

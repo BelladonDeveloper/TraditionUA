@@ -1,10 +1,16 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class Teleporter : MonoBehaviour
 {
     [SerializeField] private CameraFollow _camFollow;
-    public Transform destination; 
+    [SerializeField] private CarTimer _carTimer;
+    [SerializeField] private Transform destination;
+
+    private GameObject player;
+
     public float teleportDelay = 3f; 
     public float FadeDelay = 1f; 
 
@@ -23,7 +29,7 @@ public class Teleporter : MonoBehaviour
 
             if (timer >= teleportDelay)
             {
-                Teleport(GameObject.FindGameObjectWithTag("Player"));
+                Teleport(player);
             }
         }
         else
@@ -36,8 +42,10 @@ public class Teleporter : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            player = other.gameObject;
             _camFollow.Fade();
             StartCoroutine(WaitForFade());
+            _carTimer.StartTimer();
             playerInRange = true;
         }
     }
@@ -52,13 +60,14 @@ public class Teleporter : MonoBehaviour
 
     private void Teleport(GameObject objectToTeleport)
     {
+        //objectToTeleport.transform.position = destination.position;
+        Vector3 posToTp = destination.position;
+        player.transform.DOMove(posToTp, 0.0001f).SetEase(Ease.OutQuad);
         _camFollow.Light();
-        objectToTeleport.transform.position = destination.position; 
     }
 
     private void SwichCam()
     {
-        Camera.main.orthographic = false;
         _camFollow.SetFloatToOut();
     }
 

@@ -13,6 +13,7 @@ public class FirstTask : MonoBehaviour
     public static int _isDoneChecker = 0;
 
     [SerializeField] private EasterProvider easterProvider;
+    [SerializeField] private PassingAndTakingTasks _passingAndTakingTasks;
 
     [SerializeField] private GameObject _eggPrefab;
 
@@ -74,10 +75,10 @@ public class FirstTask : MonoBehaviour
             {
                 _timerCoroutine = StartCoroutine(TimerForStartingFirstTask(_eggsSpritesPrefabs, number, time));
             }
-        }
 
-        if (_isDoneChecker == 3)
-            CountCollectedEggs.Singleton.FinishFirstTask();
+
+            _countCollectedEggs.ResetCollectedEggs();
+        }
 
         _isStarted = true;
     }
@@ -127,21 +128,31 @@ public class FirstTask : MonoBehaviour
 
     public void Win()
     {
-        EasterTimer.Singleton.TimerText.text = "Round Completed";
+        EasterTimer.Singleton.TimerText.text = "";
+
+        _passingAndTakingTasks.ChangeIsDialogueDone(true);
+
+        EasterTimer.IsNextLevel = false;
     }
 
     public void RestartedTask()
     {
+        Sequence appear = DOTween.Sequence();
+
         _isDoneChecker = 0;
 
         _eggsCounterChecker.Clear();
+
+        _passingAndTakingTasks.ChangeIsDialogueDone(true);
+
+        appear.Append(_firstTaskUI.DOFade(0f, _timeToAppearing));
     }
 
     private void OnEnable()
     {
         PassingAndTakingTasks.OnTakenFirstTask += TakeFirstTask;
         EasterTimer.OnLost += Lose;
-        EasterTimer.OnWin += Win;
+        CountCollectedEggs.OnWin += Win;
         RestartFirstTask.OnRestarted += RestartedTask;
     }
 
@@ -149,7 +160,7 @@ public class FirstTask : MonoBehaviour
     {
         PassingAndTakingTasks.OnTakenFirstTask -= TakeFirstTask;
         EasterTimer.OnLost -= Lose;
-        EasterTimer.OnWin -= Win;
+        CountCollectedEggs.OnWin -= Win;
         RestartFirstTask.OnRestarted -= RestartedTask;
     }
 }

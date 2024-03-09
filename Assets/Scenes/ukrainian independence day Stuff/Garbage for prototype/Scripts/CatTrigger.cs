@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CatTrigger : MonoBehaviour
 {
-    [SerializeField] private bool _canTriggerCat = false;
+    private bool _canTriggerCat = false;
     private bool playerInside;
     private float timer;
 
