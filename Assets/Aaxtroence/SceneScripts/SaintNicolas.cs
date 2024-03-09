@@ -5,6 +5,7 @@ using System;
 using DG.Tweening;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class SaintNicolas : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class SaintNicolas : MonoBehaviour
     [SerializeField] private string[] DialogueTexts;
     [SerializeField] private Characters[] characters;
     private int DialogueNum = 0;
+    [SerializeField] private TransitionScript Transition;
 
     private void Start() 
     {
@@ -50,10 +52,17 @@ public class SaintNicolas : MonoBehaviour
         }
         else if(DialogueNum == 2)
         {
-            //Когда собрал подарки
+            Talk(6, 8, EndGame);
         }
     }
-
+    private void EndGame()
+    {
+        Transition.DoTransition(OpenMenu);
+    }
+    private void OpenMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
     private void ShowTask()
     {
         ResetPresentText();
