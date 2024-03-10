@@ -15,19 +15,15 @@ public class SpriteChanger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // ѕерев≥рка, чи об'Їкт, €кий потрапив в тригер, Ї предметом
+        
         if (other.gameObject == toy1 || other.gameObject == toy1 || other.gameObject == toy3)
         {
-            // «б≥льшуЇмо л≥чильник з≥браних предмет≥в
+            
             collectedToys++;
-
-            // ¬имикаЇмо з≥браний предмет
             other.gameObject.SetActive(false);
 
-            // ѕерев≥рка, чи з≥бран≥ вс≥ три предмети
             if (collectedToys == 3)
             {
-                // «м≥нюЇмо спрайт третього об'Їкта
                 ChangeSprite();
             }
         }
@@ -35,10 +31,8 @@ public class SpriteChanger : MonoBehaviour
 
     private void ChangeSprite()
     {
-        // ѕерев≥рка, чи Ї новий спрайт дл€ зм≥ни
         if (presentSprite != null)
         {
-            // «м≥нюЇмо спрайт третього об'Їкта
             SpriteRenderer spriteRenderer = present.GetComponent<SpriteRenderer>();
 
             if (spriteRenderer != null)

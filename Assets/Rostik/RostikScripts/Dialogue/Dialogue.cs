@@ -14,7 +14,9 @@ public class Dialogue : MonoBehaviour
     public GameObject contButton;
     public float wordSpeed;
     public bool playerInTrigger;
+    public GameObject[] objectsToActivate; // Масив об'єктів для активації після діалогу
 
+    private bool dialogueCompleted = false;
 
     void Start()
     {
@@ -38,7 +40,7 @@ public class Dialogue : MonoBehaviour
 
         }
 
-        if (dialogueText.text == dialogue[index]) 
+        if (dialogueText.text == dialogue[index])
         {
             contButton.SetActive(true);
         }
@@ -50,6 +52,7 @@ public class Dialogue : MonoBehaviour
         dialogueText.text = "";
         index = 0;
         dialoguePanel.SetActive(false);
+
     }
 
     IEnumerator Typing()
@@ -73,6 +76,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
+            dialogueCompleted = true;
             RemoveText();
         }
     }
@@ -92,5 +96,18 @@ public class Dialogue : MonoBehaviour
             playerInTrigger = false;
             RemoveText();
         }
+
+        foreach (GameObject obj in objectsToActivate)
+        {
+            obj.SetActive(true); // Активуємо кожен об'єкт з масиву
+        }
     }
+
+    //void ActivateObjects()
+    //{
+    //    foreach (GameObject obj in objectsToActivate)
+    //    {
+    //        obj.SetActive(true); // Активуємо кожен об'єкт з масиву
+    //    }
+    //}
 }
