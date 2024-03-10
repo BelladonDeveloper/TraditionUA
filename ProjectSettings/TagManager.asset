@@ -26,6 +26,7 @@ TagManager:
   - Interactable
   - Enemy
   - Toy
+  - Terrain
   layers:
   - Default
   - TransparentFX
