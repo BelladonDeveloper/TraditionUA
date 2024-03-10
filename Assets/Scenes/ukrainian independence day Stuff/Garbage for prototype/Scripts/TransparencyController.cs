@@ -17,7 +17,6 @@ public class TransparencyController : MonoBehaviour
 
     public void Darken()
     {
-        Debug.Log(12213123);
         image.gameObject.SetActive(true);
         image.DOColor(new Color(originalColor.r, originalColor.g, originalColor.b, 1f), duration);
     }

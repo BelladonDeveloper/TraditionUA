@@ -34,12 +34,12 @@ public class CVKTeleporter : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         Player.transform.position = new Vector3(destination.position.x, destination.position.y, destination.position.z);
-        _camFollow.Light();
         SwichCam();
+        _camFollow.Light();
     }
 
     private void SwichCam()
     {
-        _camFollow.SetFloatToOut();
+        _camFollow.SetFloatToIn();
     }
 }
