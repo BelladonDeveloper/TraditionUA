@@ -18,6 +18,7 @@ public class NeedleFinding : MonoBehaviour
         {
             if (counter == 3)
             {
+                VDDialogue.meeting = 1;
                 StartCoroutine("Wining");
             }
             else

@@ -6,9 +6,8 @@ using UnityEngine.SceneManagement;
 public class ToysTask : MonoBehaviour
 {
     public GameObject villager;
-    public GameObject home;
-    public GameObject home1;
-    public GameObject home2;
+    public GameObject buble;
+    public GameObject buble1;
     public Sprite openHome;
     public int counter = 0;
     public string lvlName;
@@ -18,13 +17,16 @@ public class ToysTask : MonoBehaviour
         {
             collision.gameObject.GetComponent<VDDialogue>().start = true;
         }
-        if (collision.gameObject.name == "Villager2")
+        if (collision.gameObject.name == "Villager1")
         {
+            Destroy(buble);
+            VDDialogue.meeting = 0;
             collision.gameObject.GetComponent<VDDialogue>().start = true;
         }
-        if (collision.gameObject.name == "hatka1")
+        if (collision.gameObject.name == "Villager2")
         {
-            SceneManager.LoadScene("NeedleFinding");
+            VDDialogue.meeting = 0;
+            collision.gameObject.GetComponent<VDDialogue>().start = true;
         }
     }
     
@@ -32,7 +34,7 @@ public class ToysTask : MonoBehaviour
     {
         if (counter == 3)
         {
-            VDDialogue.meeting += 1;
+            VDDialogue.meeting = 1;
             SceneManager.LoadScene("Василів_День_Основа");
         }
     }

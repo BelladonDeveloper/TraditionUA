@@ -37,6 +37,7 @@ public class VDDialogue : MonoBehaviour
 
     public void Start()
     {
+        Debug.Log(meeting);
         start = false;
         next.onClick.AddListener(Dialoguing);
         if (phrase1 == "k") { } else { phrasesCount++; }
@@ -64,6 +65,7 @@ public class VDDialogue : MonoBehaviour
     }
     public void Dialoguing()
     {
+        Debug.Log(meeting);
         if (phrasesCount > 0)
         {
             if (meeting == 0)
@@ -93,13 +95,24 @@ public class VDDialogue : MonoBehaviour
         }
         else
         {
-            start = false;
-            meeting++;
-            Time.timeScale = 1;
-            bubble.GetComponent<CanvasGroup>().alpha = 0;
-            joystick.GetComponent<CanvasGroup>().alpha = 1;
-            end = true;
-            SceneManager.LoadScene(lvl);
+                start = false;
+                meeting++;
+                Time.timeScale = 1;
+                bubble.GetComponent<CanvasGroup>().alpha = 0;
+                joystick.GetComponent<CanvasGroup>().alpha = 1;
+                end = true;   
+            if (meeting == 0)
+            {
+                gameObject.GetComponent<BoxCollider>().enabled = false;
+                Destroy(bubble);
+            }
+            else
+            {
+                if(meeting == 1)
+                {
+                    SceneManager.LoadScene(lvl);
+                }
+            }
         }
     }
 }
