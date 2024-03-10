@@ -13,18 +13,18 @@ public class Church : MonoBehaviour
     
     void Deebug()
     {
-        if (AndrePlayerController.weed == 0 && AndrePlayerController.flowers == 0)
-        {
-            Debug.Log(" В тебе недостатньо квітів, повертайся коли назбираєш ");
-        }
-        if (AndrePlayerController.weed == 1)
+        if (AndrePlayerController.weed == 3 || AndrePlayerController.weed > 3)
         {
             Debug.Log(" З цього букет не вийде ");
         }
-        if (AndrePlayerController.flowers == 1)
+        if (AndrePlayerController.flowers == 3 || AndrePlayerController.flowers > 3)
         {
             Debug.Log(" Чудовий букет, Ось тримай Мак ");
             Inventory.pope = true;
         }
+        if (AndrePlayerController.weed < 3 || AndrePlayerController.flowers < 3)
+        {
+            Debug.Log(" В тебе недостатньо квітів, повертайся коли назбираєш ");
+        }
     }
-}
+}        

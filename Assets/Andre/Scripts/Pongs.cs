@@ -41,7 +41,7 @@ public class Pongs : MonoBehaviour
         Camera1.Quaternions = 45;
         MiniGame1.SetActive(false);
         //AndrePlayerController._moveSpeed = 6;
-        AndrePlayerController.weed = +1;
+        AndrePlayerController.weed += 1;
         WeedT.SetActive(true);
         FlowersT.SetActive(true);
     }
@@ -54,7 +54,7 @@ public class Pongs : MonoBehaviour
         Camera1.target = targes;
         Camera1.Quaternions = 45;
         MiniGame1.SetActive(false);
-        AndrePlayerController.flowers = +1;
+        AndrePlayerController.flowers += 1;
     }
 }
 //if (AndrePlayerController.rectTransform.anchoredPosition != Vector2.zero) { AndrePlayerController._moveSpeed = 6;}
