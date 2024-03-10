@@ -25,6 +25,8 @@ TagManager:
   - Joystick
   - Interactable
   - Enemy
+  - Toy
+  - Terrain
   layers:
   - Default
   - TransparentFX

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using DG.Tweening;
+using Base;
 
 public class Krampus : MonoBehaviour
 {
@@ -11,26 +12,39 @@ public class Krampus : MonoBehaviour
     [SerializeField] private Characters[] characters;
     [SerializeField] private SaintNicolas saintNicolas;
     [SerializeField] private TransitionScript Transition;
-    [SerializeField] private GameObject KrampusMinigame;
+    [SerializeField] private GameObject _KrampusMinigame;
     [SerializeField] private GameObject KrampusCanvas;
     [SerializeField] private GameObject MainCamera;
     [SerializeField] private GameObject MainCanvas;
-
+    [SerializeField] private KrampusMinigame krampusMinigameScript;
+    [SerializeField] private AudioClip KrampusMusic;
 
     public int DialogueNum = 0;
     public void Near()
     {
         if(DialogueNum == 0)
         {
-            Talk(0, 2, ClaimTask);
+            Talk(0, 4, ClaimTask);
         }
         else if(DialogueNum == 1)
         {
-            
+            Talk(5, 5, ClaimTask);
+        }
+        else if(DialogueNum == 2)
+        {
+            Talk(6, 7, GivePresent);
+            DialogueNum++;
+        }
+        else if(DialogueNum == 3)
+        {
+            Talk(8, 8, null);
         }
     }
     
-
+    private void GivePresent()
+    {
+        saintNicolas.CollectedPresent();
+    }
     private void ClaimTask()
     {
         Transition.DoTransition(TransitionFunction);
@@ -38,10 +52,12 @@ public class Krampus : MonoBehaviour
 
     private void TransitionFunction()
     {
-        KrampusMinigame.SetActive(true);
+        Register.Get<SoundManager>().PlayMusic(KrampusMusic,true,50);
+        _KrampusMinigame.SetActive(true);
         KrampusCanvas.SetActive(true);
         MainCamera.SetActive(false);
         MainCanvas.SetActive(false);
+        krampusMinigameScript.StartMinigame();
     }
 
     private void OnTriggerEnter(Collider other) 
