@@ -36630,7 +36630,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u0423 \u0426\u0415\u0419 \u0414\u0415\u041D\u042C \u0423\u041A\u0420\u0410\u0407\u041D\u0410
     \u0417\u0414\u041E\u0411\u0423\u041B\u0410 \u0422\u0415, \u0427\u041E\u0413\u041E
-    \u041D\u0415 \u041C\u0410\u041B\u0410 74 \u0420\u041E\u041A\u0406\u0412"
+    \u041D\u0415 \u041C\u0410\u041B\u0410 74 \u0420\u041E\u041A\u0418"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
